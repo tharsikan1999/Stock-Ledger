@@ -1,3 +1,6 @@
+
+/* Slider bar animations */
+
 const hangBurgar = document.querySelector(".hanburgar");
 
 const slideBar = document.querySelector(".slide-bar");
@@ -10,3 +13,19 @@ hangBurgar.addEventListener("click",function(){
     hangBurgar.children[1].classList.toggle("Display2");
     hangBurgar.children[2].classList.toggle("Display3");
 })
+
+
+/* user profile animations */
+
+
+const userLogo = document.querySelector(".admin-avatar");
+
+const userMenu = document.querySelector(".user-dashboard");
+
+
+
+
+userLogo.addEventListener("click",function(){
+    userMenu.classList.toggle("user-Display");
+});
+
