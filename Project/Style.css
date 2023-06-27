@@ -181,42 +181,43 @@
 }
 
 .Display p {
-    display: none;
-    
-}
-.Display .slide-dashboard {
-    width: 50px;    transition: 1s;
-
-    padding: 0;
-    margin: 0;
+    display: none;  
     transition: 0.8s;
 }
+.Display .slide-dashboard {
+    width: 50px;   
+    padding: 0;
+    margin: 0;
+    transition: 0.8s ease-in-out;
+}
+
+
 .Display .inbound {
     width: 50px;
     padding: 0;
     margin: 0;
-    transition: 0.8s;
+    transition: 0.8s ease-in-out;
 
 }
 .Display .outbound {
     width: 50px;
     padding: 0;
     margin: 0;
-    transition: 0.8s;
+    transition: 0.8s ease-in-out;
 
 }
 .Display .report {
     width: 50px;
     padding: 0;
     margin: 0;
-    transition: 0.8s;
+    transition: 0.8s ease-in-out;
 
 }
 .Display .history {
     width: 50px;
     padding: 0;
     margin: 0;
-    transition: 0.8s;
+    transition: 0.8s ease-in-out;
 
 }
 
@@ -428,12 +429,12 @@
     
 }
 .add-button {
-    height: 23px;
+    height: 25px;
     width: 100px;
     background: #7F63F4;
     line-height: 23px;
     padding: 0 0 0 15px;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 0 20px;
     font-weight: 600;
     color: #1a1a1a;
@@ -442,12 +443,12 @@
 
 }
 .edit-button {
-    height: 23px;
+    height: 25px;
     width: 100px;
     background: #7F63F4;
     line-height: 23px;
     padding: 0 0 0 15px;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 0 20px;
     font-weight: 600;
     color: #1a1a1a;
@@ -456,12 +457,12 @@
 
 }
 .delete-button {
-    height: 23px;
+    height: 25px;
     width: 120px;
     background: #7F63F4;
     line-height: 23px;
     padding: 0 0 0 15px;
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 0 20px;
     font-weight: 600;
     color: #1a1a1a;
@@ -471,8 +472,11 @@
 
 }
 .delete-button:hover,.edit-button:hover,.add-button:hover {
-    color: #1a1a1a;
-    background: #8063f49f;
+    color: #7F63F4;
+    background: #ffffff;
+    border: 2px solid #7F63F4;
+    transition: 0.5s ;
+    
 }
 .right-index-url {
     min-width: 300px;
@@ -707,9 +711,10 @@
 }
 
 .Select-invoice:hover ,.select-month:hover {
-    color: #1a1a1a;
-    background: #8063f49f;
+    color: #ffffff;
+    background:#7c5ef2;
     cursor: pointer;
+    transition: 0.6s ease-in-out;
 }
 
 .select-menu-box {
@@ -937,6 +942,7 @@ table .table-total-cost {
 .table-position-no1:hover,.table-position-no2:hover,.table-position-no3:hover,.table-position-no4:hover,.table-position-no5:hover {
     background-color: #7c5ef2;
     color: #fff;
+    transition: 0.6s ease-out;
 }
 
 
@@ -965,11 +971,9 @@ table .table-total-cost {
 
 .user-Display {
     display: flex;
+    transition: 1s ease-out;
 }
 
-.user-Display-body {
-    display: none;
-}
 
 
 
@@ -988,6 +992,7 @@ table .table-total-cost {
 .user-profile:hover,.logout-user-profile:hover {
     background:#7F63F4;
     color: #fff;
+    border-radius: 10px;
     
 }
 
