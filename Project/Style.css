@@ -870,7 +870,86 @@ table input:hover {
 
 table .table-total-cost {
     color: #7c5ef2;
+    font-weight: 600;
 }
+
+.table-positions {
+    height: 40px;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 15px 0;
+    align-items: center;
+    font-size: 14px;
+}
+
+.left-select-positions {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #595757;
+    padding: 0 30px;
+}
+
+.right-select-positions {
+    display: flex;
+    padding: 0 50px;
+    
+}
+
+.left-position-arrow,.right-postions-arrow {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background:#7c5ef2f3;
+    margin: 0 5px;
+     
+
+}
+
+
+
+
+.table-position-no1,.table-position-no2,.table-position-no3,.table-position-no4,.table-position-no5 {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #d4d0ec3f; 
+    margin: 0 5px;
+    font-weight: 600;
+    color: #7c5ef2;
+}
+
+.fa-angle-left,.fa-angle-right {
+    color: #fff;
+    
+}
+
+/* 
+.fa-angle-left:hover,.fa-angle-right:hover {
+    color: #fff;
+    
+}
+.left-position-arrow:hover,.right-postions-arrow:hover {
+
+    background-color: #7c5ef2;
+    color: #fff;
+    
+
+} */
+
+.table-position-no1:hover,.table-position-no2:hover,.table-position-no3:hover,.table-position-no4:hover,.table-position-no5:hover {
+    background-color: #7c5ef2;
+    color: #fff;
+}
+
 
 
 
