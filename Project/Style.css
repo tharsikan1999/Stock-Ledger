@@ -503,8 +503,8 @@
     position: relative;
 }
 .outer {
-    height: 160px;
-    width: 160px;
+    height: 157px;
+    width: 157px;
     border-radius: 50%;
     box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
     -6px -6px 10px -1px rgba(255,255,255,0.7);
@@ -559,8 +559,14 @@
 .cricle1-sub-box h3,.cricle2-sub-box h3,.cricle3-sub-box h3,.cricle4-sub-box h3{
     font-weight: 600;
     margin: 20px 0 10px 0;
-    font-size: 20px;
+    font-size: 17px;
     color: #595757;
+}
+
+.cricle1-sub-box h2,.cricle2-sub-box h2,.cricle3-sub-box h2,.cricle4-sub-box h2{
+    
+    font-size: 19px;
+    
 }
 
 .circle2 {
@@ -646,6 +652,148 @@
 .number4 {
     color: #FF5274;
 }
+
+
+/* ---- Select Options -- --- */
+
+.select-options {
+    height: 40px;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 15px 0;
+    align-items: center;
+    font-size: 14px;
+}
+
+.left-select-options {
+
+    flex-grow: 1;
+
+}
+
+.right-select-options {
+    display: flex;
+}
+
+.select-month {
+    height: 30px;
+    width: 110px;
+    text-align: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #595757;
+    border: 2px solid #7c5ef2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Select-invoice {
+    height: 30px;font-size: 14px;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #595757;
+    border: 2px solid #7c5ef2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Select-invoice:hover ,.select-month:hover {
+    color: #1a1a1a;
+    background: #8063f49f;
+    cursor: pointer;
+}
+
+.select-menu-box {
+    height: 30px;
+    width: 30px;
+    background-color: #7F63F4;
+    margin: 0 20px ;
+    border-radius: 5px;
+    
+}
+
+
+
+/* -- fillter options -- */
+
+
+
+.Fillter-options {
+    height: 40px;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0 15px 0;
+    align-items: center;
+}
+
+.left-Fillter-options {
+
+    flex-grow: 1;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    font-size: 14px;
+
+}
+
+.right-Fillter-options {
+    height: 30px;
+    display: flex;
+    margin: 0 60px 0 0;
+    color: #595757;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.filter-number-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px ;
+    margin: 0 15px;
+    background-color: #59575721;
+    border-radius: 5px;
+}
+.number-fillter-box {
+    margin: 0 2px;
+}
+.fa-arrow-up ,.fa-arrow-down{
+    margin: 0 2px;
+    
+
+}
+
+.fa-arrow-up:hover ,.fa-arrow-down:hover{
+    
+    color: #3809f6;
+    cursor: pointer;
+
+}
+.Fillter-options p {
+    font-weight: 520;
+    color: #595757;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
