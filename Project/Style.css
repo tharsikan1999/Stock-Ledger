@@ -787,12 +787,81 @@
 
 
 
+/*--- tabels ---- */
+
+
+table {
+    min-width: 100%;
+}
 
 
 
 
+table tr th {
+}
+
+table .table-header {
+    height: 40px;
+    min-width: 100%;
+    background-color: #FFFFFF;
+    text-align: center;
+
+}
+
+table .table-white-part {
+    height: 40px;
+    min-width: 100%;    background: #d4d0ec2e;    
+
+    background-color: #FFFFFF;
+    text-align: center;
+    margin: 5px 0;
 
 
+}
+
+table .table-gray-part {
+    height: 40px;
+    min-width: 100%;
+    background: #d4d0ec2e;    
+    text-align: center;
+    margin: 5px 0;
+
+}
+
+table .product-avilable-marker {
+
+    height: 27px;
+    width: 27px;
+    background:#71D875;
+    border-radius: 50%;
+}
+
+table .product-unailable-marker {
+
+    height: 27px;
+    width: 27px;
+    background:#FF5274;
+    border-radius: 50%;
+}
+
+
+table .product-low-marker {
+
+    height: 27px;
+    width: 27px;
+    background:#FFC107;
+    border-radius: 50%;
+    
+}
+table .table-avilable {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 40px;
+    
+}
 
 
 
