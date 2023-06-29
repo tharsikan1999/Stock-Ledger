@@ -138,3 +138,97 @@ DivisionTableth.addEventListener("click",function() {
     Divisionup.classList.toggle("up-Button-Display");
     Divisionown.classList.toggle("Down-Button-Display");
 });
+
+
+
+/* get the value tables stocks */
+
+
+const stocksva = document.querySelectorAll("#tables-stocks");
+
+
+
+
+
+
+/* for(i=0;i<makeArray.length;i++){
+    console.log(makeArray);
+} */
+
+
+
+
+    function GetCellValues() {
+        var table = document.getElementById('tables');
+        for (var r = 0, n = table.rows.length; r < n; r++) {
+            for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+
+                const avilableCircle = document.querySelectorAll(".table-avilable-circle");
+
+                const makeArray = Array.apply(null,avilableCircle);
+
+
+
+
+                let stocksCounts = table.rows[r].cells[5].innerText;
+
+                if(stocksCounts< 1){
+                    makeArray[r].style.background = " #FF5274";
+                }
+                else if(stocksCounts<11){
+                    makeArray[r].style.background = "#FFC107";
+                }
+                else  {
+                    makeArray[r].style.background = " #71D875";
+
+
+                } 
+
+
+                console.log(table.rows.length);
+                
+
+
+
+                
+
+            }
+        }
+    }
+
+
+    GetCellValues();
+
+
+
+
+        
+/* 
+if(valueStocks< 1){
+    circles.style.background = " #FF5274";
+}
+else if(valueStocks<11){
+    circles.style.background = "#FFC107";
+}
+else  {
+    circles.style.background = " #71D875";
+} */
+
+
+
+
+  
+
+    
+
+
+
+/* get the value of stocks */
+
+
+
+
+
+
+
+
