@@ -1018,11 +1018,37 @@ table th {
 .fa-caret-up {
     color: #6a48f1;
 }
+
+.fa-caret-down {
+    color:#59575739;
+}
     
 .Down-Button-Display {
     color: #6a48f1;
 }
 
 .up-Button-Display {
-    color: #595757;
+    color:#59575739;
+}
+
+
+
+.table-avilable-circle {
+    height: 30px;
+    width: 30px;
+    background-color: #71D875;
+    border-radius: 50%;
+    background-color: #FFC107;
+    background-color: #FF5274;
+}
+
+#table-avilable-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#dropdown-buttons {
+    border: 1px sold red;
+    padding: 0 0 0 20px;
 }
