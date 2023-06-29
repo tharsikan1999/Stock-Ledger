@@ -141,7 +141,9 @@ DivisionTableth.addEventListener("click",function() {
 
 
 
-/* get the value tables stocks */
+/* get and set the value tables stocks for available options */
+
+
 
 
 const stocksva = document.querySelectorAll("#tables-stocks");
@@ -151,9 +153,7 @@ const stocksva = document.querySelectorAll("#tables-stocks");
 
 
 
-/* for(i=0;i<makeArray.length;i++){
-    console.log(makeArray);
-} */
+
 
 
 
@@ -203,27 +203,6 @@ const stocksva = document.querySelectorAll("#tables-stocks");
 
 
         
-/* 
-if(valueStocks< 1){
-    circles.style.background = " #FF5274";
-}
-else if(valueStocks<11){
-    circles.style.background = "#FFC107";
-}
-else  {
-    circles.style.background = " #71D875";
-} */
-
-
-
-
-  
-
-    
-
-
-
-/* get the value of stocks */
 
 
 
