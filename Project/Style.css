@@ -493,45 +493,52 @@
     
 }
 .add-button {
-    height: 25px;
-    width: 100px;
-    background: #7F63F4;
-    line-height: 23px;
-    padding: 0 0 0 15px;
-    border-radius: 7px;
-    margin: 0 20px;
+    height: 35px;
+    width: 120px;
+    font-size: 17px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #6a48f1df;
     cursor: pointer;
-    color: #ffffffee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+
 
 }
 .edit-button {
-    height: 25px;
-    width: 100px;
-    background: #7F63F4;
-    line-height: 23px;
-    padding: 0 0 0 15px;
-    border-radius: 7px;
-    margin: 0 20px;
+    height: 35px;
+    width: 120px;
+    font-size: 17px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #6a48f1df;
     cursor: pointer;
-    color: #ffffffee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
 
 }
 .delete-button {
-    height: 25px;
+    height: 35px;
     width: 120px;
-    background: #7F63F4;
-    line-height: 23px;
-    padding: 0 0 0 15px;
-    border-radius: 7px;
-    margin: 0 20px;
+    font-size: 17px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #6a48f1df;
     cursor: pointer;
-    color: #ffffffee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
 
 
 }
@@ -540,7 +547,18 @@
     background: #ffffff;
     border: 2px solid #7F63F4;
     transition: 0.5s ;
+
+
     
+}
+
+.Add-Display {
+    color: #7F63F4;
+    background: #ffffff;
+    border: 2px solid #7F63F4;
+    transition: 0.5s ;
+    
+
 }
 .right-index-url {
     min-width: 300px;
@@ -1204,11 +1222,11 @@ table th {
 
 .main-button-box {
     display: flex;
-    min-width: 50%;
+    min-width: 25%;
     height: 60px;
     align-items: center;
-    justify-content: space-around;
     padding: 20px 0 0 0;
+    justify-content: space-between;
     
 }
 
@@ -1230,7 +1248,9 @@ table th {
     border: none;
     background-color: #6a48f1df;
     cursor: pointer;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #close-button{
@@ -1252,3 +1272,5 @@ table th {
     border: 2px solid #6a48f1;
     transition: 0.6s;
 }
+
+
