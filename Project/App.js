@@ -1,4 +1,16 @@
 
+/* pre loader  */
+
+
+const preloader = document.querySelector(".center");
+
+window.addEventListener("load",function(){
+    preloader.style.display = "none";
+})
+
+
+
+
 /* Slider bar animations */
 
 const hangBurgar = document.querySelector(".hanburgar");
@@ -141,23 +153,10 @@ DivisionTableth.addEventListener("click",function() {
 
 
 
-/* get and set the value tables stocks for available options */
+/* get and set the value tables stocks for avilable options */
 
 
-
-
-const stocksva = document.querySelectorAll("#tables-stocks");
-
-
-
-
-
-
-
-
-
-
-
+(
     function GetCellValues() {
         var table = document.getElementById('tables');
         for (var r = 0, n = table.rows.length; r < n; r++) {
@@ -166,9 +165,6 @@ const stocksva = document.querySelectorAll("#tables-stocks");
                 const avilableCircle = document.querySelectorAll(".table-avilable-circle");
 
                 const makeArray = Array.apply(null,avilableCircle);
-
-
-
 
                 let stocksCounts = table.rows[r].cells[5].innerText;
 
@@ -183,21 +179,14 @@ const stocksva = document.querySelectorAll("#tables-stocks");
 
 
                 } 
-
-
-                console.log(table.rows.length);
-                
-
-
-
                 
 
             }
         }
     }
+)();
 
-
-    GetCellValues();
+  
 
 
 
