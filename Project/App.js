@@ -193,9 +193,20 @@ DivisionTableth.addEventListener("click",function() {
 
 const addButton = document.querySelector(".add-button");
 
+const mainAddButton = document.querySelector(".add-button-box");
+
+
 const editButton = document.querySelector(".edit-button");
 
+const mainEditButton = document.querySelector(".edit-button-box");
+
+
 const deleteButton = document.querySelector(".delete-button");
+
+const mainDeleteButton = document.querySelector(".delete-button-box");
+
+
+
 
 const chartCircle = document.querySelector(".total-circle-box");
 
@@ -205,21 +216,71 @@ const closeButton = document.querySelector("#close-button");
 
 
 addButton.addEventListener("click",function(){
+
+
     chartCircle.style.display = "none";
 
     addEditBox.style.display = "flex";
+
+    addButton.classList.add("Add-Display");
+
+    mainEditButton.style.display = "none";
+
+    mainDeleteButton.style.display = "none";
+
+
+    editButton.style.display = "none";
+
+    deleteButton.style.display = "none";
+
+
+
 });
 
 editButton.addEventListener("click",function(){
     chartCircle.style.display = "none";
 
     addEditBox.style.display = "flex";
+
+    editButton.classList.add("Add-Display");
+
+
+    mainDeleteButton.style.display = "none";
+
+    mainAddButton.style.display = "none";
+
+    addButton.style.display = "none";
+
+
+    deleteButton.style.display = "none";
+
+
+
+
 });
 
 deleteButton.addEventListener("click",function(){
     chartCircle.style.display = "none";
 
     addEditBox.style.display = "flex";
+
+    deleteButton.classList.add("Add-Display");
+
+
+
+
+
+    mainAddButton.style.display = "none";
+
+    mainEditButton.style.display = "none";
+
+    addButton.style.display = "none";
+
+    editButton.style.display = "none";
+
+
+
+
 });
 
 
@@ -227,6 +288,37 @@ closeButton.addEventListener("click",function(){
     chartCircle.style.display = "flex";
     
     addEditBox.style.display = "none";
+
+    addButton.classList.remove("Add-Display");
+
+    editButton.classList.remove("Add-Display");
+
+    deleteButton.classList.remove("Add-Display");
+
+
+    mainEditButton.style.display = "flex";
+
+    mainDeleteButton.style.display = "flex";
+
+
+    mainAddButton.style.display = "flex";
+
+    addButton.style.display = "flex";
+
+    editButton.style.display = "flex";
+
+    deleteButton.style.display = "flex";
+
+
+
+
+    
+
+
+
+
+
+
 })
 
 
