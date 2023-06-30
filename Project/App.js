@@ -189,6 +189,47 @@ DivisionTableth.addEventListener("click",function() {
   
 
 
+/* --- Add ,Edit,Delete --- */
+
+const addButton = document.querySelector(".add-button");
+
+const editButton = document.querySelector(".edit-button");
+
+const deleteButton = document.querySelector(".delete-button");
+
+const chartCircle = document.querySelector(".total-circle-box");
+
+const addEditBox = document.querySelector(".add-edit-delete-manage-box");
+
+const closeButton = document.querySelector("#close-button");
+
+
+addButton.addEventListener("click",function(){
+    chartCircle.style.display = "none";
+
+    addEditBox.style.display = "flex";
+});
+
+editButton.addEventListener("click",function(){
+    chartCircle.style.display = "none";
+
+    addEditBox.style.display = "flex";
+});
+
+deleteButton.addEventListener("click",function(){
+    chartCircle.style.display = "none";
+
+    addEditBox.style.display = "flex";
+});
+
+
+closeButton.addEventListener("click",function(){
+    chartCircle.style.display = "flex";
+    
+    addEditBox.style.display = "none";
+})
+
+
 
 
         
