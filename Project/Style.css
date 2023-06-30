@@ -561,6 +561,7 @@
     display: flex;
     justify-content: space-around;
     margin: 40px 0 0 0;
+    
 }
 
 .skill {
@@ -622,6 +623,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .cricle1-sub-box h3,.cricle2-sub-box h3,.cricle3-sub-box h3,.cricle4-sub-box h3{
@@ -918,7 +920,7 @@
     font-size: 17px;
     font-weight: 600;
     color: #595757;
-    background-color: #f3f0f0;
+    background-color: #d4d0ec2e;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
@@ -933,7 +935,7 @@
 .form-control-sm {
     border: none;
     border-radius: 15px;
-    background-color: #f3f0f0;
+    background-color:#ffffff2e;
     outline: none;
     letter-spacing: 1px;
     width: 350px;
@@ -948,7 +950,7 @@
 }
 
 #example_filter:hover {
-    border: 3px solid #8063f469;
+    border: 2px solid  #7c5ef2;
     cursor: pointer;
 
 }
@@ -1124,4 +1126,129 @@ table th {
 #dropdown-buttons {
     border: 1px sold red;
     padding: 0 0 0 20px;
+}
+
+
+/*----- Add Edit Delete -----*/
+
+.add-edit-delete-manage-box {
+    min-height: 200px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+
+.main-input-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#Product-No,#Product-Name,#Division,#Stocks,#Cost,#Total-Cost{
+    height: 40px;
+    outline: none;
+    border: 2px solid #6a48f1c5;
+    font-size: 16px;
+    font-weight: 600;
+    color: #595757;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+#Click-Button {
+    height: 40px;
+    width: 50px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #6a48f1;
+    border: none;
+
+}
+
+#Click-Button:hover {
+    background-color: #fff;
+    color: #6a48f1;
+    border:2px solid #6a48f1;
+    cursor: pointer;
+
+}
+
+#Add-Date,#Up-Date {
+    height: 40px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6a48f1;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid #6a48f1c5;
+
+}
+
+.Product-No-box,.Product-Name-box,.Division-box,.Add-Date-box,.Up-Date-box ,.Stocks-box,.Cost-box,.Total-Cost-box{
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #2f2e2ee3;
+}
+
+.main-button-box {
+    display: flex;
+    min-width: 50%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0 0 0;
+    
+}
+
+.add-button-box,.edit-button-box,.delete-button-box{
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#add-button ,#edit-button,#delete-button {
+    height: 40px;
+    width: 140px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #6a48f1df;
+    cursor: pointer;
+    
+}
+
+#close-button{
+    height: 40px;
+    width: 140px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color:#FF5274;
+    cursor: pointer;
+    
+}
+
+#add-button:hover ,#edit-button:hover,#delete-button:hover,#close-button:hover {
+    background-color: #fff;
+    color: #6a48f1;
+    border: 2px solid #6a48f1;
+    transition: 0.6s;
 }
