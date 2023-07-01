@@ -72,7 +72,7 @@ userLogo.addEventListener("click",function(){
             }
         }
     }
-)(); 
+)();  
  
 
  
@@ -200,7 +200,110 @@ closeButton.addEventListener("click",function(){
 
 
 
+/* Add,Edit,Delete Inputs value Set the table */
 
+
+/*  Add Items to table */
+
+     mainAddButton.addEventListener("click",function(){
+
+   const     produtcNo = document.getElementById("Product-No").value,
+
+        produtcName = document.getElementById("Product-Name").value,
+    
+        division = document.getElementById("Division").value,
+    
+        addDate = document.getElementById("Add-Date").value,
+
+        upDate = document.getElementById("Up-Date").value,
+    
+        stocks = document.getElementById("Stocks").value,
+
+        cost = document.getElementById("Cost").value,
+    
+        totalCost = document.getElementById("Total-Cost").value;
+
+
+        const table = document.querySelector("#tables");
+
+
+        if(produtcNo == ""|| produtcName == "" || division == "" ||addDate == "" ||upDate == "" ||stocks == "" ||cost == "" || totalCost == "" ){
+
+            window.alert("Please Fill Empty Field");
+        }
+        else{
+            table.innerHTML += `
+
+            
+            
+        <tr >
+        <td><input type="checkbox"></td>
+        <td>${produtcNo}</td>
+        <td>${produtcName}</td>
+        <td>${division}</td>
+        <td>${addDate}</td>
+        <td>${upDate}</td>
+        <td>${stocks} </td>
+        <td>${cost}</td>
+        <td>${totalCost}</td
+        <td class="table-avilable"><div class="product-avilable-marker"></div></td>
+
+    </tr>     
+            `
+        }
+     
+
+        
+
+    }); 
+        
+
+/* ---- edit Items ----------- */
+
+
+var table = document.getElementById("tables"),rIndex;
+
+for(r = 0; r <table.rows.length; r ++ ){
+    table.rows[r].addEventListener("click",function(){
+        rIndex = this.rowIndex;
+        
+        document.getElementById("Product-No").value = this.cells[1].innerHTML;
+
+        document.getElementById("Product-Name").value = this.cells[2].innerHTML;
+
+        document.getElementById("Division").value = this.cells[3].innerHTML;
+        
+        document.getElementById("Add-Date").value = this.cells[4].innerHTML;
+
+        document.getElementById("Up-Date").value = this.cells[5].innerHTML;
+
+        document.getElementById("Stocks").value = this.cells[6].innerHTML;
+
+        document.getElementById("Cost").value = this.cells[7].innerHTML;
+
+        document.getElementById("Total-Cost").value = this.cells[8].innerHTML;
+    });
+}
+
+
+
+     
+
+mainEditButton.addEventListener("click",function(){
+    table.rows[rIndex-1].cells[1].innerHTML = document.getElementById("Product-No").value;
+    table.rows[rIndex-1].cells[2].innerHTML = document.getElementById("Product-Name").value;
+    table.rows[rIndex-1].cells[3].innerHTML = document.getElementById("Division").value;
+    table.rows[rIndex-1].cells[4].innerHTML = document.getElementById("Add-Date").value;
+    table.rows[rIndex-1].cells[5].innerHTML = document.getElementById("Up-Date").value;
+    table.rows[rIndex-1].cells[6].innerHTML = document.getElementById("Stocks").value;
+    table.rows[rIndex-1].cells[7].innerHTML = document.getElementById("Cost").value;
+    table.rows[rIndex-1].cells[8].innerHTML = document.getElementById("Total-Cost").value;
+})
+
+
+
+
+  
 
 
 
