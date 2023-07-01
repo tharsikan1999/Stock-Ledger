@@ -298,11 +298,33 @@ mainEditButton.addEventListener("click",function(){
     table.rows[rIndex-1].cells[6].innerHTML = document.getElementById("Stocks").value;
     table.rows[rIndex-1].cells[7].innerHTML = document.getElementById("Cost").value;
     table.rows[rIndex-1].cells[8].innerHTML = document.getElementById("Total-Cost").value;
-})
+});
 
 
+/* ------ delete Options ----------- */
 
 
+mainDeleteButton.addEventListener("click",function(){
+
+    table.deleteRow(rIndex-1);
+
+    document.getElementById("Product-No").value = "";
+
+        document.getElementById("Product-Name").value = "";
+
+        document.getElementById("Division").value = "";
+        
+        document.getElementById("Add-Date").value = "";
+
+        document.getElementById("Up-Date").value = "";
+
+        document.getElementById("Stocks").value = "";
+
+        document.getElementById("Cost").value = "";
+
+        document.getElementById("Total-Cost").value = "";
+
+});
   
 
 
