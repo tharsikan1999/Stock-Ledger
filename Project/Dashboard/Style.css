@@ -16,6 +16,8 @@
     background:#ffffff no-repeat center ;
     position: fixed;
     z-index: 1000;
+    
+
 
   }
   .wave {
@@ -78,9 +80,10 @@
 
 .dash-menu {
     min-height: 50px;
-    width: 100%;
+    min-width: 100%;
     display: flex;
     line-height: 60px;
+    border: 1px solid red;
     
 
     
@@ -958,6 +961,23 @@ table .table-total-cost {
 }
 
 
+.table-avilable-circle {
+    height: 30px;
+    width: 30px;
+    background-color: #71D875;
+    border-radius: 50%;
+    background-color: #FFC107;
+    background-color: #FF5274;
+}
+
+#table-avilable-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 40px;
+} 
+
 
 
 /* ---- user dashbord ---- */
@@ -1025,7 +1045,8 @@ table .table-total-cost {
 
 .footer {
     display: flex;
-    background: #d4d0ec2e;    
+    background: #d4d0ec2e;
+    margin: 30px 0;  
 
 }
 .footer a {
