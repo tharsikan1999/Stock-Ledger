@@ -56,7 +56,7 @@ userLogo.addEventListener("click",function(){
 
                 const makeArray = Array.apply(null,avilableCircle);
 
-                let stocksCounts = table.rows[r].cells[6].innerText;
+                let stocksCounts = table.rows[r].cells[5].innerText;
 
                 if(stocksCounts< 1){
                     makeArray[r].style.background = " #FF5274";
@@ -101,6 +101,8 @@ const addEditBox = document.querySelector(".add-edit-delete-manage-box");
 
 const closeButton = document.querySelector("#close-button");
 
+const tableBody = document.querySelector("#tables");
+
 
 
 
@@ -119,6 +121,10 @@ addButton.addEventListener("click",function(){
     editButton.style.display = "none";
 
     deleteButton.style.display = "none";
+
+    tableBody.style.cursor = "pointer";
+
+
 
 });
 
@@ -141,6 +147,9 @@ editButton.addEventListener("click",function(){
 
     deleteButton.style.display = "none";
 
+    tableBody.style.cursor = "pointer";
+
+
 
 });
 
@@ -160,6 +169,9 @@ deleteButton.addEventListener("click",function(){
     addButton.style.display = "none";
 
     editButton.style.display = "none";
+
+    tableBody.style.cursor = "pointer";
+
 
 
 
@@ -192,6 +204,26 @@ closeButton.addEventListener("click",function(){
     editButton.style.display = "flex";
 
     deleteButton.style.display = "flex";
+
+    tableBody.style.cursor = "default";
+
+
+    document.getElementById("Product-No").value = "";
+
+        document.getElementById("Product-Name").value = "";
+
+        document.getElementById("Division").value = "";
+        
+        document.getElementById("Add-Date").value = "";
+
+        document.getElementById("Up-Date").value = "";
+
+        document.getElementById("Stocks").value = "";
+
+        document.getElementById("Cost").value = "";
+
+        document.getElementById("Total-Cost").value = "";
+
 
 
 
@@ -237,7 +269,6 @@ closeButton.addEventListener("click",function(){
             
             
         <tr >
-        <td><input type="checkbox"></td>
         <td>${produtcNo}</td>
         <td>${produtcName}</td>
         <td>${division}</td>
@@ -267,21 +298,21 @@ for(r = 0; r <table.rows.length; r ++ ){
     table.rows[r].addEventListener("click",function(){
         rIndex = this.rowIndex;
         
-        document.getElementById("Product-No").value = this.cells[1].innerHTML;
+        document.getElementById("Product-No").value = this.cells[0].innerHTML;
 
-        document.getElementById("Product-Name").value = this.cells[2].innerHTML;
+        document.getElementById("Product-Name").value = this.cells[1].innerHTML;
 
-        document.getElementById("Division").value = this.cells[3].innerHTML;
+        document.getElementById("Division").value = this.cells[2].innerHTML;
         
-        document.getElementById("Add-Date").value = this.cells[4].innerHTML;
+        document.getElementById("Add-Date").value = this.cells[3].innerHTML;
 
-        document.getElementById("Up-Date").value = this.cells[5].innerHTML;
+        document.getElementById("Up-Date").value = this.cells[4].innerHTML;
 
-        document.getElementById("Stocks").value = this.cells[6].innerHTML;
+        document.getElementById("Stocks").value = this.cells[5].innerHTML;
 
-        document.getElementById("Cost").value = this.cells[7].innerHTML;
+        document.getElementById("Cost").value = this.cells[6].innerHTML;
 
-        document.getElementById("Total-Cost").value = this.cells[8].innerHTML;
+        document.getElementById("Total-Cost").value = this.cells[7].innerHTML;
     });
 }
 
@@ -290,14 +321,14 @@ for(r = 0; r <table.rows.length; r ++ ){
      
 
 mainEditButton.addEventListener("click",function(){
-    table.rows[rIndex-1].cells[1].innerHTML = document.getElementById("Product-No").value;
-    table.rows[rIndex-1].cells[2].innerHTML = document.getElementById("Product-Name").value;
-    table.rows[rIndex-1].cells[3].innerHTML = document.getElementById("Division").value;
-    table.rows[rIndex-1].cells[4].innerHTML = document.getElementById("Add-Date").value;
-    table.rows[rIndex-1].cells[5].innerHTML = document.getElementById("Up-Date").value;
-    table.rows[rIndex-1].cells[6].innerHTML = document.getElementById("Stocks").value;
-    table.rows[rIndex-1].cells[7].innerHTML = document.getElementById("Cost").value;
-    table.rows[rIndex-1].cells[8].innerHTML = document.getElementById("Total-Cost").value;
+    table.rows[rIndex-1].cells[0].innerHTML = document.getElementById("Product-No").value;
+    table.rows[rIndex-1].cells[1].innerHTML = document.getElementById("Product-Name").value;
+    table.rows[rIndex-1].cells[2].innerHTML = document.getElementById("Division").value;
+    table.rows[rIndex-1].cells[3].innerHTML = document.getElementById("Add-Date").value;
+    table.rows[rIndex-1].cells[4].innerHTML = document.getElementById("Up-Date").value;
+    table.rows[rIndex-1].cells[5].innerHTML = document.getElementById("Stocks").value;
+    table.rows[rIndex-1].cells[6].innerHTML = document.getElementById("Cost").value;
+    table.rows[rIndex-1].cells[7].innerHTML = document.getElementById("Total-Cost").value;
 });
 
 
