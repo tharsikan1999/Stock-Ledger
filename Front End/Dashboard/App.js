@@ -322,14 +322,14 @@ mainEditButton.addEventListener("click",function(){
         window.alert("Please Fill Empty Field");
     }
     else{
-    table.rows[rIndex-1].cells[0].innerHTML = document.getElementById("Product-No").value;
-    table.rows[rIndex-1].cells[1].innerHTML = document.getElementById("Product-Name").value;
-    table.rows[rIndex-1].cells[2].innerHTML = document.getElementById("Division").value;
-    table.rows[rIndex-1].cells[3].innerHTML = document.getElementById("Add-Date").value;
-    table.rows[rIndex-1].cells[4].innerHTML = document.getElementById("Up-Date").value;
-    table.rows[rIndex-1].cells[5].innerHTML = document.getElementById("Stocks").value;
-    table.rows[rIndex-1].cells[6].innerHTML = document.getElementById("Cost").value;
-    table.rows[rIndex-1].cells[7].innerHTML = document.getElementById("Total-Cost").value;
+    table.rows[rIndex].cells[0].innerHTML = document.getElementById("Product-No").value;
+    table.rows[rIndex].cells[1].innerHTML = document.getElementById("Product-Name").value;
+    table.rows[rIndex].cells[2].innerHTML = document.getElementById("Division").value;
+    table.rows[rIndex].cells[3].innerHTML = document.getElementById("Add-Date").value;
+    table.rows[rIndex].cells[4].innerHTML = document.getElementById("Up-Date").value;
+    table.rows[rIndex].cells[5].innerHTML = document.getElementById("Stocks").value;
+    table.rows[rIndex].cells[6].innerHTML = document.getElementById("Cost").value;
+    table.rows[rIndex].cells[7].innerHTML = document.getElementById("Total-Cost").value;
 }
     
 });
@@ -340,7 +340,7 @@ mainEditButton.addEventListener("click",function(){
 
 mainDeleteButton.addEventListener("click",function(){
 
-    table.deleteRow(rIndex-1);
+    table.deleteRow(rIndex);
 
     document.getElementById("Product-No").value = "";
 
