@@ -9,14 +9,11 @@ window.addEventListener("load",function(){
 })
 
 
-
-
 /* Slider bar animations */
 
 const hangBurgar = document.querySelector(".hanburgar");
 
 const slideBar = document.querySelector(".slide-bar");
-
 
 
 hangBurgar.addEventListener("click",function(){
@@ -29,12 +26,9 @@ hangBurgar.addEventListener("click",function(){
 
 /* user profile animations */
 
-
 const userLogo = document.querySelector(".admin-avatar");
 
 const userMenu = document.querySelector(".user-dashboard");
-
-
 
 
 userLogo.addEventListener("click",function(){
@@ -75,7 +69,6 @@ userLogo.addEventListener("click",function(){
 )();   
  
 
- 
 
 /* --- Add ,Edit,Delete --- */
 
@@ -87,13 +80,9 @@ const editButton = document.querySelector(".edit-button");
 
 const mainEditButton = document.querySelector(".edit-button-box");
 
-
 const deleteButton = document.querySelector(".delete-button");
 
 const mainDeleteButton = document.querySelector(".delete-button-box");
-
-
-
 
 const chartCircle = document.querySelector(".total-circle-box");
 
@@ -117,7 +106,6 @@ addButton.addEventListener("click",function(){
 
     mainDeleteButton.style.display = "none";
 
-
     editButton.style.display = "none";
 
     deleteButton.style.display = "none";
@@ -131,19 +119,18 @@ addButton.addEventListener("click",function(){
 
    
 editButton.addEventListener("click",function(){
+
     chartCircle.style.display = "none";
 
     addEditBox.style.display = "flex";
 
     editButton.classList.add("Add-Display");
 
-
     mainDeleteButton.style.display = "none";
 
     mainAddButton.style.display = "none";
 
     addButton.style.display = "none";
-
 
     deleteButton.style.display = "none";
 
@@ -160,7 +147,6 @@ deleteButton.addEventListener("click",function(){
     addEditBox.style.display = "flex";
 
     deleteButton.classList.add("Add-Display");
-
 
     mainAddButton.style.display = "none";
 
@@ -191,11 +177,9 @@ closeButton.addEventListener("click",function(){
 
     deleteButton.classList.remove("Add-Display");
 
-
     mainEditButton.style.display = "flex";
 
     mainDeleteButton.style.display = "flex";
-
 
     mainAddButton.style.display = "flex";
 
@@ -239,7 +223,7 @@ closeButton.addEventListener("click",function(){
 
      mainAddButton.addEventListener("click",function(){
 
-   const     produtcNo = document.getElementById("Product-No").value,
+const produtcNo = document.getElementById("Product-No").value,
 
         produtcName = document.getElementById("Product-Name").value,
     
@@ -282,9 +266,6 @@ closeButton.addEventListener("click",function(){
             `
         }
      
-
-        
-
     }); 
         
 
@@ -314,9 +295,6 @@ for(r = 0; r <table.rows.length; r ++ ){
         document.getElementById("Total-Cost").value = this.cells[7].innerHTML;
     });
 }
-
-
-
      
 
 mainEditButton.addEventListener("click",function(){
@@ -381,7 +359,47 @@ mainDeleteButton.addEventListener("click",function(){
         document.getElementById("Total-Cost").value = "";
 
 });
-  
+
+
+
+/* search for table */
+
+
+var input = document.querySelector(".search-button");
+
+var table = document.getElementById('myTable');
+
+input.addEventListener('keyup', filterTable);
+
+function filterTable() {
+  var filter = input.value.toUpperCase();
+  var rows = table.getElementsByTagName('tr');
+
+  for (var i = 0; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName('td');
+    var found = false;
+
+    for (var j = 0; j < cells.length; j++) {
+      var cell = cells[j];
+
+      if (cell) {
+        var cellValue = cell.textContent || cell.innerText;
+
+        if (cellValue.toUpperCase().indexOf(filter) > -1) {
+          found = true;
+          break;
+        }
+      }
+    }
+
+    if (found) {
+      rows[i].style.display = '';
+    } else {
+      rows[i].style.display = 'none';
+    }
+  }
+}
+
 
 
 
