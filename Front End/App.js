@@ -377,7 +377,7 @@ function filterTable() {
   var filter = input.value.toUpperCase();
   var rows = table.getElementsByTagName('tr');
 
-  for (var i = 0; i < rows.length; i++) {
+  for (var i = 1; i < rows.length; i++) {
     var cells = rows[i].getElementsByTagName('td');
     var found = false;
 
