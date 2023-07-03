@@ -54,6 +54,8 @@ userLogo.addEventListener("click",function(){
 
                 if(stocksCounts< 1){
                     makeArray[r].style.background = " #FF5274";
+
+                    
                 }
                 else if(stocksCounts<11){
                     makeArray[r].style.background = "#FFC107";
@@ -258,7 +260,7 @@ const produtcNo = document.getElementById("Product-No").value,
         <td>${division}</td>
         <td>${addDate}</td>
         <td>${upDate}</td>
-        <td>${stocks} </td>
+        <td id="stocks-values">${stocks} </td>
         <td>${cost}</td>
         <td>${totalCost}</td>
         <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
@@ -399,6 +401,85 @@ function filterTable() {
     }
   }
 }
+
+
+
+/* Chart Numbers --- */
+
+
+const totalNumber = document.querySelector(".totalNumber");
+
+const avilableStocks = document.querySelector(".avilableStocks");
+
+const lowStocks = document.querySelector(".lowStock");
+
+const outOfStocks = document.querySelector(".outOfStock");
+
+
+
+
+
+var table = document.getElementById("myTable");
+
+
+    var stocksVal = document.querySelectorAll("#stocks-values");
+
+    
+
+    var stocksVArr =  Array.apply(null,stocksVal), totalStocks = 0;
+
+     var totalSt = 0,totalNumberStocks=0,lowTotalStocks=0,outOfS=0;
+
+    for(var i = 0; i < stocksVArr.length; i ++){
+
+
+        var totalStocks = parseInt(stocksVArr[i].innerText);
+
+
+        var totalNumberStocks = totalNumberStocks + totalStocks;
+
+        totalNumber.innerHTML = this.totalNumberStocks;
+
+
+        if(totalStocks<1){
+           
+           
+
+        }
+
+
+
+       else if(totalStocks < 11){
+            var lowTotalStocks = lowTotalStocks + totalStocks;
+            
+           lowStocks.innerHTML = this.lowTotalStocks;
+
+
+        }
+        else {
+
+           
+         var totalSt = totalSt + totalStocks;
+
+            avilableStocks.innerHTML = this.totalSt;
+
+        }
+
+
+    }
+
+
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
