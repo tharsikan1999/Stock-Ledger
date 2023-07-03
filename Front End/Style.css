@@ -1290,6 +1290,7 @@ table .table-total-cost {
     align-items: center;
     width: 150px;
     padding: 0 40px 0 0;
+    cursor: pointer;
 }
 
 .logout p {
