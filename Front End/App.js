@@ -438,11 +438,21 @@ var table = document.getElementById("myTable");
 
         var totalNumberStocks = totalNumberStocks + totalStocks;
 
-        totalNumber.innerHTML = this.totalNumberStocks;
+
+        let demo = 0;
+
+        let inter = setInterval(()=>{
+
+            totalNumber.innerHTML = demo ++ + 1;
+
+            if( demo == this.totalNumberStocks)
+            clearInterval(inter);
+        },5);
 
 
         if(totalStocks<1){
-           
+
+              
            
 
         }
@@ -450,9 +460,23 @@ var table = document.getElementById("myTable");
 
 
        else if(totalStocks < 11){
+
+
             var lowTotalStocks = lowTotalStocks + totalStocks;
             
-           lowStocks.innerHTML = this.lowTotalStocks;
+
+           let demo = 0;
+
+          let interval = setInterval(()=>{
+
+            lowStocks.innerHTML = demo ++ + 1;
+
+
+
+            if( demo == this.lowTotalStocks)
+            clearInterval(interval)
+          },100);
+         
 
 
         }
@@ -461,7 +485,20 @@ var table = document.getElementById("myTable");
            
          var totalSt = totalSt + totalStocks;
 
-            avilableStocks.innerHTML = this.totalSt;
+            avilableStocks.innerHTML = this.totalSt ;
+
+            let demo = 0;
+
+            const interval = setInterval(()=>{
+
+                avilableStocks.innerHTML = demo ++ + 1;
+
+                if(demo == this.totalSt)
+
+                clearInterval(interval);
+                
+            },5);
+
 
         }
 
