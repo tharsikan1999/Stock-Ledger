@@ -594,11 +594,6 @@ nav ul li a:hover {
     height: 60px;
     margin: 0 0 0 10px;
 
-
-
-
-
-
 }
 
 
@@ -613,12 +608,6 @@ nav ul li a:hover {
     margin: 0 0 0 10px;
 
 
-
-
-
-
-
-
 }
 
 .report {
@@ -630,12 +619,6 @@ nav ul li a:hover {
     cursor: pointer;
     height: 60px;    
     margin: 0 0 0 10px;
-
-
-
-
-
-
 
 }
 .history {
@@ -649,10 +632,6 @@ nav ul li a:hover {
     margin: 0 0 0 10px;
 
 
-
-
-
-
 }
 
 
@@ -662,6 +641,7 @@ nav ul li a:hover {
 
 .page-bar {
     flex-grow: 1;
+    min-height: 86vh;
    
 }
 
@@ -915,18 +895,18 @@ nav ul li a:hover {
         stroke-dashoffset: 380;
     }
 }
-.number1 {
+.totalNumber {
     color: #00AFF0;
 }
 
-.number2 {
+.avilableStocks {
     color: #71D875;
 }
-.number3 {
+.lowStock {
     color: #FFC107;
 }
 
-.number4 {
+.outOfStock {
     color: #FF5274;
 }
 
