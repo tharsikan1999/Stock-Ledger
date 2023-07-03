@@ -428,7 +428,7 @@ var table = document.getElementById("myTable");
 
     var stocksVArr =  Array.apply(null,stocksVal), totalStocks = 0;
 
-     var totalSt = 0,totalNumberStocks=0,lowTotalStocks=0,outOfS=0;
+     var totalSt = 0,totalNumberStocks=0,lowTotalStocks=0,outOfS=0, zeroCounts = 0;
 
     for(var i = 0; i < stocksVArr.length; i ++){
 
@@ -437,6 +437,8 @@ var table = document.getElementById("myTable");
 
 
         var totalNumberStocks = totalNumberStocks + totalStocks;
+
+        
 
 
         let demo = 0;
@@ -452,8 +454,28 @@ var table = document.getElementById("myTable");
 
         if(totalStocks<1){
 
-              
-           
+            let demo = 0;
+
+
+            if(totalStocks == 0){
+
+                zeroCounts++;
+
+                const interval = setInterval(()=>{
+
+                    
+                    outOfStocks.innerHTML = demo++ + 1; 
+    
+                    if( demo == zeroCounts)
+                    clearInterval(interval)
+                    
+                },200); 
+
+
+
+            }
+
+             
 
         }
 
