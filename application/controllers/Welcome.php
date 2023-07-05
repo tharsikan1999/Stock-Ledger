@@ -37,6 +37,10 @@ class Welcome extends CI_Controller
   {
     $this->load->view('manager/log.php');
   }
+  public function profileView()
+  {
+    $this->load->view('manager/profile.php');
+  }
   
   
 

@@ -649,7 +649,9 @@
     <div class="user-dashboard">
         <div class="user-profile">
             <i class="fas fa-user fa-lg"></i>
-            <p>Profile</p>
+            <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
+                <p>Profile</p>
+            </a>
         </div>
 
         <div class="logout-user-profile">
