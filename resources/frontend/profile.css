@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(243, 235, 240);
+  }
+  
+  .profile-container {
+    background-color: rgb(127, 99, 244);
+    width: 180px;
+    padding: 180px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom:70px;
+  }
+  
+  img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .profile-info {
+    margin-bottom: 10px;
+  }
+  .button{
+    padding: 10px 20px;
+    background-color: #1c4499;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
