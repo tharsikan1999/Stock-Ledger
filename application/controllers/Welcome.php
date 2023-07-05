@@ -33,6 +33,11 @@ class Welcome extends CI_Controller
   {
     $this->load->view('manager/report.php');
   }
+  public function logView()
+  {
+    $this->load->view('manager/log.php');
+  }
+  
   
 
   
