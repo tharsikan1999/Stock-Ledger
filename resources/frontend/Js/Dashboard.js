@@ -16,14 +16,14 @@ const logOutUrl = document.querySelector(".logout-user-profile");
 
 
 logOutUrl.addEventListener("click",()=>{
-    window.location = "index.php";
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
 
 const logOutUrlFooter = document.querySelector(".logout");
 
 logOutUrlFooter.addEventListener("click",()=>{
-    window.location = "index.php";
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
 
@@ -56,39 +56,7 @@ userLogo.addEventListener("click",function(){
 
 
 
-/* get and set the value tables stocks for avilable options */
 
-
-  (
-    function GetCellValues() {
-        var table = document.getElementById('tables');
-        for (var r = 0, n = table.rows.length; r < n; r++) {
-            for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-
-                const avilableCircle = document.querySelectorAll(".table-avilable-circle");
-
-                const makeArray = Array.apply(null,avilableCircle);
-
-                let stocksCounts = table.rows[r].cells[5].innerText;
-
-                if(stocksCounts< 1){
-                    makeArray[r].style.background = " #FF5274";
-
-                    
-                }
-                else if(stocksCounts<11){
-                    makeArray[r].style.background = "#FFC107";
-                }
-                else  {
-                    makeArray[r].style.background = " #71D875";
-                } 
-                
-
-            }
-        }
-    }
-)();   
- 
 
 
 /* --- Add ,Edit,Delete --- */
@@ -237,328 +205,263 @@ closeButton.addEventListener("click",function(){
 
 
 
-/* Add,Edit,Delete Inputs value Set the table */
-
-
-/*  Add Items to table */
-
-     mainAddButton.addEventListener("click",function(){
-
-const produtcNo = document.getElementById("Product-No").value,
-
-        produtcName = document.getElementById("Product-Name").value,
-    
-        division = document.getElementById("Division").value,
-    
-        addDate = document.getElementById("Add-Date").value,
-
-        upDate = document.getElementById("Up-Date").value,
-    
-        stocks = document.getElementById("Stocks").value,
-
-        cost = document.getElementById("Cost").value,
-    
-        totalCost = document.getElementById("Total-Cost").value;
-
-
-        const table = document.querySelector("#tables");
-
-
-        if(produtcNo == ""|| produtcName == "" || division == "" ||addDate == "" ||upDate == "" ||stocks == "" ||cost == "" || totalCost == "" ){
-
-            window.alert("Please Fill Empty Field");
-        }
-        else{
-            table.innerHTML += `
-
-            
-            
-        <tr >
-        <td>${produtcNo}</td>
-        <td>${produtcName}</td>
-        <td>${division}</td>
-        <td>${addDate}</td>
-        <td>${upDate}</td>
-        <td id="stocks-values">${stocks} </td>
-        <td>${cost}</td>
-        <td>${totalCost}</td>
-        <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-    </tr>     
-            `
-        }
-     
-    }); 
-        
-
-/* ---- edit Items ----------- */
-
-
-var table = document.getElementById("tables"),rIndex;
-
-for(r = 0; r <table.rows.length; r ++ ){
-    table.rows[r].addEventListener("click",function(){
-        rIndex = this.rowIndex;
-        
-        document.getElementById("Product-No").value = this.cells[0].innerHTML;
-
-        document.getElementById("Product-Name").value = this.cells[1].innerHTML;
-
-        document.getElementById("Division").value = this.cells[2].innerHTML;
-        
-        document.getElementById("Add-Date").value = this.cells[3].innerHTML;
-
-        document.getElementById("Up-Date").value = this.cells[4].innerHTML;
-
-        document.getElementById("Stocks").value = this.cells[5].innerHTML;
-
-        document.getElementById("Cost").value = this.cells[6].innerHTML;
-
-        document.getElementById("Total-Cost").value = this.cells[7].innerHTML;
-    });
-}
-     
-
-mainEditButton.addEventListener("click",function(){
-
-    const     produtcNo = document.getElementById("Product-No").value,
-
-    produtcName = document.getElementById("Product-Name").value,
-
-    division = document.getElementById("Division").value,
-
-    addDate = document.getElementById("Add-Date").value,
-
-    upDate = document.getElementById("Up-Date").value,
-
-    stocks = document.getElementById("Stocks").value,
-
-    cost = document.getElementById("Cost").value,
-
-    totalCost = document.getElementById("Total-Cost").value;
-
-
-
-    if(produtcNo == ""|| produtcName == "" || division == "" ||addDate == "" ||upDate == "" ||stocks == "" ||cost == "" || totalCost == "" ){
-
-        window.alert("Please Fill Empty Field");
-    }
-    else{
-    table.rows[rIndex].cells[0].innerHTML = document.getElementById("Product-No").value;
-    table.rows[rIndex].cells[1].innerHTML = document.getElementById("Product-Name").value;
-    table.rows[rIndex].cells[2].innerHTML = document.getElementById("Division").value;
-    table.rows[rIndex].cells[3].innerHTML = document.getElementById("Add-Date").value;
-    table.rows[rIndex].cells[4].innerHTML = document.getElementById("Up-Date").value;
-    table.rows[rIndex].cells[5].innerHTML = document.getElementById("Stocks").value;
-    table.rows[rIndex].cells[6].innerHTML = document.getElementById("Cost").value;
-    table.rows[rIndex].cells[7].innerHTML = document.getElementById("Total-Cost").value;
-}
-    
-});
-
-
-/* ------ delete Options ----------- */
-
-
-mainDeleteButton.addEventListener("click",function(){
-
-    
-
-      const answer = confirm("Are You Sure To Delete This Item?");
-
-      if(answer == true){
-        table.deleteRow(rIndex);
-
-        document.getElementById("Product-No").value = "";
-    
-            document.getElementById("Product-Name").value = "";
-    
-            document.getElementById("Division").value = "";
-            
-            document.getElementById("Add-Date").value = "";
-    
-            document.getElementById("Up-Date").value = "";
-    
-            document.getElementById("Stocks").value = "";
-    
-            document.getElementById("Cost").value = "";
-    
-            document.getElementById("Total-Cost").value = "";
-      }
-
-      else{
-
-        
-
-      
-      }
-
-});
-
-
-
-/* search for table */
-
-
-var input = document.querySelector(".search-button");
-
-var table = document.getElementById('myTable');
-
-input.addEventListener('keyup', filterTable);
-
-function filterTable() {
-  var filter = input.value.toUpperCase();
-  var rows = table.getElementsByTagName('tr');
-
-  for (var i = 1; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName('td');
-    var found = false;
-
-    for (var j = 0; j < cells.length; j++) {
-      var cell = cells[j];
-
-      if (cell) {
-        var cellValue = cell.textContent || cell.innerText;
-
-        if (cellValue.toUpperCase().indexOf(filter) > -1) {
-          found = true;
-          break;
-        }
-      }
-    }
-
-    if (found) {
-      rows[i].style.display = '';
-    } else {
-      rows[i].style.display = 'none';
-    }
-  }
-}
-
-
 
 /* Chart Numbers --- */
 
-
-const totalNumber = document.querySelector(".totalNumber");
-
-const avilableStocks = document.querySelector(".avilableStocks");
-
-const lowStocks = document.querySelector(".lowStock");
-
-const outOfStocks = document.querySelector(".outOfStock");
+/*--Total Stocks*/
 
 
+(()=>{
+    const totalNumber = document.querySelector(".totalNumber");
+
+
+let demo = 0;
+
+let inter = setInterval(()=>{
+
+    totalNumber.innerHTML = demo ++ + 1;
+
+    if( demo == 352)
+    clearInterval(inter);
+},5);
 
 
 
-var table = document.getElementById("myTable");
+
+})();
+
+/* Avilable Stocks */
 
 
-    var stocksVal = document.querySelectorAll("#stocks-values");
+(()=>{
+    const avilableStocks = document.querySelector(".avilableStocks");
+
+    let demo = 0;
+
 
     
-
-    var stocksVArr =  Array.apply(null,stocksVal), totalStocks = 0;
-
-     var totalSt = 0,totalNumberStocks=0,lowTotalStocks=0,outOfS=0, zeroCounts = 0;
-
-    for(var i = 0; i < stocksVArr.length; i ++){
-
-
-        var totalStocks = parseInt(stocksVArr[i].innerText);
-
-
-        var totalNumberStocks = totalNumberStocks + totalStocks;
-
-        
-
-
-        let demo = 0;
-
-        let inter = setInterval(()=>{
-
-            totalNumber.innerHTML = demo ++ + 1;
-
-            if( demo == this.totalNumberStocks)
-            clearInterval(inter);
-        },5);
-
-
-        if(totalStocks<1){
-
-            let demo = 0;
-
-
-            if(totalStocks == 0){
-
-                zeroCounts++;
-
-                const interval = setInterval(()=>{
-
-                    
-                    outOfStocks.innerHTML = demo++ + 1; 
+        const interval = setInterval(()=>{
     
-                    if( demo == zeroCounts)
-                    clearInterval(interval)
-                    
-                },200); 
+            
+            avilableStocks.innerHTML = demo++ + 1; 
+    
+            if( demo == 296)
+            clearInterval(interval)
+            
+        },5); 
+})();
+
+/* Low Stocks */
 
 
+(()=>{
+    const lowStocks = document.querySelector(".lowStock");
+
+    let demo = 0;
+
+        const interval = setInterval(()=>{
+    
+            
+            lowStocks.innerHTML = demo++ + 1; 
+    
+            if( demo == 126)
+            clearInterval(interval)
+            
+        },10); 
+})();
+
+
+/* Out OF Stocks */
+
+
+(()=>{
+    const outOfStocks = document.querySelector(".outOfStock");
+
+    let demo = 0;
+
+
+    
+        const interval = setInterval(()=>{
+    
+            
+            outOfStocks.innerHTML = demo++ + 1; 
+    
+            if( demo == 50)
+            clearInterval(interval)
+            
+        },10); 
+})();
+
+
+
+/* ----- table ---- */
+
+
+new DataTable('#example');
+
+
+/* tabel functions */
+
+const firstTableth = document.querySelector(".table-first-th");
+
+const secondTableth = document.querySelector(".table-second-th");
+
+const thirdTableth = document.querySelector(".table-third-th");
+
+const fourthTableth = document.querySelector(".table-fourth-th");
+
+const fiveTableth = document.querySelector(".table-five-th");
+
+const sixTableth = document.querySelector(".table-six-th");
+
+const sevenTableth = document.querySelector(".table-seven-th");
+
+const DivisionTableth = document.querySelector(".table-Division-th");
+
+
+const upButton = document.querySelector(".fa-caret-up");
+
+const downButton = document.querySelector(".fa-caret-down");
+
+firstTableth.addEventListener("click",function(){
+
+    upButton.classList.toggle("up-Button-Display");
+
+    downButton.classList.toggle("Down-Button-Display");
+
+});
+
+
+
+
+const secondUp = document.querySelector("#second-fa-caret-up");
+
+const secondDown = document.querySelector("#second-fa-caret-down");
+
+
+
+secondTableth.addEventListener("click",function() {
+
+    secondUp.classList.toggle("up-Button-Display");
+
+    secondDown.classList.toggle("Down-Button-Display");
+
+});
+
+
+
+const thirdUp = document.querySelector("#third-fa-caret-up");
+
+const thirdDown = document.querySelector("#third-fa-caret-down");
+
+thirdTableth.addEventListener("click",function() {
+
+    thirdUp.classList.toggle("up-Button-Display");
+
+    thirdDown.classList.toggle("Down-Button-Display");
+
+});
+
+
+
+const fourthup = document.querySelector("#fourth-fa-caret-up");
+
+const fourthdown = document.querySelector("#fourth-fa-caret-down");
+
+fourthTableth.addEventListener("click",function() {
+
+    fourthup.classList.toggle("up-Button-Display");
+
+    fourthdown.classList.toggle("Down-Button-Display");
+
+});
+
+const fiveup = document.querySelector("#five-fa-caret-up");
+
+const fivedown = document.querySelector("#five-fa-caret-down");
+
+fiveTableth.addEventListener("click",function() {
+
+    fiveup.classList.toggle("up-Button-Display");
+
+    fivedown.classList.toggle("Down-Button-Display");
+
+});
+
+
+const sixup = document.querySelector("#six-fa-caret-up");
+
+const sixdown = document.querySelector("#six-fa-caret-down");
+
+sixTableth.addEventListener("click",function() {
+
+    sixup.classList.toggle("up-Button-Display");
+
+    sixdown.classList.toggle("Down-Button-Display");
+
+});
+
+const sevenup = document.querySelector("#seven-fa-caret-up");
+
+const sevendown = document.querySelector("#seven-fa-caret-down");
+
+sevenTableth.addEventListener("click",function() {
+
+    sevenup.classList.toggle("up-Button-Display");
+
+    sevendown.classList.toggle("Down-Button-Display");
+
+});
+
+
+const Divisionup = document.querySelector("#Division-fa-caret-up");
+
+const Divisionown = document.querySelector("#Division-fa-caret-down");
+
+DivisionTableth.addEventListener("click",function() {
+
+    Divisionup.classList.toggle("up-Button-Display");
+
+    Divisionown.classList.toggle("Down-Button-Display");
+    
+});
+
+
+
+/* get and set the value tables stocks for avilable options */
+
+
+(
+    function GetCellValues() {
+        var table = document.getElementById('tables');
+        for (var r = 0, n = table.rows.length; r < n; r++) {
+            for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+
+                const avilableCircle = document.querySelectorAll(".table-avilable-circle");
+
+                const makeArray = Array.apply(null,avilableCircle);
+
+                let stocksCounts = table.rows[r].cells[5].innerText;
+
+                if(stocksCounts< 1){
+                    makeArray[r].style.background = " #FF5274";
+                }
+                else if(stocksCounts<11){
+                    makeArray[r].style.background = "#FFC107";
+                }
+                else  {
+                    makeArray[r].style.background = " #71D875";
+
+
+                } 
+                
 
             }
-
-             
-
         }
-
-
-
-       else if(totalStocks < 11){
-
-
-            var lowTotalStocks = lowTotalStocks + totalStocks;
-            
-
-           let demo = 0;
-
-          let interval = setInterval(()=>{
-
-            lowStocks.innerHTML = demo ++ + 1;
-
-
-
-            if( demo == this.lowTotalStocks)
-            clearInterval(interval)
-          },100);
-         
-
-
-        }
-        else {
-
-           
-         var totalSt = totalSt + totalStocks;
-
-            avilableStocks.innerHTML = this.totalSt ;
-
-            let demo = 0;
-
-            const interval = setInterval(()=>{
-
-                avilableStocks.innerHTML = demo ++ + 1;
-
-                if(demo == this.totalSt)
-
-                clearInterval(interval);
-                
-            },5);
-
-
-        }
-
-
     }
+)();
 
+  
 
 
 

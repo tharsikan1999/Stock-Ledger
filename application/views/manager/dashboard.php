@@ -330,313 +330,254 @@
                 </div>
 
 
-                <!--Fillter Options-->
-
-                <div class="Fillter-options">
-                    <div class="left-Fillter-options">
-                        <p>Show</p>
-                        <div class="filter-number-box">
-                            <p class="number-fillter-box">10</p>
-                            <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                        </div>
-                        <p>Entries</p>
-
-                    </div>
-                    <form class="search-form" action="">
-                        <i class="fas fa-search"></i>
-                        <input class="search-button" type="text" placeholder="Search Here ">
-
-
-                    </form>
-                </div>
-
-
+                
                 <!--Tables-->
-                <table id="myTable">
+
+              
+
+
+              
+                <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th>Product No</th>
-                        <th>Product Name</th>
-                        <th>Division</th>
-                        <th>Add Date</th>
-                        <th>Up Date</th>
-                        <th>Stocks</th>
-                        <th>Cost</th>
-                        <th>Total Cost</th>
-                        <th>Available
-            </div>
-            </th>
-            </thead>
+                        <tr >
+                            <th class="table-first-th">Product No <div class="dropdown-buttons">
+                                <i class="fas fa-caret-up"></i>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                        </th>
+                            <th class="table-second-th">Product Name
+                                <div class="dropdown-buttons">
+                                    <i id="second-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="second-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-Division-th">Division
+                                <div class="dropdown-buttons">
+                                    <i id="Division-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="Division-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-third-th">Add Date
+                                <div class="dropdown-buttons">
+                                    <i id="third-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="third-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-fourth-th">Up Date
+                                <div class="dropdown-buttons">
+                                    <i id="fourth-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-five-th">Stocks  
+                                <div id="dropdown-buttons" class="dropdown-buttons">
+                                    <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-six-th">Cost  
+                                <div class="dropdown-buttons">
+                                    <i id="six-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="six-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th class="table-seven-th">Total Cost
+                                <div class="dropdown-buttons">
+                                    <i id="seven-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="seven-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+                            <th>Avilable</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tables">
+                        <tr>
+                            <td>154-24</td>
+                            <td>Blue - Pen</td>
+                            <td>IT</td>
+                            <td>08 Mar 2018</td>
+                            <td>09 Mar 2018</td>
+                            <td id="tables-stocks" >0</td>
+                            <td>453 Rs</td>
+                            <td>346546.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
 
-            <tbody id="tables">
+                            </div></td>
 
+                        </tr>
+                        <tr>
+                            <td>154-234</td>
+                            <td>Pencil</td>
+                            <td>Civil</td>
+                            <td>12 Mar 2018</td>
+                            <td>24 Mar 2018</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356 Rs</td>
+                            <td>45636.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td>35-24</td>
+                            <td>Pencil</td>
+                            <td>Marine</td>
+                            <td>25 Mar 2018</td>
+                            <td>26 Mar 2018</td>
+                            <td id="tables-stocks" >567</td>
+                            <td>2341 Rs</td>
+                            <td>435654.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                <tr>
-                    <td>1</td>
-                    <td>Product 1</td>
-                    <td>It</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">72</td>
-                    <td>81</td>
-                    <td class="table-total-cost">32468</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
+                        </tr>
+                        <tr>
+                            <td>23-24</td>
+                            <td>Pencil</td>
+                            <td>IT</td>
+                            <td>28 Mar 2018</td>
+                            <td>12 Mar 2018</td>
+                            <td id="tables-stocks">35</td>
+                            <td>678 Rs</td>
+                            <td>3456546.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Product 2</td>
-                    <td>Civil</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">13</td>
-                    <td>678</td>
-                    <td class="table-total-cost">7893</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Product 3</td>
-                    <td>Civil</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">0</td>
-                    <td>678</td>
-                    <td class="table-total-cost">896</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Product 4</td>
-                    <td>It</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">38</td>
-                    <td>678</td>
-                    <td class="table-total-cost">90643</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Product 5</td>
-                    <td>Marine</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">55</td>
-                    <td>678</td>
-                    <td class="table-total-cost">963</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Product 6</td>
-                    <td>Mechanical</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">07</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>545-24</td>
+                            <td>Marker</td>
+                            <td>IT</td>
+                            <td>01 Mar 2018</td>
+                            <td>05 Mar 2018</td>
+                            <td id="tables-stocks">8</td>
+                            <td>1234 Rs</td>
+                            <td>465363.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">85432</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Product 7</td>
-                    <td>It</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">0</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>86-24</td>
+                            <td>Black - Pen</td>
+                            <td>Marine</td>
+                            <td>26 Mar 2018</td>
+                            <td>29 Mar 21 520018</td>
+                            <td id="tables-stocks">547</td>
+                            <td>785 Rs</td>
+                            <td>546436.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">98523</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Product 8</td>
-                    <td>Civil</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">73</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>654-24</td>
+                            <td>Eraser</td>
+                            <td>Electrical</td>
+                            <td>26 Mar 2018</td>
+                            <td>26 Mar 2018</td>
+                            <td id="tables-stocks">3264</td>
+                            <td>1341 Rs</td>
+                            <td>325643.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">13431</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Product 9</td>
-                    <td>Mechanical</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">11</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>6-67</td>
+                            <td>Shirt</td>
+                            <td>IT</td>
+                            <td>04 Mar 2018</td>
+                            <td>09 Mar 2018</td>
+                            <td id="tables-stocks">768</td>
+                            <td>2315 Rs</td>
+                            <td>346546.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">4372</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Product 10</td>
-                    <td>Marine</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">0</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>978-243</td>
+                            <td>T-Shirt</td>
+                            <td>Electrical</td>
+                            <td>16 Mar 2018</td>
+                            <td>19 Mar 2018</td>
+                            <td id="tables-stocks">1342</td>
+                            <td>346546 Rs</td>
+                            <td>32656733.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">6786</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>Product 11</td>
-                    <td>It</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">11</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>35-456</td>
+                            <td>Cap</td>
+                            <td>Mechanical</td>
+                            <td>11 Mar 2018</td>
+                            <td>22 Mar 2018</td>
+                            <td id="tables-stocks">7</td>
+                            <td>343654 Rs</td>
+                            <td>45636324.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">235</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>Product 12</td>
-                    <td>Mechanical</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">38</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>789-234</td>
+                            <td>Short</td>
+                            <td>IT</td>
+                            <td>08 Mar 2018</td>
+                            <td>09 Mar 2018</td>
+                            <td id="tables-stocks">0</td>
+                            <td>345 Rs</td>
+                            <td>345435655.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">5473</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>Product 13</td>
-                    <td>Civil</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">03</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>789-234</td>
+                            <td>Short</td>
+                            <td>IT</td>
+                            <td>08 Mar 2018</td>
+                            <td>09 Mar 2018</td>
+                            <td id="tables-stocks">0</td>
+                            <td>345 Rs</td>
+                            <td>345435655.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">578</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>Product 14</td>
-                    <td>Mechanical</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">1</td>
-                    <td>678</td>
+                        </tr>
+                        <tr>
+                            <td>789-234</td>
+                            <td>Short</td>
+                            <td>IT</td>
+                            <td>08 Mar 2018</td>
+                            <td>09 Mar 2018</td>
+                            <td id="tables-stocks">18</td>
+                            <td>345 Rs</td>
+                            <td>345435655.00 Rs</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">
+                                
+                            </div></td>
 
-                    <td class="table-total-cost">4562</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>Product 15</td>
-                    <td>It</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">24</td>
-                    <td>678</td>
-
-                    <td class="table-total-cost">2354</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-
-                    <td>16</td>
-                    <td>Product 16</td>
-                    <td>Civil</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">0</td>
-                    <td>678</td>
-
-                    <td class="table-total-cost">4564</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td>Product 17</td>
-                    <td>Marine</td>
-                    <td>2023-07-02</td>
-                    <td>2023-07-02</td>
-                    <td id="stocks-values">05</td>
-                    <td>678</td>
-                    <td class="table-total-cost">45645</td>
-                    <td id="table-avilable-circle">
-                        <div class="table-avilable-circle"></div>
-                    </td>
-
-            </tbody>
-            </table>
-            <div class="table-positions">
-                <div class="left-select-positions">
-
-                    <p>Showing 1 to 10 of 20 Invoices</p>
-
-                </div>
-                <div class="right-select-positions">
-                    <div class="left-position-arrow">
-                        <i class="fas fa-angle-left fa-lg"></i>
-                    </div>
-                    <div class="table-position-no1">
-                        <p>01</p>
-                    </div>
-                    <div class="table-position-no2">
-                        <p>02</p>
-                    </div>
-                    <div class="table-position-no3">
-                        <p>03</p>
-                    </div>
-                    <div class="table-position-no4">
-                        <p>04</p>
-                    </div>
-                    <div class="table-position-no5">
-                        <p>05</p>
-                    </div>
-                    <div class="right-postions-arrow">
-                        <i class="fas fa-angle-right fa-lg"></i>
-                    </div>
-
-                </div>
+                        </tr>
+                       
+                    </tbody>
+                   
+                </table>
+               
+           
             </div>
 
         </div>
@@ -649,16 +590,12 @@
     <div class="user-dashboard">
         <div class="user-profile">
             <i class="fas fa-user fa-lg"></i>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
                 <p>Profile</p>
-            </a>
         </div>
 
         <div class="logout-user-profile">
             <i class="fas fa-sign-out-alt fa-lg"></i>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/index">
                 <p>Log Out</p>
-            </a>
         </div>
 
     </div>
@@ -680,6 +617,9 @@
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
     <script src="<?php echo base_url(); ?>resources/frontend/Js/Dashboard.js">
 
