@@ -2,20 +2,25 @@
 <html lang="en">
 
 <head>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Inbound.css" />
+
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Inventory Management</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script src=" https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js "></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-  <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css" />
   <script>
-    function totalAmount(stock, unit, tst) {
+   
+   /*
+   function totalAmount(stock, unit, tst) {
       let st = document.getElementById(stock).value;
       let un = document.getElementById(unit).value;
       document.getElementById(tst).value = st * un;
@@ -31,7 +36,7 @@
       document.getElementById("add15").style.display = btn2;
       document.getElementById("mid5").style.display = mid5;
       document.getElementById("last5").style.display = last5;
-    }
+    } */
 
     function add10() {
       btn1 = "none";
@@ -54,6 +59,8 @@
       document.getElementById("mid5").style.display = mid5;
       document.getElementById("last5").style.display = last5;
     }
+
+    
   </script>
 </head>
 
@@ -76,10 +83,7 @@
     <div class="dash-menu">
       <div class="left-dash">
         <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="" />
-        <form class="search-form" action="">
-          <i class="fas fa-search"></i>
-          <input class="search-button" type="text" placeholder="Search For Stocks " />
-        </form>
+        
       </div>
       <div class="right-dash">
         <i class="fa-solid fa-bell"></i>
@@ -157,21 +161,19 @@
       <!--Page bar-->
 
       <div class="page-bar">
-        <div class="page-adress-bar">
-          <div class="container">
-            <h2 class="text-center">INBOUND ITEMS</h2>
+            <h2  class="text-center" id="inbound-heading">INBOUND ITEMS</h2>
             <form id="inbound_form" name="inbound_form">
               <div class="row col-md-12 col-lg-12 col-sm-12">
                 <span class="col-md-9 col-lg-9 col-sm-9 px-4">PO.NO: <input type="text" name="po_no" id="po_no" /></span>
-                <span class="col-md-3 col-lg-3 col-sm-3">GRN: <input type="text" name="grn_no" id="grn_no" /></span>
+                <span  class="col-md-3 col-lg-3 col-sm-3">GRN: <input type="text" name="grn_no" id="grn_no" /></span>
               </div>
 
               <div class="row col-md-12 py-2">
                 <span class="col-md-9 col-lg-9 col-sm-9 px-4">NAME: <input type="text" name="name" id="name" /></span>
-                <span class="col-md-3 col-lg-3 col-sm-3">DATE: <input type="date" name="date" id="date" /></span>
+                <span id="col-sm-33" class="col-md-3 col-lg-3 col-sm-3">DATE : <input type="date" name="date" id="date" /></span>
               </div>
               <!-- Label -->
-              <div class="row col-md-12 col-lg-12 col-sm-12">
+              <div class="row col-md-12 col-lg-12 col-sm-12" id="inbound-menu">
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">TYPE</span>
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">PRODUCT</span>
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">STOCK</span>
@@ -365,7 +367,7 @@
                 </div>
               </div>
               <div id="add10" style="text-align: right">
-                <input type="button" class="admin-avatar btn-ld text-white btn-outline-warning border-0" onclick="add10()" style="font-size: larger; font-weight: 900" value="+" />
+                <div id="circle-button-inbound" onclick="add10()"><p>+</p></div>
               </div>
 
               <div id="mid5" name="mid5" style="display: none">
@@ -550,8 +552,10 @@
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="text" name="des10" id="des10" placeholder="More details" /></span>
                 </div>
               </div>
-              <div id="add15" style="text-align: right; display: none">
-                <input type="button" class="admin-avatar btn-ld text-white btn-outline-warning border-0" onclick="add15()" style="font-size: larger; font-weight: 900" value="+" />
+              <div id="add15">
+              <div id="add152">
+              <div id="circle-button-inbound2" onclick="add15()"><p>+</p></div>
+              </div>
               </div>
 
               <div id="last5" name="last5" style="display: none">
@@ -736,32 +740,27 @@
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="text" name="des15" id="des15" placeholder="More details" /></span>
                 </div>
               </div>
-              <div class="text-center py-2">
-                <input type="submit" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
+              <div id="py-2" class="text-center py-2">
+                <input type="submit" id="save-button-inbound" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
               </div>
             </form>
-          </div>
-        </div>
       </div>
 
-      <!--User Dropdown Bar -->
+     <!--User Dropdown Bar -->
 
-      <div class="user-dashboard">
+     <div class="user-dashboard">
         <div class="user-profile">
           <i class="fas fa-user fa-lg"></i>
-          <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
             <p>Profile</p>
-          </a>
         </div>
 
         <div class="logout-user-profile">
           <i class="fas fa-sign-out-alt fa-lg"></i>
-          <a href="<?php echo base_url(); ?>index.php/Welcome/index">
             <p>Log Out</p>
-          </a>
         </div>
       </div>
     </div>
+
 
     <!--Footer-->
     <div class="footer">

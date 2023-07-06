@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/style1.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Login_Signup.css">
     <title>Login & Registration</title>
 </head>
 <body>
+
+  <!--add pre loader-->
+
+
+  <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
  <div class="wrapper">
     <nav class="nav">
         <div class="nav-logo">
@@ -104,6 +121,13 @@
 
 
 <script>
+
+      const preloader = document.querySelector(".center");
+
+           window.addEventListener("load",function(){
+             preloader.style.display = "none";
+         });
+
     function myMenuFunction() {
         var i = document.getElementById("navMenu");
 

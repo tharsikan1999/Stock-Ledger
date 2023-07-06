@@ -168,9 +168,9 @@
 
             </div>
 
-            <!--User Dropdown Bar -->
+        <!--User Dropdown Bar -->
 
-            <div class="user-dashboard">
+        <div class="user-dashboard">
                 <div class="user-profile">
                     <i class="fas fa-user fa-lg"></i>
                     <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
@@ -188,6 +188,8 @@
             </div>
 
         </div>
+
+       
 
         <!--Footer-->
         <div class="footer">

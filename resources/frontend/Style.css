@@ -338,6 +338,9 @@ nav ul li a:hover {
 
 /* --- slide bar */
 
+
+
+
 .content {
   display: flex;
 }
@@ -1077,7 +1080,7 @@ table th {
   justify-content: space-evenly;
   font-weight: 600;
   color: #2f2e2e;
-  top: 50px;
+  top: 55px;
   right: 20px;
   border-radius: 10px;
   display: none;
@@ -1330,8 +1333,4 @@ table th {
   transition: 0.6s;
 }
 
-/* Inbound.php */
 
-.btn-ld {
-  background-color: #7f63f4;
-}

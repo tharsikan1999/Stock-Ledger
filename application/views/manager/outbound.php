@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Inventory Management</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script src=" https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js "></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css" />
+  <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Outbound.css" />
+
   <script>
     function totalAmount(stock, unit, tst) {
       let st = document.getElementById(stock).value;
@@ -75,10 +76,7 @@
     <div class="dash-menu">
       <div class="left-dash">
         <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="" />
-        <form class="search-form" action="">
-          <i class="fas fa-search"></i>
-          <input class="search-button" type="text" placeholder="Search For Stocks " />
-        </form>
+        
       </div>
       <div class="right-dash">
         <i class="fa-solid fa-bell"></i>
@@ -156,8 +154,6 @@
       <!--Page bar-->
 
       <div class="page-bar">
-        <div class="page-adress-bar">
-          <div class="container">
             <h2 class="text-center">OUTBOUND ITEMS</h2>
             <form id="outbound_form" name="outbound_form">
               <div class="row col-md-12 col-lg-12 col-sm-12 pt-3">
@@ -877,28 +873,30 @@
                 <input type="submit" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
               </div>
             </form>
-          </div>
-        </div>
       </div>
 
-      <!--User Dropdown Bar -->
+        <!--User Dropdown Bar -->
 
-      <div class="user-dashboard">
-        <div class="user-profile">
-          <i class="fas fa-user fa-lg"></i>
-          <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
-            <p>Profile</p>
-          </a>
+        <div class="user-dashboard">
+                <div class="user-profile">
+                    <i class="fas fa-user fa-lg"></i>
+                    <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
+                        <p>Profile</p>
+                    </a>
+                </div>
+
+                <div class="logout-user-profile">
+                    <i class="fas fa-sign-out-alt fa-lg"></i>
+                    <a href="<?php echo base_url(); ?>index.php/Welcome/index">
+                        <p>Log Out</p>
+                    </a>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="logout-user-profile">
-          <i class="fas fa-sign-out-alt fa-lg"></i>
-          <a href="<?php echo base_url(); ?>index.php/Welcome/index">
-            <p>Log Out</p>
-          </a>
-        </div>
-      </div>
-    </div>
+      
 
     <!--Footer-->
     <div class="footer">

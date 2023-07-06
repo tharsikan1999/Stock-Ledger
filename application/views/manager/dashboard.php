@@ -585,9 +585,11 @@
 
     </div>
 
-    <!--User Dropdown Bar -->
 
-    <div class="user-dashboard">
+
+     <!--User Dropdown Bar -->
+
+     <div class="user-dashboard">
         <div class="user-profile">
             <i class="fas fa-user fa-lg"></i>
                 <p>Profile</p>
@@ -598,7 +600,6 @@
                 <p>Log Out</p>
         </div>
 
-    </div>
     </div>
 
 
