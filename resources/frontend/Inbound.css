@@ -96,7 +96,7 @@
 
 
 .col-sm-9:hover, #col-sm-33:hover,.col-lg-3:hover{
-    border: 1.5px solid  #7c5ef2;
+    border: 2.5px solid  #7c5ef2;
     cursor: pointer;
 
 }
@@ -137,8 +137,23 @@
   font-weight: 600;
   color: #3b3a3a;
   padding: 0 10px;
+  outline: none;
+  border-radius: 5px;
 
 }
+
+
+select {
+  background-color: #d4d0ec2e;
+  color: #595757;
+
+}
+
+option {
+  background: #fff;
+  color: #7c5ef2;
+}
+
 
 
 

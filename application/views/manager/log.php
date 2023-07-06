@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Login_Signup.css">
+
     <title>Login & Registration</title>
 </head>
 <body>
@@ -28,17 +29,7 @@
 
  <div class="wrapper">
     <nav class="nav">
-        <div class="nav-logo">
-            <p>STOCK LEDGER </p>
-        </div>
-       
-        <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
-            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
+    <a href="http://localhost/Stock-Ledger/index.php"><img class="log-logo" src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt=""></a>
     </nav>
 
 <!----------------------------- Form box ----------------------------------->    

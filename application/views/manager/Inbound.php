@@ -19,7 +19,7 @@
 
   <script>
    
-   /*
+   
    function totalAmount(stock, unit, tst) {
       let st = document.getElementById(stock).value;
       let un = document.getElementById(unit).value;
@@ -36,7 +36,7 @@
       document.getElementById("add15").style.display = btn2;
       document.getElementById("mid5").style.display = mid5;
       document.getElementById("last5").style.display = last5;
-    } */
+    } 
 
     function add10() {
       btn1 = "none";
