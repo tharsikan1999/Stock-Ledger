@@ -140,23 +140,7 @@
 
 }
 
-#des,#des2,#des3,#des4,#des5,#des6,#des7,#des8,#des9,#des10,#des11,#des12,#des13,#des14,#des15 {
 
-
-  height: 40px;
-  width: 200px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #3b3a3a;
-  padding: 0 10px;
-  outline: none;
-  border-radius: 5px;
-}
-
-#des:hover,#des2:hover,#des3:hover,#des4:hover,#des5:hover,#des6:hover,#des7:hover,#des8:hover,#des9:hover,#des10:hover,#des11:hover,#des12:hover,#des13:hover,#des14:hover,#des15:hover {
-  border: 3px solid #7c5ef2 ;
-  cursor: pointer;
-}
 
 
 #product,#product2,#product3,#product4,#product5,#product6,#product7,#product8,#product9,#product10,#product11,#product12,#product13,#product14,#product15{
@@ -219,6 +203,24 @@
 }
 
 #tstock:hover,#tstock2:hover,#tstock3:hover,#tstock4:hover,#tstock5:hover,#tstock6:hover,#tstock7:hover,#tstock8:hover,#tstock9:hover,#tstock10:hover,#tstock11:hover,#tstock12:hover,#tstock13:hover,#tstock14:hover,#tstock15:hover {
+  border: 3px solid #7c5ef2 ;
+  cursor: pointer;
+}
+
+#des,#des2,#des3,#des4,#des5,#des6,#des7,#des8,#des9,#des10,#des11,#des12,#des13,#des14,#des15 {
+
+
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3b3a3a;
+  padding: 0 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
+#des:hover,#des2:hover,#des3:hover,#des4:hover,#des5:hover,#des6:hover,#des7:hover,#des8:hover,#des9:hover,#des10:hover,#des11:hover,#des12:hover,#des13:hover,#des14:hover,#des15:hover {
   border: 3px solid #7c5ef2 ;
   cursor: pointer;
 }
