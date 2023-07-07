@@ -22,6 +22,16 @@ logOutUrlFooter.addEventListener("click",()=>{
     window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
+
+/* ---- Profile page turnig --- */
+
+const profilePage = document.querySelector(".user-profile");
+
+profilePage.addEventListener("click",()=>{
+    window.location = "http://localhost/Stock-Ledger/index.php/Welcome/profileView"
+});
+
+
 /* Slider bar animations */
 
 const hangBurgar = document.querySelector(".hanburgar");

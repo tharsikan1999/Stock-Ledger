@@ -153,7 +153,18 @@
 
       <!--Page bar-->
 
+      
+
       <div class="page-bar">
+      <div class="buttons">
+                    <div class="left-buttons">
+                        
+
+                    </div>
+                    <div class="right-index-url">
+                        <p> Home - Pages - Outbound</p>
+                    </div>
+            </div>
             <h2 id="outbound-heading" class="text-center">OUTBOUND ITEMS</h2>
             <form id="outbound_form" name="outbound_form">
               <div class="row col-md-12 col-lg-12 col-sm-12 pt-3">

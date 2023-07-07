@@ -161,6 +161,15 @@
       <!--Page bar-->
 
       <div class="page-bar">
+      <div class="buttons">
+                    <div class="left-buttons">
+                        
+
+                    </div>
+                    <div class="right-index-url">
+                        <p> Home - Pages - Inbound</p>
+                    </div>
+            </div>
             <h2  class="text-center" id="inbound-heading">INBOUND ITEMS</h2>
             <form id="inbound_form" name="inbound_form">
               <div class="row col-md-12 col-lg-12 col-sm-12">

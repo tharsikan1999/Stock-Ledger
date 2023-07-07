@@ -33,12 +33,7 @@
         <div class="dash-menu">
             <div class="left-dash">
                 <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="">
-                <form class="search-form" action="">
-                    <i class="fas fa-search"></i>
-                    <input class="search-button" type="text" placeholder="Search For Stocks ">
-
-
-                </form>
+                
 
             </div>
             <div class="right-dash">
@@ -150,10 +145,15 @@
             <!--Page bar-->
 
             <div class="page-bar">
-                <div class="page-adress-bar">
-                    <P>insert your content</P>
+            <div class="buttons">
+                    <div class="left-buttons">
+                        
 
-                </div>
+                    </div>
+                    <div class="right-index-url">
+                        <p> Home - Pages - History</p>
+                    </div>
+            </div>
 
 
             </div>
@@ -163,16 +163,12 @@
             <div class="user-dashboard">
                 <div class="user-profile">
                     <i class="fas fa-user fa-lg"></i>
-                    <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
                         <p>Profile</p>
-                    </a>
                 </div>
 
                 <div class="logout-user-profile">
                     <i class="fas fa-sign-out-alt fa-lg"></i>
-                    <a href="<?php echo base_url(); ?>index.php/Welcome/index">
                         <p>Log Out</p>
-                    </a>
                 </div>
 
             </div>

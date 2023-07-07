@@ -44,6 +44,8 @@
     overflow: hidden;
     margin: 0 20px;
     padding: 0 0 0 20px;
+    border: 1px solid #59575762;
+
     
   }
 
@@ -77,7 +79,6 @@
     font-size: 17px;
     cursor: pointer;
     color: #3a3a3a;
-    border: 1px solid #59575762;
 
     
   }
