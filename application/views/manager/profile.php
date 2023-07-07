@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management</title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Profile.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -136,15 +138,59 @@
             </div>
 
             <!--Page bar-->
-
-            <div class="buttons">
+            <div class="page-bar">
+                <!--Button-->
+                <div class="buttons">
                     <div class="left-buttons">
-                        
 
                     </div>
                     <div class="right-index-url">
                         <p> Home - Pages - Profile</p>
                     </div>
+                </div>
+
+                <div class="profile-box">
+                    <div class="left-box-profile">
+                    <img  src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
+                <div class="box">
+                    <h3>Tom Cruise</h3>
+                    <p><span>Member Since:</span> November 2023</p>
+                </div>
+                    </div>
+
+                    <div class="right-box-profile">
+
+                    <div class="edit-profile">
+                        
+                    <div class="edit-button-profile">
+                        Edit Profile
+                    </div>
+                </div>
+                    </div>  
+                </div>
+                <div class="Personal-Information">
+                <p>Personal Information</p> 
+                </div>
+                <div class="p-Information">
+                    <div class="left-personal-information">
+                    <p>Full Name : <span>Tom Cruise</span></p>
+                    <p>Email : <span>abcd@gmail.com</span></p>
+                    <p>Division : <span>It</span></p>
+                    <p> Role : <span id="admin">Admin</span></p>
+
+                    
+                    </div>
+                    <div class="right-personal-information">
+                        
+                    </div>
+                </div>
+                <div class="change-password-manage">
+                <div class="password-changed">
+                    <p>Change Password</p>
+
+                </div>
+                </div>
+
             </div>
 
          
