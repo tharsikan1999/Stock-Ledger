@@ -154,14 +154,18 @@
       <!--Page bar-->
 
       <div class="page-bar">
-            <h2 class="text-center">OUTBOUND ITEMS</h2>
+            <h2 id="outbound-heading" class="text-center">OUTBOUND ITEMS</h2>
             <form id="outbound_form" name="outbound_form">
               <div class="row col-md-12 col-lg-12 col-sm-12 pt-3">
                 <span class="col-md-4 col-lg-4 col-sm-4 text-center">Issuing.No:
-                  <input type="text" name="is_no" id="is_no" size="15" /></span>
-                <span class="col-md-4 col-lg-4 col-sm-4 text-center">DATE: <input type="date" name="date" id="date" /></span>
+                  <input type="text" name="is_no" id="is_no" size="15" />
+                </span>
+                <span class="col-md-4 col-lg-4 col-sm-4 text-center">DATE: 
+                  <input type="date" name="date" id="date" />
+                </span>
                 <span class="col-md-4 col-lg-4 col-sm-4 text-center">SIR No:
-                  <input type="text" name="sir_no" id="sir_no" size="15" /></span>
+                  <input type="text" name="sir_no" id="sir_no" size="15" />
+                </span>
               </div>
 
               <div class="row col-md-12 py-2">
@@ -169,7 +173,7 @@
                 <span class="col-md-3 col-lg-3 col-sm-3"></span>
               </div>
               <!-- Label -->
-              <div class="row col-md-12 col-lg-12 col-sm-12">
+              <div class="row col-md-12 col-lg-12 col-sm-12" id="outbound-menu">
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">TYPE</span>
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">PRODUCT</span>
                 <span class="col-md-2 col-lg-2 col-sm-2 text-center">STOCK</span>
@@ -407,8 +411,8 @@
                   </span>
                 </div>
               </div>
-              <div id="add10" class="" style="text-align: right">
-                <input type="button" class="admin-avatar btn-ld text-white btn-outline-warning border-0" onclick="add10()" style="font-size: larger; font-weight: 900" value="+" />
+              <div id="add10" style="text-align: right">
+                <div id="circle-button-inbound" onclick="add10()"><p>+</p></div>
               </div>
 
               <div id="mid5" name="mid5" style="display: none">
@@ -638,8 +642,10 @@
                   </span>
                 </div>
               </div>
-              <div id="add15" class="" style="text-align: right; display: none">
-                <input type="button" class="admin-avatar btn-ld text-white btn-outline-warning border-0" onclick="add15()" style="font-size: larger; font-weight: 900" value="+" />
+              <div id="add15">
+                 <div id="add152">
+                 <div id="circle-button-inbound2" onclick="add15()"><p>+</p></div>
+                  </div>
               </div>
 
               <div id="last5" name="last5" style="display: none">
@@ -869,8 +875,8 @@
                   </span>
                 </div>
               </div>
-              <div class="text-center py-2">
-                <input type="submit" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
+              <div id="py-2" class="text-center py-2">
+                <input type="submit" id="save-button-inbound" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
               </div>
             </form>
       </div>
@@ -880,16 +886,12 @@
         <div class="user-dashboard">
                 <div class="user-profile">
                     <i class="fas fa-user fa-lg"></i>
-                    <a href="<?php echo base_url(); ?>index.php/Welcome/profileView">
                         <p>Profile</p>
-                    </a>
                 </div>
 
                 <div class="logout-user-profile">
                     <i class="fas fa-sign-out-alt fa-lg"></i>
-                    <a href="<?php echo base_url(); ?>index.php/Welcome/index">
                         <p>Log Out</p>
-                    </a>
                 </div>
 
             </div>

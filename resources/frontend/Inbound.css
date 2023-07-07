@@ -44,6 +44,7 @@
     overflow: hidden;
     margin: 0 20px;
     padding: 0 0 0 20px;
+    
   }
 
   #col-sm-33{
@@ -61,6 +62,8 @@
     overflow: hidden;
     margin: 0 20px;
     padding: 0 20px 0 20px;
+    border: 1px solid #59575762;
+
   }
 
   #po_no,#name,#grn_no {
@@ -73,7 +76,11 @@
     font-weight: 600;
     font-size: 17px;
     cursor: pointer;
-    color: #3a3a3a;}
+    color: #3a3a3a;
+    border: 1px solid #59575762;
+
+    
+  }
 
   
 

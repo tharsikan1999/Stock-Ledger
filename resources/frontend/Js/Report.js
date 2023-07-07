@@ -15,14 +15,14 @@ const logOutUrl = document.querySelector(".logout-user-profile");
 
 
 logOutUrl.addEventListener("click",()=>{
-    window.location = "index.php";
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
 
 const logOutUrlFooter = document.querySelector(".logout");
 
 logOutUrlFooter.addEventListener("click",()=>{
-    window.location = "index.php";
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
 

@@ -10,14 +10,16 @@ window.addEventListener("load", function () {
 
 const logOutUrl = document.querySelector(".logout-user-profile");
 
-logOutUrl.addEventListener("click", () => {
-  window.location = "index.php";
+
+logOutUrl.addEventListener("click",()=>{
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
+
 
 const logOutUrlFooter = document.querySelector(".logout");
 
-logOutUrlFooter.addEventListener("click", () => {
-  window.location = "index.php";
+logOutUrlFooter.addEventListener("click",()=>{
+    window.location = "http://localhost/Stock-Ledger/index.php/";
 });
 
 /* Slider bar animations */
