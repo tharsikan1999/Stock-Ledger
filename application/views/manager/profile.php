@@ -175,6 +175,32 @@
                 </div>
                 </div>
 
+                <div class="password-popup">
+                <img  src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt="">
+                <div class="old-password">
+                    <p>Enter Your Old Password</p>
+                    <input type="Password" id="old-Password">
+                </div>
+                <div class="new-password">
+                    <p>Enter Your New Password</p>
+                    <input type="Password" id="new-Password">
+                </div>
+                <div class="new-password">
+                    <p>Conform Your New Password</p>
+                    <input type="Password" id="new-Password">
+                </div>
+                <div class="change-buttons">
+                <div class="change-password-manage-popup">
+                <div class="password-changed-popup">
+                <p>Change Password</p>
+                </div>
+                </div>
+                <div class="close-button-popup">
+                 <button id="close-button-popup" type="button">Cancel</button>
+                </div>
+                </div>
+                </div>
+
             </div>
 
          
@@ -215,13 +241,14 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+   
 
     <script src="<?php echo base_url(); ?>resources/frontend/Js/Dashboard.js">
 
     </script>
+      <script src="<?php echo base_url(); ?>resources/frontend/Js/Profile.js">
+    </script>
+
 </body>
 
 </html>

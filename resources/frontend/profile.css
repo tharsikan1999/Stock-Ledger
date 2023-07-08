@@ -3,6 +3,9 @@
 .page-bar {
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(to right, #d4d0ec0d , #d9d7e52d);
+  position: relative;
+
 }
 
 
@@ -69,7 +72,7 @@
   display: flex;
   justify-content: space-evenly;
   background: #d4d0ec2d;
-  background-image: linear-gradient(to right, #d4d0ec2d , #d4d0ec2d);
+  background-image: linear-gradient(to right, #d4d0ec0d , #d9d7e52d);
   margin: 50px 0;
   
 
@@ -90,6 +93,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 
 }
 
@@ -159,6 +163,8 @@
   height: 200px;
   width: 200px;
   border-radius: 50%;
+  margin: 0 0 0 40px;
+  
 }
 
 .box {
@@ -166,4 +172,111 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+
+/* --- Password pop --- */
+
+.password-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+ 
+  
+}
+
+.password-popup img {
+ margin: 20px 0 ;
+ 
+  
+}
+
+.new-password p,.old-password p {
+  color: #595757;
+  font-size: 17px ;
+  font-weight: 550;
+}
+
+.new-password {
+  margin: 10px 0 0 0;
+}
+#old-Password {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+
+}
+
+#new-Password {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+
+}
+
+#old-Password:hover {
+  border: 2.5px solid #6a48f1;
+
+}
+
+#new-Password:hover {
+  border: 2.5px solid #6a48f1;
+
+}
+
+.password-changed-popup {
+  
+  height:50px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px 0 0;
+}
+
+.password-changed-popup:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+#close-button-popup {
+  height: 50px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff5274;
+  cursor: pointer;
+  margin: 0 0 0 30px;
+}
+
+#close-button-popup:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+.change-buttons {
+  display: flex;
+  margin: 30px 0;
 }
