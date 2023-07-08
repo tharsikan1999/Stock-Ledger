@@ -177,18 +177,29 @@
 
                 <div class="password-popup">
                 <img  src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt="">
+                <form action="">
                 <div class="old-password">
                     <p>Enter Your Old Password</p>
-                    <input type="Password" id="old-Password">
+                    <input type="Password" id="old-Password" name="old-password">
+                    <i class="fas fa-eye" id="password-show-eye"></i>
+                    <i class="fas fa-eye-slash" id="password-hide-eye"></i>
+
                 </div>
                 <div class="new-password">
                     <p>Enter Your New Password</p>
-                    <input type="Password" id="new-Password">
+                    <input type="Password" id="new-Password" name="new-password">
+                    <i class="fas fa-eye"  id="password-show-eye2"></i>
+                    <i class="fas fa-eye-slash" id="password-hide-eye2"></i>
+
                 </div>
                 <div class="new-password">
                     <p>Conform Your New Password</p>
-                    <input type="Password" id="new-Password">
+                    <input type="Password" id="new-Password1" name="new-password">
+                    <i class="fas fa-eye" id="password-show-eye3"></i>
+                    <i class="fas fa-eye-slash" id="password-hide-eye3"></i>
+
                 </div>
+                </form>
                 <div class="change-buttons">
                 <div class="change-password-manage-popup">
                 <div class="password-changed-popup">
@@ -243,9 +254,7 @@
 
    
 
-    <script src="<?php echo base_url(); ?>resources/frontend/Js/Dashboard.js">
 
-    </script>
       <script src="<?php echo base_url(); ?>resources/frontend/Js/Profile.js">
     </script>
 

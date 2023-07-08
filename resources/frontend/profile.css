@@ -209,6 +209,9 @@
   outline: none;
   border: 1px solid #5957576c;
   border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
 
 }
 
@@ -219,6 +222,22 @@
   outline: none;
   border: 1px solid #5957576c;
   border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
+
+}
+
+#new-Password1 {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
 
 }
 
@@ -279,4 +298,16 @@
 .change-buttons {
   display: flex;
   margin: 30px 0;
+}
+
+.fa-eye ,.fa-eye-slash{
+  color: #6a48f1;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+  font-size: 20px;
+}
+
+
+#password-hide-eye, #password-hide-eye2, #password-hide-eye3 {
+  display: none;
 }
