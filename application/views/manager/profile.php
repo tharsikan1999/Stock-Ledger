@@ -149,39 +149,23 @@
                     </div>
                 </div>
 
-                <div class="profile-box">
-                    <div class="left-box-profile">
+              
+                <div class="p-Information">
+                    <div class="left-personal-information">
                     <img  src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
-                <div class="box">
+
+                    <div class="box">
                     <h3>Tom Cruise</h3>
                     <p><span>Member Since:</span> November 2023</p>
                 </div>
-                    </div>
-
-                    <div class="right-box-profile">
-
-                    <div class="edit-profile">
-                        
-                    <div class="edit-button-profile">
-                        Edit Profile
-                    </div>
-                </div>
-                    </div>  
-                </div>
-                <div class="Personal-Information">
-                <p>Personal Information</p> 
-                </div>
-                <div class="p-Information">
-                    <div class="left-personal-information">
-                    <p>Full Name : <span>Tom Cruise</span></p>
-                    <p>Email : <span>abcd@gmail.com</span></p>
-                    <p>Division : <span>It</span></p>
-                    <p> Role : <span id="admin">Admin</span></p>
-
                     
                     </div>
                     <div class="right-personal-information">
-                        
+                    <p>Personal Information</p> 
+                    <p>Full Name : <span>Tom Cruise</span></p>
+                    <p>Email : <span>abcd@gmail.com</span></p>
+                    <p>Division : <span>It</span></p>
+                    <p> Role : <span id="admin">Admin</span></p>    
                     </div>
                 </div>
                 <div class="change-password-manage">
