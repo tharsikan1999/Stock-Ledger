@@ -276,45 +276,33 @@ iconNotification.addEventListener("click",()=>{
 
  
 
- var passwordChangedBtn  = document.querySelector("#change-password-btn");
+var passwordChangedBtn  = document.querySelector("#change-password-btn");
 
- passwordChangedBtn.addEventListener("click",()=>{
+passwordChangedBtn.addEventListener("click",()=>{
 
-    var oldPasswordInput = document.querySelector("#old-Password");
+   var oldPasswordInput = document.querySelector("#old-Password");
 
-    var oldPasswordInputValue =  oldPasswordInput.value;
+   var oldPasswordInputValue =  oldPasswordInput.value;
 
-    var newPasswordInput = document.querySelector("#new-Password");
+   var newPasswordInput = document.querySelector("#new-Password");
 
-    var newPasswordInputValue =   newPasswordInput.value;
+   var newPasswordInputValue =   newPasswordInput.value;
 
-    var newPasswordInput1 = document.querySelector("#new-Password1");
+   var newPasswordInput1 = document.querySelector("#new-Password1");
 
-    var newPasswordInputValue1 =   newPasswordInput1.value;
-
-
-    if(newPasswordInputValue === newPasswordInputValue1){
-        
-        window.alert("You can Change Password successfully");
-
-    }
-    else{
-        window.alert("Password Didn't")
-    }
+   var newPasswordInputValue1 =   newPasswordInput1.value;
 
 
-    
- })
+   if(newPasswordInputValue === newPasswordInputValue1){
+       
+       window.alert("You can Change Password successfully");
 
-
-
-     
-
-
-
+   }
+   else{
+       window.alert("Password Didn't")
+   }
 
 
    
-
-
+})
 
