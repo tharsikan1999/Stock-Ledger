@@ -252,3 +252,69 @@ oldPasswordHideEye3.addEventListener("click",()=>{
     
 
 });
+
+
+
+/* Notification bar */
+
+
+const iconNotification = document.querySelector("#notification-icon");
+
+const notificationBar = document.querySelector(".notifications-box");
+
+iconNotification.addEventListener("click",()=>{
+
+    notificationBar.classList.toggle("notification-display");
+
+});
+
+
+/* set the function for check passwords */
+
+
+ 
+
+ 
+
+ var passwordChangedBtn  = document.querySelector("#change-password-btn");
+
+ passwordChangedBtn.addEventListener("click",()=>{
+
+    var oldPasswordInput = document.querySelector("#old-Password");
+
+    var oldPasswordInputValue =  oldPasswordInput.value;
+
+    var newPasswordInput = document.querySelector("#new-Password");
+
+    var newPasswordInputValue =   newPasswordInput.value;
+
+    var newPasswordInput1 = document.querySelector("#new-Password1");
+
+    var newPasswordInputValue1 =   newPasswordInput1.value;
+
+
+    if(newPasswordInputValue === newPasswordInputValue1){
+        
+        window.alert("You can Change Password successfully");
+
+    }
+    else{
+        window.alert("Password Didn't")
+    }
+
+
+    
+ })
+
+
+
+     
+
+
+
+
+
+   
+
+
+

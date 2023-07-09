@@ -311,3 +311,69 @@
 #password-hide-eye, #password-hide-eye2, #password-hide-eye3 {
   display: none;
 }
+
+
+/* <!-- Notifications bar --> */
+
+
+.notifications-box {
+  height: 300px ;
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  right: 153px;
+  background-color: #d4d0ec44;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: none;
+  scroll-behavior: smooth;
+
+}
+
+.scrollable-element {
+  scrollbar-color:#6a48f1;
+}
+
+.notification-display {
+  display: block;
+}
+
+.header-notifications {
+  height: 50px;
+  width: 300px;
+  background-color: #6a48f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  
+
+}
+
+.items-for-notifications {
+  display: flex;
+  width: 300px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 10px 0 ;
+
+}
+
+.notify-box {
+  height: 60px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #595757;
+  cursor: pointer;
+
+}

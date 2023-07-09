@@ -32,6 +32,22 @@ profilePage.addEventListener("click",()=>{
 });
 
 
+
+/* Notification bar */
+
+
+const iconNotification = document.querySelector("#notification-icon");
+
+const notificationBar = document.querySelector(".notifications-box");
+
+iconNotification.addEventListener("click",()=>{
+
+    notificationBar.classList.toggle("notification-display");
+
+});
+
+
+
 /* Slider bar animations */
 
 const hangBurgar = document.querySelector(".hanburgar");

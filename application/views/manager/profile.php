@@ -43,11 +43,13 @@
                 <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
-                <i class="fa-solid fa-bell"></i>
+                <i id="notification-icon" class="fa-solid fa-bell"></i>
                 <h4>Admin</h4>
                 <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
             </div>
         </div>
+
+        
 
         <!--contetent-->
         <div class="content">
@@ -187,14 +189,14 @@
                 </div>
                 <div class="new-password">
                     <p>Enter Your New Password</p>
-                    <input type="Password" id="new-Password" name="new-password">
+                    <input type="Password" id="new-Password" name="new-password1">
                     <i class="fas fa-eye"  id="password-show-eye2"></i>
                     <i class="fas fa-eye-slash" id="password-hide-eye2"></i>
 
                 </div>
                 <div class="new-password">
                     <p>Conform Your New Password</p>
-                    <input type="Password" id="new-Password1" name="new-password">
+                    <input type="Password" id="new-Password1" name="new-password2">
                     <i class="fas fa-eye" id="password-show-eye3"></i>
                     <i class="fas fa-eye-slash" id="password-hide-eye3"></i>
 
@@ -202,7 +204,7 @@
                 </form>
                 <div class="change-buttons">
                 <div class="change-password-manage-popup">
-                <div class="password-changed-popup">
+                <div class="password-changed-popup" id="change-password-btn">
                 <p>Change Password</p>
                 </div>
                 </div>
@@ -214,10 +216,130 @@
 
             </div>
 
+
+
+              <!-- Notifications bar -->
+
+    <div class="notifications-box">
+        <div class="header-notifications">
+            <p>All Notifications</p>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+            <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+            <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+            <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+            </div>
+        </div>
+
+    </div>
+
+    
+
          
 
 
     </div>
+
+  
 
 
 
