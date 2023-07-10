@@ -151,29 +151,25 @@
                 </div>
             </div>
 
-            <!--Page bar-->
+        <!--Page bar-->
 
-            <div class="page-bar">
+        <div class="page-bar">
             <div class="buttons">
                     <div class="left-buttons">
                         
 
                     </div>
                     <div class="right-index-url">
-                        <p> Home - Pages - Report</p>
+                        <p> Home - Pages - History</p>
                     </div>
             </div>
-                <div class="page-adress-bar">
 
-
-
-                </div>
 
             </div>
 
-        <!--User Dropdown Bar -->
+            <!--User Dropdown Bar -->
 
-        <div class="user-dashboard">
+            <div class="user-dashboard">
                 <div class="user-profile">
                     <i class="fas fa-user fa-lg"></i>
                         <p>Profile</p>
@@ -184,12 +180,11 @@
                         <p>Log Out</p>
                 </div>
 
-        </div>
+            </div>
 
+                        <!-- Notifications bar -->
 
-        </div>
-
-        <div class="notifications-box">
+    <div class="notifications-box">
         <div class="header-notifications">
             <p>All Notifications</p>
         </div>
@@ -299,8 +294,11 @@
             </div>
         </div>
 
-       
+    </div>
 
+
+        </div>
+        
         <!--Footer-->
         <div class="footer">
             <div class="main-logout">
@@ -314,8 +312,9 @@
             </div>
         </div>
 
+
     </div>
-    <script src="<?php echo base_url(); ?>resources/frontend/Js/Report.js">
+    <script src="<?php echo base_url(); ?>resources/frontend/Js/Histroy.Js">
     </script>
 </body>
 

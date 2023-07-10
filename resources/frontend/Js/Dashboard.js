@@ -246,7 +246,7 @@ let inter = setInterval(()=>{
 
     if( demo == 352)
     clearInterval(inter);
-},5);
+},2);
 
 
 
@@ -271,7 +271,7 @@ let inter = setInterval(()=>{
             if( demo == 296)
             clearInterval(interval)
             
-        },5); 
+        },2); 
 })();
 
 /* Low Stocks */
@@ -329,7 +329,6 @@ const firstTableth = document.querySelector(".table-first-th");
 
 const secondTableth = document.querySelector(".table-second-th");
 
-const thirdTableth = document.querySelector(".table-third-th");
 
 const fourthTableth = document.querySelector(".table-fourth-th");
 
@@ -339,7 +338,6 @@ const sixTableth = document.querySelector(".table-six-th");
 
 const sevenTableth = document.querySelector(".table-seven-th");
 
-const DivisionTableth = document.querySelector(".table-Division-th");
 
 
 const upButton = document.querySelector(".fa-caret-up");
@@ -373,17 +371,7 @@ secondTableth.addEventListener("click",function() {
 
 
 
-const thirdUp = document.querySelector("#third-fa-caret-up");
 
-const thirdDown = document.querySelector("#third-fa-caret-down");
-
-thirdTableth.addEventListener("click",function() {
-
-    thirdUp.classList.toggle("up-Button-Display");
-
-    thirdDown.classList.toggle("Down-Button-Display");
-
-});
 
 
 
@@ -437,17 +425,6 @@ sevenTableth.addEventListener("click",function() {
 });
 
 
-const Divisionup = document.querySelector("#Division-fa-caret-up");
-
-const Divisionown = document.querySelector("#Division-fa-caret-down");
-
-DivisionTableth.addEventListener("click",function() {
-
-    Divisionup.classList.toggle("up-Button-Display");
-
-    Divisionown.classList.toggle("Down-Button-Display");
-    
-});
 
 
 
@@ -464,7 +441,7 @@ DivisionTableth.addEventListener("click",function() {
 
                 const makeArray = Array.apply(null,avilableCircle);
 
-                let stocksCounts = table.rows[r].cells[5].innerText;
+                let stocksCounts = table.rows[r].cells[3].innerText;
 
                 if(stocksCounts< 1){
                     makeArray[r].style.background = " #FF5274";

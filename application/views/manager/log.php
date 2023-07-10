@@ -37,7 +37,8 @@
         
         <!------------------- login form -------------------------->
 
-        <div class="login-container" id="login">
+       
+            <div class="login-container" id="login">
             <div class="top">
                 <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                 <header>Login</header>
@@ -63,37 +64,45 @@
                 </div>
             </div>
         </div>
+       
+
+        <!-- Register backend -->
+
+
+
+
+
 
         <!------------------- registration form -------------------------->
-        <div class="register-container" id="register">
+        <form action="post" class="register-container" id="register">
             <div class="top">
                 <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                 <header>Sign Up</header>
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname" id="regFirstName">
+                    <input type="text" class="input-field" placeholder="Firstname" id="regFirstName" name="Firstname">
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname" id="regLastName">
+                    <input type="text" class="input-field" placeholder="Lastname" id="regLastName" name="regLastName">
                     <i class="bx bx-user"></i>
                 </div>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email" id="regEmail">
+                <input type="text" class="input-field" placeholder="Email" id="regEmail" name="regEmail">
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Division" id="regDivision">
+                <input type="text" class="input-field" placeholder="Division" id="regDivision" name="regDivision">
                 <i class="bx bx-home"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password" id="regPassword">
+                <input type="password" class="input-field" placeholder="Password" id="regPassword" name="regPassword">
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Confirm Password" id="regConfirmPassword">
+                <input type="password" class="input-field" placeholder="Confirm Password" id="regConfirmPassword" >
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="submit-box">
@@ -106,7 +115,7 @@
                 </div>
                 
             </div>
-        </div>
+        </form>
     </div>
 </div>   
 

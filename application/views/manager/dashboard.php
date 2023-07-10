@@ -351,18 +351,6 @@
                                     <i id="second-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-Division-th">Division
-                                <div class="dropdown-buttons">
-                                    <i id="Division-fa-caret-up" class="fas fa-caret-up"></i>
-                                    <i id="Division-fa-caret-down" class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
-                            <th class="table-third-th">Add Date
-                                <div class="dropdown-buttons">
-                                    <i id="third-fa-caret-up" class="fas fa-caret-up"></i>
-                                    <i id="third-fa-caret-down" class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
                             <th class="table-fourth-th">Up Date
                                 <div class="dropdown-buttons">
                                     <i id="fourth-fa-caret-up" class="fas fa-caret-up"></i>
@@ -375,7 +363,7 @@
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-six-th">Cost  
+                            <th class="table-six-th">Unit Cost  
                                 <div class="dropdown-buttons">
                                     <i id="six-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="six-fa-caret-down" class="fas fa-caret-down"></i>
@@ -390,26 +378,10 @@
                             <th>Avilable</th>
                         </tr>
                     </thead>
-                    <tbody id="tables">
-                        <tr>
-                            <td>154-24</td>
-                            <td>Blue - Pen</td>
-                            <td>IT</td>
-                            <td>08 Mar 2018</td>
-                            <td>09 Mar 2018</td>
-                            <td id="tables-stocks" >0</td>
-                            <td>453 Rs</td>
-                            <td>346546.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-
-                            </div></td>
-
-                        </tr>
+                    <tbody id="tables">   
                         <tr>
                             <td>154-234</td>
                             <td>Pencil</td>
-                            <td>Civil</td>
-                            <td>12 Mar 2018</td>
                             <td>24 Mar 2018</td>
                             <td id="tables-stocks">10</td>
                             <td>4356 Rs</td>
@@ -421,8 +393,6 @@
                         <tr>
                             <td>35-24</td>
                             <td>Pencil</td>
-                            <td>Marine</td>
-                            <td>25 Mar 2018</td>
                             <td>26 Mar 2018</td>
                             <td id="tables-stocks" >567</td>
                             <td>2341 Rs</td>
@@ -435,8 +405,6 @@
                         <tr>
                             <td>23-24</td>
                             <td>Pencil</td>
-                            <td>IT</td>
-                            <td>28 Mar 2018</td>
                             <td>12 Mar 2018</td>
                             <td id="tables-stocks">35</td>
                             <td>678 Rs</td>
@@ -449,8 +417,6 @@
                         <tr>
                             <td>545-24</td>
                             <td>Marker</td>
-                            <td>IT</td>
-                            <td>01 Mar 2018</td>
                             <td>05 Mar 2018</td>
                             <td id="tables-stocks">8</td>
                             <td>1234 Rs</td>
@@ -463,8 +429,6 @@
                         <tr>
                             <td>86-24</td>
                             <td>Black - Pen</td>
-                            <td>Marine</td>
-                            <td>26 Mar 2018</td>
                             <td>29 Mar 21 520018</td>
                             <td id="tables-stocks">547</td>
                             <td>785 Rs</td>
@@ -477,8 +441,6 @@
                         <tr>
                             <td>654-24</td>
                             <td>Eraser</td>
-                            <td>Electrical</td>
-                            <td>26 Mar 2018</td>
                             <td>26 Mar 2018</td>
                             <td id="tables-stocks">3264</td>
                             <td>1341 Rs</td>
@@ -491,8 +453,6 @@
                         <tr>
                             <td>6-67</td>
                             <td>Shirt</td>
-                            <td>IT</td>
-                            <td>04 Mar 2018</td>
                             <td>09 Mar 2018</td>
                             <td id="tables-stocks">768</td>
                             <td>2315 Rs</td>
@@ -505,8 +465,6 @@
                         <tr>
                             <td>978-243</td>
                             <td>T-Shirt</td>
-                            <td>Electrical</td>
-                            <td>16 Mar 2018</td>
                             <td>19 Mar 2018</td>
                             <td id="tables-stocks">1342</td>
                             <td>346546 Rs</td>
@@ -519,8 +477,6 @@
                         <tr>
                             <td>35-456</td>
                             <td>Cap</td>
-                            <td>Mechanical</td>
-                            <td>11 Mar 2018</td>
                             <td>22 Mar 2018</td>
                             <td id="tables-stocks">7</td>
                             <td>343654 Rs</td>
@@ -533,8 +489,6 @@
                         <tr>
                             <td>789-234</td>
                             <td>Short</td>
-                            <td>IT</td>
-                            <td>08 Mar 2018</td>
                             <td>09 Mar 2018</td>
                             <td id="tables-stocks">0</td>
                             <td>345 Rs</td>
@@ -547,8 +501,6 @@
                         <tr>
                             <td>789-234</td>
                             <td>Short</td>
-                            <td>IT</td>
-                            <td>08 Mar 2018</td>
                             <td>09 Mar 2018</td>
                             <td id="tables-stocks">0</td>
                             <td>345 Rs</td>
@@ -561,8 +513,6 @@
                         <tr>
                             <td>789-234</td>
                             <td>Short</td>
-                            <td>IT</td>
-                            <td>08 Mar 2018</td>
                             <td>09 Mar 2018</td>
                             <td id="tables-stocks">18</td>
                             <td>345 Rs</td>
