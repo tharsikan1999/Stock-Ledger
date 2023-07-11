@@ -181,16 +181,6 @@
                             <input type="text" placeholder="Enter Product-Name" name="Product-Name" id="Product-Name">
 
                         </div>
-                        <div class="Division-box">
-                            <h3>Enter Division</h3>
-                            <input type="text" placeholder="Enter Division" name="Division" id="Division">
-
-                        </div>
-                        <div class="Add-Date-box">
-                            <h3>Add-Date</h3>
-                            <input type="date" name="Add-Date" id="Add-Date">
-
-                        </div>
                         <div class="Up-Date-box">
                             <h3>Up-Date</h3>
                             <input type="date" name="Up-Date" id="Up-Date">
@@ -340,7 +330,7 @@
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr >
-                            <th class="table-first-th">Product No <div class="dropdown-buttons">
+                            <th class="table-first-th">Product No <div class="dropdown-buttons" >
                                 <i class="fas fa-caret-up"></i>
                                 <i class="fas fa-caret-down"></i>
                             </div>
@@ -380,147 +370,244 @@
                     </thead>
                     <tbody id="tables">   
                         <tr>
-                            <td>154-234</td>
-                            <td>Pencil</td>
-                            <td>24 Mar 2018</td>
+                        <td>1</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
-                            <td>4356 Rs</td>
-                            <td>45636.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
                         </tr>
                         <tr>
-                            <td>35-24</td>
-                            <td>Pencil</td>
-                            <td>26 Mar 2018</td>
-                            <td id="tables-stocks" >567</td>
-                            <td>2341 Rs</td>
-                            <td>435654.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                        <td>2</td>
+                            <td>Product</td>
+                            <td>2023-07-07</td>
+                            <td id="tables-stocks">120</td>
+                            <td>235</td>
+                            <td>2354</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
                         </tr>
                         <tr>
-                            <td>23-24</td>
-                            <td>Pencil</td>
-                            <td>12 Mar 2018</td>
-                            <td id="tables-stocks">35</td>
-                            <td>678 Rs</td>
-                            <td>3456546.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                        <td>3</td>
+                            <td>Product</td>
+                            <td>2023-04-02</td>
+                            <td id="tables-stocks">45</td>
+                            <td>689</td>
+                            <td>234</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
                         </tr>
                         <tr>
-                            <td>545-24</td>
-                            <td>Marker</td>
-                            <td>05 Mar 2018</td>
-                            <td id="tables-stocks">8</td>
-                            <td>1234 Rs</td>
-                            <td>465363.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                        <td>4</td>
+                            <td>Product</td>
+                            <td>2023-01-02</td>
+                            <td id="tables-stocks">235</td>
+                            <td>23</td>
+                            <td>9009</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
                         </tr>
                         <tr>
-                            <td>86-24</td>
-                            <td>Black - Pen</td>
-                            <td>29 Mar 21 520018</td>
-                            <td id="tables-stocks">547</td>
-                            <td>785 Rs</td>
-                            <td>546436.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
-                            </div></td>
-
-                        </tr>
-                        <tr>
-                            <td>654-24</td>
-                            <td>Eraser</td>
-                            <td>26 Mar 2018</td>
-                            <td id="tables-stocks">3264</td>
-                            <td>1341 Rs</td>
-                            <td>325643.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
-                            </div></td>
-
-                        </tr>
-                        <tr>
-                            <td>6-67</td>
-                            <td>Shirt</td>
-                            <td>09 Mar 2018</td>
-                            <td id="tables-stocks">768</td>
-                            <td>2315 Rs</td>
-                            <td>346546.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
-                            </div></td>
-
-                        </tr>
-                        <tr>
-                            <td>978-243</td>
-                            <td>T-Shirt</td>
-                            <td>19 Mar 2018</td>
-                            <td id="tables-stocks">1342</td>
-                            <td>346546 Rs</td>
-                            <td>32656733.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
-                            </div></td>
-
-                        </tr>
-                        <tr>
-                            <td>35-456</td>
-                            <td>Cap</td>
-                            <td>22 Mar 2018</td>
-                            <td id="tables-stocks">7</td>
-                            <td>343654 Rs</td>
-                            <td>45636324.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
-                            </div></td>
-
-                        </tr>
-                        <tr>
-                            <td>789-234</td>
-                            <td>Short</td>
-                            <td>09 Mar 2018</td>
+                        <td>5</td>
+                            <td>Product</td>
+                            <td>2023-07-05</td>
                             <td id="tables-stocks">0</td>
-                            <td>345 Rs</td>
-                            <td>345435655.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                            <td>109</td>
+                            <td>18923</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
                         </tr>
                         <tr>
-                            <td>789-234</td>
-                            <td>Short</td>
-                            <td>09 Mar 2018</td>
+                        <td>6</td>
+                            <td>Product</td>
+                            <td>2023-07-12</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>7</td>
+                            <td>Product</td>
+                            <td>2013-07-12</td>
                             <td id="tables-stocks">0</td>
-                            <td>345 Rs</td>
-                            <td>345435655.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                            <td>981</td>
+                            <td>19034</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
                         </tr>
                         <tr>
-                            <td>789-234</td>
-                            <td>Short</td>
-                            <td>09 Mar 2018</td>
-                            <td id="tables-stocks">18</td>
-                            <td>345 Rs</td>
-                            <td>345435655.00 Rs</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">
-                                
+                        <td>8</td>
+                            <td>Product</td>
+                            <td>2023-06-09</td>
+                            <td id="tables-stocks">98</td>
+                            <td>289</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
                             </div></td>
-
+                        </tr>
+                        <tr>
+                        <td>9</td>
+                            <td>Product</td>
+                            <td>2023-01-02</td>
+                            <td id="tables-stocks">03</td>
+                            <td>36</td>
+                            <td>3789</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>10</td>
+                            <td>Product</td>
+                            <td>2023-12-03</td>
+                            <td id="tables-stocks">134</td>
+                            <td>324</td>
+                            <td>65721</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
+                        </tr>
+                        <tr>
+                        <td>16</td>
+                            <td>Product</td>
+                            <td>2023-07-02</td>
+                            <td id="tables-stocks">10</td>
+                            <td>4356</td>
+                            <td>45636</td>
+                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
+                            </div></td>
                         </tr>
                        
                     </tbody>

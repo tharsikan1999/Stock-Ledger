@@ -203,24 +203,21 @@ closeButton.addEventListener("click",function(){
 
     tableBody.style.cursor = "default";
 
-
     document.getElementById("Product-No").value = "";
 
-        document.getElementById("Product-Name").value = "";
+    document.getElementById("Product-Name").value = "";
 
-        document.getElementById("Division").value = "";
-        
-        document.getElementById("Add-Date").value = "";
+    
+    document.getElementById("Up-Date").value = "";
 
-        document.getElementById("Up-Date").value = "";
+    document.getElementById("Stocks").value = "";
 
-        document.getElementById("Stocks").value = "";
+    document.getElementById("Cost").value = "";
 
-        document.getElementById("Cost").value = "";
-
-        document.getElementById("Total-Cost").value = "";
+    document.getElementById("Total-Cost").value = "";
 
 
+   
 
 
 });
@@ -460,6 +457,154 @@ sevenTableth.addEventListener("click",function() {
         }
     }
 )();
+
+
+
+
+/* Add,Edit,Delete Inputs value Set the table */
+
+
+/*  Add Items to table */
+
+mainAddButton.addEventListener("click",function(){
+
+    const produtcNo = document.getElementById("Product-No").value,
+
+    produtcName = document.getElementById("Product-Name").value,
+
+
+    upDate = document.getElementById("Up-Date").value,
+
+    stocks = document.getElementById("Stocks").value,
+
+    cost = document.getElementById("Cost").value,
+
+    totalCost = document.getElementById("Total-Cost").value;
+
+
+    const table = document.querySelector("#tables");
+
+
+    if(produtcNo == ""|| produtcName == "" ||upDate == "" ||stocks == "" ||cost == "" || totalCost == "" ){
+
+        window.alert("Please Fill Empty Field");
+    }
+    else{
+        table.innerHTML += `
+
+        
+        
+    <tr >
+    <td>${produtcNo}</td>
+    <td>${produtcName}</td>
+    <td>${upDate}</td>
+    <td id="stocks-values">${stocks} </td>
+    <td>${cost}</td>
+    <td>${totalCost}</td>
+    <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+</tr>     
+        `
+    }
+ 
+}); 
+
+
+/* ---- edit Items ----------- */
+
+
+var table = document.getElementById("tables"),rIndex;
+
+for(r = 0; r <table.rows.length; r ++ ){
+    table.rows[r].addEventListener("click",function(){
+        rIndex = this.rowIndex;
+        
+        document.getElementById("Product-No").value = this.cells[0].innerHTML;
+
+        document.getElementById("Product-Name").value = this.cells[1].innerHTML;
+
+        
+        document.getElementById("Up-Date").value = this.cells[2].innerHTML;
+
+        document.getElementById("Stocks").value = this.cells[3].innerHTML;
+
+        document.getElementById("Cost").value = this.cells[4].innerHTML;
+
+        document.getElementById("Total-Cost").value = this.cells[5].innerHTML;
+    });
+}
+     
+
+mainEditButton.addEventListener("click",function(){
+
+    const     produtcNo = document.getElementById("Product-No").value,
+
+    produtcName = document.getElementById("Product-Name").value,
+
+
+
+    upDate = document.getElementById("Up-Date").value,
+
+    stocks = document.getElementById("Stocks").value,
+
+    cost = document.getElementById("Cost").value,
+
+    totalCost = document.getElementById("Total-Cost").value;
+
+
+
+    if(produtcNo == ""|| produtcName == ""  ||upDate == "" ||stocks == "" ||cost == "" || totalCost == "" ){
+
+        window.alert("Please Fill Empty Field");
+    }
+    else{
+    table.rows[rIndex-1].cells[0].innerHTML = document.getElementById("Product-No").value;
+    table.rows[rIndex-1].cells[1].innerHTML = document.getElementById("Product-Name").value;
+    table.rows[rIndex-1].cells[2].innerHTML = document.getElementById("Up-Date").value;
+    table.rows[rIndex-1].cells[3].innerHTML = document.getElementById("Stocks").value;
+    table.rows[rIndex-1].cells[4].innerHTML = document.getElementById("Cost").value;
+    table.rows[rIndex-1].cells[5].innerHTML = document.getElementById("Total-Cost").value;
+}
+    
+});
+
+
+/* ------ delete Options ----------- */
+
+
+mainDeleteButton.addEventListener("click",function(){
+
+    
+
+      const answer = confirm("Are You Sure To Delete This Item?");
+
+      if(answer == true){
+        table.deleteRow(rIndex);
+
+        document.getElementById("Product-No").value = "";
+    
+            document.getElementById("Product-Name").value = "";
+    
+            document.getElementById("Up-Date").value = "";
+    
+            document.getElementById("Stocks").value = "";
+    
+            document.getElementById("Cost").value = "";
+    
+            document.getElementById("Total-Cost").value = "";
+      }
+
+      else{
+
+        
+
+      
+      }
+
+});
+
+
+    
+
 
   
 
