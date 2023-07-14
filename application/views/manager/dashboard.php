@@ -8,7 +8,8 @@
     <title>Inventory Management</title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="body">
@@ -41,7 +42,7 @@
                 <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
-            <i id="notification-icon" class="fa-solid fa-bell"></i>
+                <i id="notification-icon" class="fa-solid fa-bell"></i>
                 <h4>Admin</h4>
                 <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
             </div>
@@ -73,7 +74,7 @@
                         <div class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/dashboardView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
                             <div id="active" class="slide-dashboard">
 
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="">
@@ -90,7 +91,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/inboundView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/inboundView">
                             <div class="inbound">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-up-light.png" alt="">
                                 <p>Inbound</p>
@@ -102,7 +103,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/outboundView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/outboundView">
                             <div class="outbound">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-down-light.png" alt="">
                                 <p>Outbound</p>
@@ -114,7 +115,7 @@
                     <div class="box1">
                         <div id="active1" class="sidebar1">
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/reportView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/reportView">
                             <div class="report">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/report-light.png" alt="">
                                 <p>Report</p>
@@ -126,7 +127,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/historyView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/historyView">
 
                             <div class="history">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/history-light.png" alt="">
@@ -167,10 +168,9 @@
 
                 -->
 
-                <div class="add-edit-delete-manage-box">
-
-
+                <!-- <div class="add-edit-delete-manage-box">
                     <div class="main-input-box">
+
                         <div class="Product-No-box">
                             <h3>Product-No</h3>
                             <input type="number" placeholder="Enter Product-No" name="Product-No" id="Product-No">
@@ -199,11 +199,7 @@
                         <div class="Total-Cost-box">
                             <h3>Enter Total-Cost</h3>
                             <input type="number" placeholder="Enter Total-Cost" name="Total-Cost" id="Total-Cost">
-
                         </div>
-
-
-
 
 
                     </div>
@@ -229,8 +225,48 @@
 
 
 
+                </div> -->
+                <div>
+                    <h1>Add Form</h1>
+                    <form id="addForm">
+                        <div>
+                            <label>Product ID:</label>
+                            <input type="text" name="proID" id="proID" required />
+                        </div>
+                        <div>
+                            <label>Product Name:</label>
+                            <input type="text" name="proName" id="proName" required />
+                        </div>
+                        <div>
+                            <label>Type:</label>
+                            <select name="type" id="type" required>
+                                <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Minimum Limit:</label>
+                            <input type="text" name="minLimit" id="minLimit" required />
+                        </div>
+                        <input type="button" id="addBtn" name="addBtn" value="ADD" />
+                    </form>
                 </div>
-
+                <!-- Delete product -->
+                <div>
+                    <h1>Delete Form</h1>
+                    <form id="deleteForm">
+                        <div>
+                            <label>Select a product to delete:</label>
+                            <select name="prd" id="prd" required>
+                                <?php foreach ($products as $item) {  ?>
+                                    <option value="<?php echo $item->pro_id; ?>"><?php echo $item->pro_id . "-". $item->pro_name; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <input type="button" id="deleteBtn" name="deleteBtn" value="DELETE" />
+                    </form>
+                </div>
                 <!--Report Chart-->
 
                 <div class="total-circle-box">
@@ -320,21 +356,21 @@
                 </div>
 
 
-                
+
                 <!--Tables-->
 
-              
 
 
-              
+
+
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <tr >
-                            <th class="table-first-th">Product No <div class="dropdown-buttons" >
-                                <i class="fas fa-caret-up"></i>
-                                <i class="fas fa-caret-down"></i>
-                            </div>
-                        </th>
+                        <tr>
+                            <th class="table-first-th">Product No <div class="dropdown-buttons">
+                                    <i class="fas fa-caret-up"></i>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
                             <th class="table-second-th">Product Name
                                 <div class="dropdown-buttons">
                                     <i id="second-fa-caret-up" class="fas fa-caret-up"></i>
@@ -347,13 +383,13 @@
                                     <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-five-th">Stocks  
+                            <th class="table-five-th">Stocks
                                 <div id="dropdown-buttons" class="dropdown-buttons">
                                     <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-six-th">Unit Cost  
+                            <th class="table-six-th">Unit Cost
                                 <div class="dropdown-buttons">
                                     <i id="six-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="six-fa-caret-down" class="fas fa-caret-down"></i>
@@ -368,253 +404,301 @@
                             <th>Avilable</th>
                         </tr>
                     </thead>
-                    <tbody id="tables">   
+                    <tbody id="tables">
                         <tr>
-                        <td>1</td>
+                            <td>1</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>2</td>
+                            <td>2</td>
                             <td>Product</td>
                             <td>2023-07-07</td>
                             <td id="tables-stocks">120</td>
                             <td>235</td>
                             <td>2354</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>3</td>
+                            <td>3</td>
                             <td>Product</td>
                             <td>2023-04-02</td>
                             <td id="tables-stocks">45</td>
                             <td>689</td>
                             <td>234</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>4</td>
+                            <td>4</td>
                             <td>Product</td>
                             <td>2023-01-02</td>
                             <td id="tables-stocks">235</td>
                             <td>23</td>
                             <td>9009</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>5</td>
+                            <td>5</td>
                             <td>Product</td>
                             <td>2023-07-05</td>
                             <td id="tables-stocks">0</td>
                             <td>109</td>
                             <td>18923</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>6</td>
+                            <td>6</td>
                             <td>Product</td>
                             <td>2023-07-12</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>7</td>
+                            <td>7</td>
                             <td>Product</td>
                             <td>2013-07-12</td>
                             <td id="tables-stocks">0</td>
                             <td>981</td>
                             <td>19034</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>8</td>
+                            <td>8</td>
                             <td>Product</td>
                             <td>2023-06-09</td>
                             <td id="tables-stocks">98</td>
                             <td>289</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>9</td>
+                            <td>9</td>
                             <td>Product</td>
                             <td>2023-01-02</td>
                             <td id="tables-stocks">03</td>
                             <td>36</td>
                             <td>3789</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>10</td>
+                            <td>10</td>
                             <td>Product</td>
                             <td>2023-12-03</td>
                             <td id="tables-stocks">134</td>
                             <td>324</td>
                             <td>65721</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                        <td>16</td>
+                            <td>16</td>
                             <td>Product</td>
                             <td>2023-07-02</td>
                             <td id="tables-stocks">10</td>
                             <td>4356</td>
                             <td>45636</td>
-                            <td id="table-avilable-circle"><div class="table-avilable-circle">   
-                            </div></td>
+                            <td id="table-avilable-circle">
+                                <div class="table-avilable-circle">
+                                </div>
+                            </td>
                         </tr>
-                       
+
                     </tbody>
-                   
+
                 </table>
-               
-           
+
+
             </div>
 
         </div>
@@ -624,130 +708,144 @@
 
 
 
-     <!--User Dropdown Bar -->
+    <!--User Dropdown Bar -->
 
-     <div class="user-dashboard">
+    <div class="user-dashboard">
         <div class="user-profile">
             <i class="fas fa-user fa-lg"></i>
-                <p>Profile</p>
+            <p>Profile</p>
         </div>
 
         <div class="logout-user-profile">
             <i class="fas fa-sign-out-alt fa-lg"></i>
-                <p>Log Out</p>
+            <p>Log Out</p>
         </div>
 
     </div>
 
-                <!-- Notifications bar -->
+    <!-- Notifications bar -->
 
-                <div class="notifications-box">
+    <div class="notifications-box">
         <div class="header-notifications">
             <p>All Notifications</p>
         </div>
 
         <div class="items-for-notifications">
             <div class="notify-box">
-            <td id="notification-pno">154-24</td>
+                <td id="notification-pno">154-24</td>
             </div>
             <div class="notify-box">
-            <td>Blue-Pen</td>
+                <td>Blue-Pen</td>
             </div>
             <div class="notify-box">
-            <td id="tables-stocks">0</td>
+                <td id="tables-stocks">0</td>
             </div>
             <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
             </div>
         </div>
 
         <div class="items-for-notifications">
             <div class="notify-box">
-            <td id="notification-pno">154-24</td>
+                <td id="notification-pno">154-24</td>
             </div>
             <div class="notify-box">
-            <td>Blue-Pen</td>
+                <td>Blue-Pen</td>
             </div>
             <div class="notify-box">
-            <td id="tables-stocks">0</td>
+                <td id="tables-stocks">0</td>
             </div>
             <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
             </div>
         </div>
 
         <div class="items-for-notifications">
             <div class="notify-box">
-            <td id="notification-pno">154-24</td>
+                <td id="notification-pno">154-24</td>
             </div>
             <div class="notify-box">
-            <td>Blue-Pen</td>
+                <td>Blue-Pen</td>
             </div>
             <div class="notify-box">
-            <td id="tables-stocks">0</td>
+                <td id="tables-stocks">0</td>
             </div>
             <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
             </div>
         </div>
 
         <div class="items-for-notifications">
             <div class="notify-box">
-            <td id="notification-pno">154-24</td>
+                <td id="notification-pno">154-24</td>
             </div>
             <div class="notify-box">
-            <td>Blue-Pen</td>
+                <td>Blue-Pen</td>
             </div>
             <div class="notify-box">
-            <td id="tables-stocks">0</td>
+                <td id="tables-stocks">0</td>
             </div>
             <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+                <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+                <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+                <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+                <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+                <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+                <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
+            </div>
+        </div>
+
+        <div class="items-for-notifications">
+            <div class="notify-box">
+                <td id="notification-pno">154-24</td>
+            </div>
+            <div class="notify-box">
+                <td>Blue-Pen</td>
+            </div>
+            <div class="notify-box">
+                <td id="tables-stocks">0</td>
+            </div>
+            <div class="notify-box">
+                <td id="table-avilable-circle">
+                    <div class="table-avilable-circle"></div>
+                </td>
             </div>
         </div>
 
@@ -771,11 +869,204 @@
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
-    <script src="<?php echo base_url(); ?>resources/frontend/Js/Dashboard.js">
+    <script src="<?php echo base_url(); ?>resources/frontend/Js/Dashboard.js"></script>
+    <script>
+        function validateDelete() {
+            var proId = document.getElementById("prd").value;
+            
 
+            if (proId.trim() === "") {
+                alert("Please select the product.");
+                return false;
+            }
+            
+            return true;
+        }
+        function validateAdd() {
+            var proId = document.getElementById("proID").value;
+            var proName = document.getElementById("proName").value;
+            var type = document.getElementById("type").value;
+            var minLimit = document.getElementById("minLimit").value;
+
+            if (proId.trim() === "") {
+                alert("Please enter the product id.");
+                return false;
+            }
+            if (proName.trim() === "") {
+                alert("Please enter product name.");
+                return false;
+            }
+            if (type.trim() === "") {
+                alert("Please enter type of the product");
+                return false;
+            }
+            if (minLimit.trim() === "") {
+                alert("Please enter minimum limit of the qauntity");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            $("#addBtn").click(function() {
+                base_url = "<?php echo base_url(); ?>";
+
+                var formvalid = validateAdd();
+                if (formvalid) {
+
+                    $.ajax({
+                        url: base_url + 'index.php/Admin/addProduct',
+                        data: $("#addForm").serialize(),
+                        method: 'post',
+                        success: function(response) {
+                            // console.log(response);
+                            if (response == true) {
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    }
+                                })
+
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Successfully added!'
+                                })
+
+                                window.location = base_url + 'index.php/Admin/index';
+                            } else {
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    }
+                                })
+
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Oops! Please try again'
+                                })
+                            }
+                        },
+                        error: function() {
+                            alert("Something went wrong");
+                        }
+                    });
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Form is not validated successfully!'
+                    })
+
+                }
+            });
+            $("#deleteBtn").click(function() {
+                base_url = "<?php echo base_url(); ?>";
+
+                var formvalid = validateDelete();
+                if (formvalid) {
+
+                    $.ajax({
+                        url: base_url + 'index.php/Admin/deleteProduct',
+                        data: $("#deleteForm").serialize(),
+                        method: 'post',
+                        success: function(response) {
+                            // console.log(response);
+                            if (response == true) {
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    }
+                                })
+
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Deleted added!'
+                                })
+
+                                window.location = base_url + 'index.php/Admin/index';
+                            } else {
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                    }
+                                })
+
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Oops! Please try again'
+                                })
+                            }
+                        },
+                        error: function() {
+                            alert("Something went wrong");
+                        }
+                    });
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Form is not validated successfully!'
+                    })
+
+                }
+            });
+
+
+
+
+        });
     </script>
 </body>
 

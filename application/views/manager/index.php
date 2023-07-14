@@ -30,7 +30,7 @@
                 <li><a href="#home">Home</a></li>
                 <!-- <li><a href="#about">About Us</a></li> -->
                 <li><a href="<?php echo base_url(); ?>index.php/Welcome/logView">Login</a></li>
-                <!-- <a href="<?php echo base_url(); ?>index.php/Welcome/dashboardView">
+                <!-- <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
                     <li><i class="fa-solid fa-user"></i></li>
                 </a> -->
 

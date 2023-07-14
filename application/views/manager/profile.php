@@ -75,7 +75,7 @@
 
                     <div class="box1">
                         
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/dashboardView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
                             <div  class="slide-dashboard">
 
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="">
@@ -91,7 +91,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/inboundView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/inboundView">
                             <div class="inbound">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-up-light.png" alt="">
                                 <p>Inbound</p>
@@ -103,7 +103,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/outboundView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/outboundView">
                             <div class="outbound">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-down-light.png" alt="">
                                 <p>Outbound</p>
@@ -115,7 +115,7 @@
                     <div class="box1">
                         <div id="active1" class="sidebar1">
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/reportView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/reportView">
                             <div class="report">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/report-light.png" alt="">
                                 <p>Report</p>
@@ -127,7 +127,7 @@
                         <div id="active1" class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/historyView">
+                        <a href="<?php echo base_url(); ?>index.php/Admin/historyView">
 
                             <div class="history">
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/history-light.png" alt="">

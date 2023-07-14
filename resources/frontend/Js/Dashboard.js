@@ -16,14 +16,14 @@ const logOutUrl = document.querySelector(".logout-user-profile");
 
 
 logOutUrl.addEventListener("click",()=>{
-    window.location = "http://localhost/Stock-Ledger/index.php/";
+    window.location = "http://localhost/Stock-Ledger/index.php/Welcome/logout";
 });
 
 
 const logOutUrlFooter = document.querySelector(".logout");
 
 logOutUrlFooter.addEventListener("click",()=>{
-    window.location = "http://localhost/Stock-Ledger/index.php/";
+    window.location =  "http://localhost/Stock-Ledger/index.php/Welcome/logout";
 });
 
 
@@ -33,7 +33,7 @@ logOutUrlFooter.addEventListener("click",()=>{
 const profilePage = document.querySelector(".user-profile");
 
 profilePage.addEventListener("click",()=>{
-    window.location = "http://localhost/Stock-Ledger/index.php/Welcome/profileView"
+    window.location = "http://localhost/Stock-Ledger/index.php/Admin/profileView"
 });
 
 

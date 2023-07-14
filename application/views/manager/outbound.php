@@ -99,7 +99,7 @@
         <div class="slide-bar">
           <div class="box1">
             <div id="active1" class="sidebar1"></div>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/dashboardView">
+            <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
               <div class="slide-dashboard">
                 <img class="dash-light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="" />
 
@@ -110,7 +110,7 @@
 
           <div class="box1">
             <div id="active1" class="sidebar1"></div>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/inboundView">
+            <a href="<?php echo base_url(); ?>index.php/Admin/inboundView">
               <div class="inbound">
                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-up-light.png" alt="" />
                 <p>Inbound</p>
@@ -120,7 +120,7 @@
 
           <div class="box1">
             <div class="sidebar1"></div>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/outboundView">
+            <a href="<?php echo base_url(); ?>index.php/Admin/outboundView">
               <div id="active" class="outbound">
                 <img src="<?php echo base_url(); ?>resources/frontend/img/aoow-down-dark.png" alt="" />
                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-down-light.png" alt="" />
@@ -131,7 +131,7 @@
 
           <div class="box1">
             <div id="active1" class="sidebar1"></div>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/reportView">
+            <a href="<?php echo base_url(); ?>index.php/Admin/reportView">
               <div class="report">
                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/report-light.png" alt="" />
                 <p>Report</p>
@@ -141,7 +141,7 @@
 
           <div class="box1">
             <div id="active1" class="sidebar1"></div>
-            <a href="<?php echo base_url(); ?>index.php/Welcome/historyView">
+            <a href="<?php echo base_url(); ?>index.php/Admin/historyView">
               <div class="history">
                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/history-light.png" alt="" />
                 <p>History</p>
@@ -202,10 +202,9 @@
                     <select name="type" id="type">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -247,10 +246,9 @@
                     <select name="type2" id="type2">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -292,10 +290,9 @@
                     <select name="type3" id="type3">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -337,10 +334,9 @@
                     <select name="type4" id="type4">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -382,10 +378,9 @@
                     <select name="type5" id="type5">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -433,10 +428,9 @@
                     <select name="type6" id="type6">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -478,10 +472,9 @@
                     <select name="type7" id="type7">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -523,10 +516,9 @@
                     <select name="type8" id="type8">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -568,10 +560,9 @@
                     <select name="type9" id="type9">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -613,10 +604,9 @@
                     <select name="type10" id="type10">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -666,10 +656,9 @@
                     <select name="type11" id="type11">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -711,10 +700,9 @@
                     <select name="type12" id="type12">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -756,10 +744,9 @@
                     <select name="type13" id="type13">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -801,10 +788,9 @@
                     <select name="type14" id="type14">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
@@ -846,10 +832,9 @@
                     <select name="type15" id="type15">
                       <option value="">Select the type</option>
                       <!-- map the database array -->
-                      <option value="stationary">Stationary</option>
-                      <option value="type2">type 2</option>
-                      <option value="type3">type 3</option>
-                      <option value="type4">type 4</option>
+                      <?php foreach ($types as $item) {  ?>
+                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                                <?php } ?>
                     </select>
                   </span>
                   <span class="col-md-2 col-lg-2 col-sm-2 text-center">
