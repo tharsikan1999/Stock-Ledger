@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- <div class="center">
+     <div class="center">
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
@@ -27,7 +27,7 @@
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
-    </div> -->
+    </div> 
     <!--DASHBOARD-->
     <div class="Dashboard">
         <!--NAVBAR-->
@@ -155,7 +155,7 @@
                         <p> Home - Pages - History</p>
                     </div>
                 </div>
-                <h2 style="text-align: center;">Stock History</h2>
+                <h2 id="history-header">Stock History</h2>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
@@ -172,40 +172,44 @@
                             </th>
                             <th class="table-third-th">PRODUCT ID
                                 <div class="dropdown-buttons">
-                                    <i id="fourth-fa-caret-up" class="fas fa-caret-up"></i>
-                                    <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
+                                    <i id="third-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="third-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
                             <th class="table-fourth-th">DATE
                                 <div id="dropdown-buttons" class="dropdown-buttons">
+                                    <i id="fourth-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
+                                </div>
+                            </th>
+
+                            <th class="table-five-th">Total Cost
+                                <div class="dropdown-buttons">
                                     <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-
-                            <th class="">DEPARTMENT/SUPPLIER
-                                <div class="">
-
+                            <th class="table-six-th">UNIT PRICE
+                            <div class="dropdown-buttons">
+                                    <i id="six-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="six-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="">UNIT PRICE
-                                <div class="">
-
+                            <th class="table-seven-th">QUANTITY
+                            <div class="dropdown-buttons">
+                                    <i id="seven-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="seven-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="">QUANTITY
-                                <div class="">
-
+                            <th class="table-eight-th">TOTAL PRICE
+                            <div class="dropdown-buttons">
+                                    <i id="eight-fa-caret-up" class="fas fa-caret-up"></i>
+                                    <i id="eight-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="">TOTAL PRICE
-                                <div class="">
-
-                                </div>
-                            </th>
-                            <th class="">DELETE
-                                <div class="">
-
+                            <th class="table-nine-th">DELETE
+                            <div >
+                                    
                                 </div>
                             </th>
                         </tr>
@@ -221,7 +225,7 @@
                                 <td><?php echo $item['unit_price']; ?></td>
                                 <td><?php echo $item['quantity']; ?></td>
                                 <td><?php echo $item['price']; ?></td>
-                                <td id="<?php echo $item['id']; ?>"><button onclick="dltStock(<?php echo $item['id']; ?>)">Delete</button></td>
+                                <td class="deleteForH" id="<?php echo $item['id']; ?>"><button id="delete-button-history" onclick="dltStock(<?php echo $item['id']; ?>)"><i class="fas fa-times"></i></button></td>
 
                             </tr>
                         <?php } ?>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Login_Signup.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Login & Registration</title>
 </head>
@@ -32,9 +33,7 @@
     </div>
 
     <div class="wrapper">
-        <nav class="nav">
-            <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="log-logo" src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt=""></a>
-        </nav>
+        
 
         <!----------------------------- Form box ----------------------------------->
         <div class="form-box">
@@ -43,79 +42,79 @@
 
 
             <div class="login-container" id="login">
+               <nav class="nav">
+                   <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="log-logo" src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt=""></a>
+               </nav>
                 <div class="top">
                     <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                     <header>Login</header>
                 </div>
                 <form id="login_form" name="login_form">
                     <div class="input-box">
+                    <i class="bx bx-user"></i>
                         <input type="text" class="input-field" placeholder="Username or Email" id="username" name="username">
-                        <i class="bx bx-user"></i>
+                        
                     </div>
                     <div class="input-box">
+                    <i class="bx bx-lock-alt"></i>
                         <input type="password" class="input-field" placeholder="Password" id="password" name="password">
-                        <i class="bx bx-lock-alt"></i>
+                        
                     </div>
                     <div class="submit-box">
                         <input type="button" id="LoginBtn" name="LoginBtn" class="submit" value="Sign In" onclick="validateLogin()">
                     </div>
                 </form>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="login-check">
-                        <label for="login-check"> Remember Me</label>
-                    </div>
-                    <div class="two">
-                        <label><a href="#">Forgot password?</a></label>
-                    </div>
-                </div>
+                
             </div>
 
 
 
             <!------------------- registration form -------------------------->
             <div class="register-container" id="register">
+            <nav class="nav">
+                   <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="log-logo" src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt=""></a>
+               </nav>
                 <form id="reg_form" name="reg_form">
-                    <div class="top">
+                    <div class="top1">
                         <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                         <header>Sign Up</header>
                     </div>
                     <div class="two-forms">
                         <div class="input-box">
+                        <i class="bx bx-user"></i>
                             <input type="text" class="input-field" placeholder="Firstname" id="fname" name="fname">
-                            <i class="bx bx-user"></i>
+                            
                         </div>
                         <div class="input-box">
+                        <i class="bx bx-user"></i>
                             <input type="text" class="input-field" placeholder="Lastname" id="lname" name="lname">
-                            <i class="bx bx-user"></i>
+                            
                         </div>
                     </div>
                     <div class="input-box">
+                    <i class="bx bx-envelope"></i>
                         <input type="text" class="input-field" placeholder="Email" id="regEmail" name="regEmail">
-                        <i class="bx bx-envelope"></i>
+                        
                     </div>
                     <div class="input-box">
+                    <i class="bx bx-home"></i>
                         <input type="text" class="input-field" placeholder="Division" id="regDivision" name="regDivision">
-                        <i class="bx bx-home"></i>
+                       
                     </div>
                     <div class="input-box">
+                    <i class="bx bx-lock-alt"></i>
                         <input type="password" class="input-field" placeholder="Password" id="regPassword" name="regPassword">
-                        <i class="bx bx-lock-alt"></i>
+                       
                     </div>
                     <div class="input-box">
+                    <i class="bx bx-lock-alt"></i>
                         <input type="password" class="input-field" placeholder="Confirm Password" id="regConfirmPassword">
-                        <i class="bx bx-lock-alt"></i>
+                       
                     </div>
                     <div class="submit-box">
                         <input type="button" id="reg_btn" name="reg_btn" class="submit" value="Register" onclick="validateRegistration()">
                     </div>
-                    <div class="two-col">
-                        <div class="one">
-                            <input type="checkbox" id="register-check">
-                            <label for="register-check"> Remember Me</label>
-                        </div>
-
-                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -129,43 +128,33 @@
             preloader.style.display = "none";
         });
 
-        function myMenuFunction() {
-            var i = document.getElementById("navMenu");
 
-            if (i.className === "nav-menu") {
-                i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
-            }
-        }
+        const registerPageBtn = document.querySelector(".top span a");
 
-        function login() {
-            var a = document.getElementById("LoginBtn");
-            var b = document.getElementById("registerBtn");
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
+        const loginPageBtn = document.querySelector(".top1 span a");
 
-            x.style.left = "4px";
-            y.style.right = "-520px";
-            a.className += " white-btn";
-            b.className = "btn";
-            x.style.opacity = 1;
-            y.style.opacity = 0;
-        }
+        const loginPage = document.querySelector("#login");
 
-        function register() {
-            var a = document.getElementById("loginBtn");
-            var b = document.getElementById("registerBtn");
-            var x = document.getElementById("login");
-            var y = document.getElementById("register");
+        const registerPage = document.querySelector("#register");
 
-            x.style.left = "-510px";
-            y.style.right = "5px";
-            // a.className = "btn";
-            // b.className += " white-btn";
-            x.style.opacity = 0;
-            y.style.opacity = 1;
-        }
+        
+
+
+        registerPageBtn.addEventListener("click",()=>{
+            
+            loginPage.style.display = "none";
+
+            registerPage.style.display = "flex";
+        });
+
+        loginPageBtn.addEventListener("click",()=>{
+            
+            loginPage.style.display = "flex";
+
+            registerPage.style.display = "none";
+        });
+
+       
 
         function validateLogin() {
             var email = document.getElementById("username").value;

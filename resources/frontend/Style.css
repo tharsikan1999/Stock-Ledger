@@ -1556,3 +1556,42 @@ table th {
   transition: 0.6s;
 
 }
+
+
+#history-header {
+  font-size: 22px;
+  color: #595757;
+  margin: 20px 0;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.deleteForH {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+#delete-button-history {
+  height: 30px;
+  width: 30px;
+  background-color: #ff5274;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#delete-button-history:hover {
+  background-color: #6a48f1;
+  color: #fff;
+  transition: 0.6s;
+}
+

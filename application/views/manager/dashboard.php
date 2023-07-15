@@ -148,10 +148,7 @@
                         <div class="add-button">
                             <p>Add Item</p>
                         </div>
-                        <div class="edit-button">
-                            <p>Edit Item</p>
-
-                        </div>
+                        
                         <div class="delete-button">
                             <p>Delete Item</p>
                         </div>
