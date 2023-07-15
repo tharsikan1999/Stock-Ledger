@@ -18,6 +18,7 @@ class Admin extends CI_Controller
             $this->load->model('admin_model');
             $data['types'] = $this->admin_model->getTypes();
             $data['products'] = $this->admin_model->getProducts();
+            $data['stock_dash'] =  $this->admin_model->getStockDetails();
             $this->load->view('manager/dashboard',$data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
@@ -26,7 +27,11 @@ class Admin extends CI_Controller
     public function dashboardView()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
-            $this->load->view('manager/dashboard');
+            $this->load->model('admin_model');
+            $data['types'] = $this->admin_model->getTypes();
+            $data['products'] = $this->admin_model->getProducts();
+            $data['stock_dash'] =  $this->admin_model->getStockDetails();
+            $this->load->view('manager/dashboard',$data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }

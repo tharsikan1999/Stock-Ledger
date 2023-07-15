@@ -28,15 +28,7 @@ profilePage.addEventListener("click", () => {
 	window.location = "http://localhost/Stock-Ledger/index.php/Admin/profileView";
 });
 
-/* Notification bar */
 
-const iconNotification = document.querySelector("#notification-icon");
-
-const notificationBar = document.querySelector(".notifications-box");
-
-iconNotification.addEventListener("click", () => {
-	notificationBar.classList.toggle("notification-display");
-});
 
 /* Slider bar animations */
 

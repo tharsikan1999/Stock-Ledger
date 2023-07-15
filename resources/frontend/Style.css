@@ -543,7 +543,7 @@ nav ul li a:hover {
   margin: 0 0 0 10px;
 }
 
-/* --- Paage box ---*/
+/* --- Page box ---*/
 
 .page-bar {
   flex-grow: 1;
@@ -1337,67 +1337,222 @@ table th {
 
 
 
-/* <!-- Notifications bar --> */
+/* Add Items */
 
 
-.notifications-box {
-  height: 350px ;
-  width: 300px;
-  position: absolute;
-  top: 50px;
-  right: 153px;
-  background-color: #d4d0ec44;
-  overflow: hidden;
-  overflow-y: scroll;
+#add-form {
+  padding: 40px 0;
   display: none;
-  scroll-behavior: smooth;
-
+}
+#add-form h1 {
+  font-size: 24px;
+    color: #595757;
+    margin: 20px 0;
+    text-align: center;
 }
 
-.scrollable-element {
-  scrollbar-color:#6a48f1;
+#addForm {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 0;
 }
 
-.notification-display {
-  display: block;
-}
-
-.header-notifications {
-  height: 50px;
-  width: 300px;
-  background-color: #6a48f1;
+.proID {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+}
+
+#proID,#minLimit {
+  height: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #595757;
+    background-color: #d4d0ec2e;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 0 0 0 20px;
+    border: 1px solid #59575762;
+}
+
+#proName {
+  height: 40px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #595757;
+    background-color: #d4d0ec2e;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 0 0 0 20px;
+    border: 1px solid #59575762;
+}
+#label1 {
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: 2px;
-  color: #ffffff;
-  margin: 0 0 10px 0;
-  
-
+  color: #595757
 }
 
-.items-for-notifications {
-  display: flex;
-  width: 300px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  margin: 10px 0 ;
-
-}
-
-.notify-box {
-  height: 60px;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#add-form #type {
+  height: 40px;
+  width: 200px;
   font-size: 16px;
   font-weight: 600;
-  color: #595757;
+  padding: 0 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  border: none;
+  color: #6a48f1;
+}
+
+#addBtn {
+  height: 40px;
+  width: 120px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+
+#addBtn:hover {
+  color: #7f63f4;
+  background: #ffffff;
+  border: 2px solid #7f63f4;
+  transition: 0.5s;
+}
+
+.close-button {
+  
+  background-color: #ff5274;
+  
+  height: 40px;
+  width: 120px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+.close-button:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+
+}
+
+/* delete Form */
+
+
+.deleteForm {
+  padding: 40px 0;
+  display: none;
+}
+
+.deleteForm h1 {
+  font-size: 24px;
+  color: #595757;
+  margin: 20px 0 0 80px;
+  text-align: center;
+}
+
+#deleteForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#df {
+  margin: 0 60px 0 0;
+}
+
+#deleteBtn {
+  height: 35px;
+  width: 120px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 40px;
+}
+
+#deleteBtn:hover {
+  color: #7f63f4;
+  background: #ffffff;
+  border: 2px solid #7f63f4;
+  transition: 0.5s;
+}
+
+#df-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #595757
+}
+
+#prd {
+
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  border: none;
+  color: #6a48f1;
+}
+
+.close-button-df {
+  background-color: #ff5274;
+  height: 35px;
+  width: 120px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.close-button-df:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
 
 }

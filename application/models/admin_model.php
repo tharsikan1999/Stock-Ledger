@@ -309,4 +309,10 @@ class admin_model extends CI_MODEL
             echo "Nothing to add";
         }
     }
+    
+    public function getStockDetails()
+    {
+        $query = $this->db->get_where('stock_view');
+        return $query->result_array();
+    }
 }

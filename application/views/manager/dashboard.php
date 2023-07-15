@@ -17,6 +17,7 @@
     <!--add pre loader-->
 
 
+
     <div class="center">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -42,7 +43,6 @@
                 <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
-                <i id="notification-icon" class="fa-solid fa-bell"></i>
                 <h4>Admin</h4>
                 <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
             </div>
@@ -161,103 +161,51 @@
                         <p> Home - Pages - Dashboard</p>
                     </div>
                 </div>
-
-
                 <!--
                     Add Items,Edit Items ,Delete Items
 
                 -->
 
-                <!-- <div class="add-edit-delete-manage-box">
-                    <div class="main-input-box">
-
-                        <div class="Product-No-box">
-                            <h3>Product-No</h3>
-                            <input type="number" placeholder="Enter Product-No" name="Product-No" id="Product-No">
-
-                        </div>
-                        <div class="Product-Name-box">
-                            <h3>Product-Name</h3>
-                            <input type="text" placeholder="Enter Product-Name" name="Product-Name" id="Product-Name">
-
-                        </div>
-                        <div class="Up-Date-box">
-                            <h3>Up-Date</h3>
-                            <input type="date" name="Up-Date" id="Up-Date">
-
-                        </div>
-                        <div class="Stocks-box">
-                            <h3>Enter Stocks</h3>
-                            <input type="number" placeholder="Enter Stocks" name="Stocks" id="Stocks">
-
-                        </div>
-                        <div class="Cost-box">
-                            <h3>Enter Cost</h3>
-                            <input type="number" placeholder="Enter Cost" name="Cost" id="Cost">
-
-                        </div>
-                        <div class="Total-Cost-box">
-                            <h3>Enter Total-Cost</h3>
-                            <input type="number" placeholder="Enter Total-Cost" name="Total-Cost" id="Total-Cost">
-                        </div>
-
-
-                    </div>
-
-                    <div class="main-button-box">
-                        <div class="add-button-box">
-                            <button id="add-button" type="button">Add Item</button>
-                        </div>
-                        <div class="edit-button-box">
-                            <button id="edit-button" type="button">Edit Item</button>
-
-                        </div>
-                        <div class="delete-button-box">
-                            <button id="delete-button" type="button">Delete Item</button>
-
-                        </div>
-
-                        <div class="close-button">
-                            <button id="close-button" type="button">Cancel</button>
-                        </div>
-                    </div>
+               
 
 
 
-
-                </div> -->
-                <div>
+             
+                <div id="add-form">
                     <h1>Add Form</h1>
                     <form id="addForm">
-                        <div>
-                            <label>Product ID:</label>
+                        <div class="proID">
+                            <label id="label1">Product ID:</label>
                             <input type="text" name="proID" id="proID" required />
                         </div>
-                        <div>
-                            <label>Product Name:</label>
+                        <div class="proID">
+                            <label  id="label1">Product Name :</label>
                             <input type="text" name="proName" id="proName" required />
                         </div>
-                        <div>
-                            <label>Type:</label>
+                        <div class="proID">
+                            <label  id="label1">Type:</label>
                             <select name="type" id="type" required>
                                 <?php foreach ($types as $item) {  ?>
                                     <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
-                        <div>
-                            <label>Minimum Limit:</label>
+                        <div class="proID">
+                            <label  id="label1">Minimum Limit:</label>
                             <input type="text" name="minLimit" id="minLimit" required />
                         </div>
                         <input type="button" id="addBtn" name="addBtn" value="ADD" />
+                        <div class="close-button">
+                        <p>Cancel</p>
+                        </div>
                     </form>
                 </div>
                 <!-- Delete product -->
-                <div>
+                <div class="deleteForm">
                     <h1>Delete Form</h1>
                     <form id="deleteForm">
-                        <div>
-                            <label>Select a product to delete:</label>
+                        <div id="df">
+                            <label id="df-label">Select a product to delete:</label>
                             <select name="prd" id="prd" required>
                                 <?php foreach ($products as $item) {  ?>
                                     <option value="<?php echo $item->pro_id; ?>"><?php echo $item->pro_id . "-". $item->pro_name; ?></option>
@@ -265,6 +213,9 @@
                             </select>
                         </div>
                         <input type="button" id="deleteBtn" name="deleteBtn" value="DELETE" />
+                        <div class="close-button-df">
+                        <p>Cancel</p>
+                        </div>
                     </form>
                 </div>
                 <!--Report Chart-->
@@ -383,18 +334,13 @@
                                     <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-five-th">Stocks
+                            <th class="table-five-th">Available Stocks
                                 <div id="dropdown-buttons" class="dropdown-buttons">
                                     <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-six-th">Unit Cost
-                                <div class="dropdown-buttons">
-                                    <i id="six-fa-caret-up" class="fas fa-caret-up"></i>
-                                    <i id="six-fa-caret-down" class="fas fa-caret-down"></i>
-                                </div>
-                            </th>
+                            
                             <th class="table-seven-th">Total Cost
                                 <div class="dropdown-buttons">
                                     <i id="seven-fa-caret-up" class="fas fa-caret-up"></i>
@@ -405,294 +351,21 @@
                         </tr>
                     </thead>
                     <tbody id="tables">
+                    <?php foreach ($stock_dash as $item) {  ?>
                         <tr>
-                            <td>1</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
+                            <td><?php echo $item['pro_id'];?></td>
+                            <td><?php echo $item['pro_name'];?></td>
+                            <td><?php echo $item['last_updated_date'];?></td>
+                            <td id="tables-stocks"><?php echo $item['available_stock'];?></td>
+                            <td><?php echo $item['total_amount'];?></td>
                             <td id="table-avilable-circle">
                                 <div class="table-avilable-circle">
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Product</td>
-                            <td>2023-07-07</td>
-                            <td id="tables-stocks">120</td>
-                            <td>235</td>
-                            <td>2354</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Product</td>
-                            <td>2023-04-02</td>
-                            <td id="tables-stocks">45</td>
-                            <td>689</td>
-                            <td>234</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Product</td>
-                            <td>2023-01-02</td>
-                            <td id="tables-stocks">235</td>
-                            <td>23</td>
-                            <td>9009</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Product</td>
-                            <td>2023-07-05</td>
-                            <td id="tables-stocks">0</td>
-                            <td>109</td>
-                            <td>18923</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Product</td>
-                            <td>2023-07-12</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Product</td>
-                            <td>2013-07-12</td>
-                            <td id="tables-stocks">0</td>
-                            <td>981</td>
-                            <td>19034</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Product</td>
-                            <td>2023-06-09</td>
-                            <td id="tables-stocks">98</td>
-                            <td>289</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Product</td>
-                            <td>2023-01-02</td>
-                            <td id="tables-stocks">03</td>
-                            <td>36</td>
-                            <td>3789</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Product</td>
-                            <td>2023-12-03</td>
-                            <td id="tables-stocks">134</td>
-                            <td>324</td>
-                            <td>65721</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Product</td>
-                            <td>2023-07-02</td>
-                            <td id="tables-stocks">10</td>
-                            <td>4356</td>
-                            <td>45636</td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
+                    <?php } ?>
+                        
+                        
 
                     </tbody>
 
@@ -719,134 +392,6 @@
         <div class="logout-user-profile">
             <i class="fas fa-sign-out-alt fa-lg"></i>
             <p>Log Out</p>
-        </div>
-
-    </div>
-
-    <!-- Notifications bar -->
-
-    <div class="notifications-box">
-        <div class="header-notifications">
-            <p>All Notifications</p>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-                <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-                <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-                <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-                <td id="table-avilable-circle">
-                    <div class="table-avilable-circle"></div>
-                </td>
-            </div>
         </div>
 
     </div>

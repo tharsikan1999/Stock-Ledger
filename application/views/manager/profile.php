@@ -43,7 +43,6 @@
                 <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
-                <i id="notification-icon" class="fa-solid fa-bell"></i>
                 <h4>Admin</h4>
                 <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
             </div>
@@ -218,119 +217,7 @@
 
 
 
-              <!-- Notifications bar -->
-
-    <div class="notifications-box">
-        <div class="header-notifications">
-            <p>All Notifications</p>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-        <div class="items-for-notifications">
-            <div class="notify-box">
-            <td id="notification-pno">154-24</td>
-            </div>
-            <div class="notify-box">
-            <td>Blue-Pen</td>
-            </div>
-            <div class="notify-box">
-            <td id="tables-stocks">0</td>
-            </div>
-            <div class="notify-box">
-            <td id="table-avilable-circle"><div class="table-avilable-circle"></div></td>
-            </div>
-        </div>
-
-    </div>
+ 
 
     
 
