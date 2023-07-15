@@ -166,11 +166,11 @@
 
                 -->
 
-               
 
 
 
-             
+
+
                 <div id="add-form">
                     <h1>Add Form</h1>
                     <form id="addForm">
@@ -179,11 +179,11 @@
                             <input type="text" name="proID" id="proID" required />
                         </div>
                         <div class="proID">
-                            <label  id="label1">Product Name :</label>
+                            <label id="label1">Product Name :</label>
                             <input type="text" name="proName" id="proName" required />
                         </div>
                         <div class="proID">
-                            <label  id="label1">Type:</label>
+                            <label id="label1">Type:</label>
                             <select name="type" id="type" required>
                                 <?php foreach ($types as $item) {  ?>
                                     <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
@@ -191,12 +191,12 @@
                             </select>
                         </div>
                         <div class="proID">
-                            <label  id="label1">Minimum Limit:</label>
+                            <label id="label1">Minimum Limit:</label>
                             <input type="text" name="minLimit" id="minLimit" required />
                         </div>
                         <input type="button" id="addBtn" name="addBtn" value="ADD" />
                         <div class="close-button">
-                        <p>Cancel</p>
+                            <p>Cancel</p>
                         </div>
                     </form>
                 </div>
@@ -208,13 +208,13 @@
                             <label id="df-label">Select a product to delete:</label>
                             <select name="prd" id="prd" required>
                                 <?php foreach ($products as $item) {  ?>
-                                    <option value="<?php echo $item->pro_id; ?>"><?php echo $item->pro_id . "-". $item->pro_name; ?></option>
+                                    <option value="<?php echo $item->pro_id; ?>"><?php echo $item->pro_id . "-" . $item->pro_name; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <input type="button" id="deleteBtn" name="deleteBtn" value="DELETE" />
                         <div class="close-button-df">
-                        <p>Cancel</p>
+                            <p>Cancel</p>
                         </div>
                     </form>
                 </div>
@@ -310,10 +310,6 @@
 
                 <!--Tables-->
 
-
-
-
-
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
@@ -340,7 +336,7 @@
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            
+
                             <th class="table-five-th">Total Cost
                                 <div class="dropdown-buttons">
                                     <i id="seven-fa-caret-up" class="fas fa-caret-up"></i>
@@ -351,21 +347,21 @@
                         </tr>
                     </thead>
                     <tbody id="tables">
-                    <?php foreach ($stock_dash as $item) {  ?>
-                        <tr>
-                            <td><?php echo $item['pro_id'];?></td>
-                            <td><?php echo $item['pro_name'];?></td>
-                            <td><?php echo $item['last_updated_date'];?></td>
-                            <td id="tables-stocks"><?php echo $item['available_stock'];?></td>
-                            <td><?php echo $item['total_amount'];?></td>
-                            <td id="table-avilable-circle">
-                                <div class="table-avilable-circle">
-                                </div>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                        
-                        
+                        <?php foreach ($stock_dash as $item) {  ?>
+                            <tr>
+                                <td><?php echo $item['pro_id']; ?></td>
+                                <td><?php echo $item['pro_name']; ?></td>
+                                <td><?php echo $item['last_updated_date']; ?></td>
+                                <td id="tables-stocks"><?php echo $item['available_stock']; ?></td>
+                                <td><?php echo $item['total_amount']; ?></td>
+                                <td id="table-avilable-circle">
+                                    <div class="table-avilable-circle">
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+
 
                     </tbody>
 
@@ -421,15 +417,16 @@
     <script>
         function validateDelete() {
             var proId = document.getElementById("prd").value;
-            
+
 
             if (proId.trim() === "") {
                 alert("Please select the product.");
                 return false;
             }
-            
+
             return true;
         }
+
         function validateAdd() {
             var proId = document.getElementById("proID").value;
             var proName = document.getElementById("proName").value;

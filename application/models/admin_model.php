@@ -18,6 +18,19 @@ class admin_model extends CI_MODEL
         $query = $this->db->query("SELECT DISTINCT type_id, type_name from product_view");
         return $query->result();
     }
+    public function getAllTypes()
+    {
+
+        $query = $this->db->query("SELECT DISTINCT type_id, type_name from type");
+        return $query->result();
+    }
+    public function getStockHistory()
+    {
+
+        $query = $this->db->query("SELECT * from stock");
+        return $query->result_array();
+    }
+    
     public function getProducts()
     {
         $query = $this->db->get('product_view');
@@ -314,5 +327,15 @@ class admin_model extends CI_MODEL
     {
         $query = $this->db->get_where('stock_view');
         return $query->result_array();
+    }
+    public function deleteStock($id)
+    {
+        $this->db->where('id', $id);
+        $result = $this->db->delete('stock');
+        if($result){
+            echo true;
+        }else{
+            echo false;
+        }
     }
 }

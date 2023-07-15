@@ -16,7 +16,7 @@ class Admin extends CI_Controller
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
-            $data['types'] = $this->admin_model->getTypes();
+            $data['types'] = $this->admin_model->getAllTypes();
             $data['products'] = $this->admin_model->getProducts();
             $data['stock_dash'] =  $this->admin_model->getStockDetails();
             $this->load->view('manager/dashboard',$data);
@@ -28,7 +28,7 @@ class Admin extends CI_Controller
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
-            $data['types'] = $this->admin_model->getTypes();
+            $data['types'] = $this->admin_model->getAllTypes();
             $data['products'] = $this->admin_model->getProducts();
             $data['stock_dash'] =  $this->admin_model->getStockDetails();
             $this->load->view('manager/dashboard',$data);
@@ -39,7 +39,9 @@ class Admin extends CI_Controller
     public function historyView()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
-            $this->load->view('manager/history');
+            $this->load->model('admin_model');
+            $data['stock_history'] =  $this->admin_model->getStockHistory();
+            $this->load->view('manager/history',$data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -111,6 +113,16 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->inboundProducts($this->input->post());
+            
+        } else {
+            redirect(base_url() . 'index.php/Welcome/logout');
+        }
+    }
+    public function deleteStock($id)
+    {
+        if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
+            $this->load->model('admin_model');
+            $this->admin_model->deleteStock($id);
             
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
