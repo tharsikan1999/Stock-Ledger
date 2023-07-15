@@ -18,7 +18,9 @@ class Welcome extends CI_Controller
     if ($this->session->userdata('Username' != '')) {
       redirect(base_url() . 'index.php/Welcome/logout');
     }
-    $this->load->view('manager/log.php');
+    $this->load->model('welcome_model');
+    $data['dep'] = $this->welcome_model->getDep();
+    $this->load->view('manager/log.php',$data);
   }
 
 

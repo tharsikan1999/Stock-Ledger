@@ -19,7 +19,11 @@ class Admin extends CI_Controller
             $data['types'] = $this->admin_model->getAllTypes();
             $data['products'] = $this->admin_model->getProducts();
             $data['stock_dash'] =  $this->admin_model->getStockDetails();
-            $this->load->view('manager/dashboard',$data);
+            $data['total'] = $this->admin_model->getTotalStock();
+            $data['available'] = $this->admin_model->getAvaiStock();
+            $data['low'] = $this->admin_model->getLowStock();
+            $data['outof'] = $this->admin_model->getOutStock();
+            $this->load->view('manager/dashboard', $data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -31,7 +35,11 @@ class Admin extends CI_Controller
             $data['types'] = $this->admin_model->getAllTypes();
             $data['products'] = $this->admin_model->getProducts();
             $data['stock_dash'] =  $this->admin_model->getStockDetails();
-            $this->load->view('manager/dashboard',$data);
+            $data['total'] = $this->admin_model->getTotalStock();
+            $data['available'] = $this->admin_model->getAvaiStock();
+            $data['low'] = $this->admin_model->getLowStock();
+            $data['outof'] = $this->admin_model->getOutStock();
+            $this->load->view('manager/dashboard', $data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -41,7 +49,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $data['stock_history'] =  $this->admin_model->getStockHistory();
-            $this->load->view('manager/history',$data);
+            $this->load->view('manager/history', $data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -51,7 +59,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $data['types'] = $this->admin_model->getTypes();
-            $this->load->view('manager/inbound',$data);
+            $this->load->view('manager/inbound', $data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -75,7 +83,9 @@ class Admin extends CI_Controller
     public function profileView()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
-            $this->load->view('manager/profile');
+            $this->load->model('admin_model');
+            $data['dp'] = $this->admin_model->getProfile();
+            $this->load->view('manager/profile',$data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -86,34 +96,31 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->addProduct($this->input->post());
-            
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
     }
-    
+
     public function deleteProduct()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->deleteProduct($this->input->post());
-            
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
     }
     public function getprod($id)
-	{
-		$this->load->model('admin_model');
-		$data['prod'] = $this->admin_model->getprod($id);
-		echo json_encode($data['prod']);
-	}
+    {
+        $this->load->model('admin_model');
+        $data['prod'] = $this->admin_model->getprod($id);
+        echo json_encode($data['prod']);
+    }
     public function inboundProducts()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->inboundProducts($this->input->post());
-            
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -123,7 +130,6 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->deleteStock($id);
-            
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }

@@ -46,7 +46,7 @@
                    <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="log-logo" src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt=""></a>
                </nav>
                 <div class="top">
-                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    <span>Don't have an account? <a href="#">Sign Up</a></span>
                     <header>Login</header>
                 </div>
                 <form id="login_form" name="login_form">
@@ -98,8 +98,12 @@
                     </div>
                     <div class="input-box">
                     <i class="bx bx-home"></i>
-                        <input type="text" class="input-field" placeholder="Division" id="regDivision" name="regDivision">
-                       
+                        <select id="regDivision" name="regDivision">
+                            <option>Select the department</option>
+                            <?php foreach($dep as $item){ ?>
+                                <option value="<?php echo $item['dep_id'];?>"><?php echo $item['dep_name'];?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="input-box">
                     <i class="bx bx-lock-alt"></i>

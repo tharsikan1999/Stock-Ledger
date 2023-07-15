@@ -183,7 +183,7 @@
                                 </div>
                             </th>
 
-                            <th class="table-five-th">Total Cost
+                            <th class="table-five-th">Department/Supplier
                                 <div class="dropdown-buttons">
                                     <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>

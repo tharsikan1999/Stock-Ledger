@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        
+
 
         <!--contetent-->
         <div class="content">
@@ -73,13 +73,13 @@
                 <div class="slide-bar">
 
                     <div class="box1">
-                        
+
                         <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
-                            <div  class="slide-dashboard">
+                            <div class="slide-dashboard">
 
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="">
 
-                                <p >Dashboard</p>
+                                <p>Dashboard</p>
                             </div>
                         </a>
 
@@ -150,122 +150,83 @@
                     </div>
                 </div>
 
-              
+
                 <div class="p-Information">
                     <div class="left-personal-information">
-                    <img  src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
+                        <img src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
 
-                    <div class="box">
-                    <h3>Tom Cruise</h3>
-                    <p><span>Member Since:</span> November 2023</p>
-                </div>
-                    
+                        <div class="box">
+                            <h3>Tom Cruise</h3>
+                            <p><span>Member Since:</span> November 2023</p>
+                        </div>
+
                     </div>
                     <div class="right-personal-information">
-                    <p>Personal Information</p> 
-                    <p>Full Name : <span>Tom Cruise</span></p>
-                    <p>Email : <span>abcd@gmail.com</span></p>
-                    <p>Division : <span>It</span></p>
-                    <p> Role : <span id="admin">Admin</span></p>    
+                        <p><b>Personal Information</b></p>
+                        <p>Full Name : <span><?php echo $dp[0]['fname'].$dp[0]['lname'];?></span></p>
+                        <p>Email(Username) : <span><?php echo $dp[0]['username'];?></span></p>
+                        <p>Division : <span>Admin</span></p>
+                        <p> Role : <span id="admin">Admin</span></p>
                     </div>
                 </div>
-                <div class="change-password-manage">
-                <div class="password-changed">
-                    <p>Change Password</p>
+                
 
-                </div>
-                </div>
 
-                <div class="password-popup">
-                <img  src="<?php echo base_url(); ?>resources/frontend/img/log.png" alt="">
-                <form action="">
-                <div class="old-password">
-                    <p>Enter Your Old Password</p>
-                    <input type="Password" id="old-Password" name="old-password">
-                    <i class="fas fa-eye" id="password-show-eye"></i>
-                    <i class="fas fa-eye-slash" id="password-hide-eye"></i>
-
-                </div>
-                <div class="new-password">
-                    <p>Enter Your New Password</p>
-                    <input type="Password" id="new-Password" name="new-password1">
-                    <i class="fas fa-eye"  id="password-show-eye2"></i>
-                    <i class="fas fa-eye-slash" id="password-hide-eye2"></i>
-
-                </div>
-                <div class="new-password">
-                    <p>Conform Your New Password</p>
-                    <input type="Password" id="new-Password1" name="new-password2">
-                    <i class="fas fa-eye" id="password-show-eye3"></i>
-                    <i class="fas fa-eye-slash" id="password-hide-eye3"></i>
-
-                </div>
-                </form>
-                <div class="change-buttons">
-                <div class="change-password-manage-popup">
-                <div class="password-changed-popup" id="change-password-btn">
-                <p>Change Password</p>
-                </div>
-                </div>
-                <div class="close-button-popup">
-                 <button id="close-button-popup" type="button">Cancel</button>
-                </div>
-                </div>
-                </div>
+                
 
             </div>
 
 
 
- 
-
-    
-
-         
-
-
-    </div>
-
-  
 
 
 
-     <!--User Dropdown Bar -->
 
-     <div class="user-dashboard">
-        <div class="user-profile">
-            <i class="fas fa-user fa-lg"></i>
+
+
+
+        </div>
+
+
+
+
+
+        <!--User Dropdown Bar -->
+
+        <div class="user-dashboard">
+            <div class="user-profile">
+                <i class="fas fa-user fa-lg"></i>
                 <p>Profile</p>
-        </div>
+            </div>
 
-        <div class="logout-user-profile">
-            <i class="fas fa-sign-out-alt fa-lg"></i>
+            <div class="logout-user-profile">
+                <i class="fas fa-sign-out-alt fa-lg"></i>
                 <p>Log Out</p>
+            </div>
+
         </div>
 
-    </div>
 
 
-
-    <!--Footer-->
-    <div class="footer">
-        <div class="main-logout">
-            <div class="logout">
-                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
-                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+        <!--Footer-->
+        <div class="footer">
+            <div class="main-logout">
+                <div class="logout">
+                    <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+                    <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt=""> <a href="https://itum.mrt.ac.lk/"><span>ITUM</span></a></p>
             </div>
         </div>
-        <div class="copyright">
-            <p>Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt=""> <a href="https://itum.mrt.ac.lk/"><span>ITUM</span></a></p>
-        </div>
-    </div>
 
 
-   
 
 
-      <script src="<?php echo base_url(); ?>resources/frontend/Js/Profile.js">
-    </script>
+
+        <script src="<?php echo base_url(); ?>resources/frontend/Js/Profile.js">
+        </script>
 
 </body>
 

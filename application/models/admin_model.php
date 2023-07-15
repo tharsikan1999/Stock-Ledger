@@ -338,4 +338,34 @@ class admin_model extends CI_MODEL
             echo false;
         }
     }
+
+    public function getTotalStock()
+    {
+
+        $query = $this->db->query("SELECT sum(available_stock) as  total_stock from stock_view");
+        return $query->result_array();
+    }
+    public function getAvaiStock()
+    {
+
+        $query = $this->db->query("SELECT count(available_stock) as  total_stock from stock_view where available_stock > 10");
+        return $query->result_array();
+    }
+    public function getLowStock()
+    {
+
+        $query = $this->db->query("SELECT count(available_stock) as  total_stock from stock_view where available_stock < 10 and available_stock >0");
+        return $query->result_array();
+    }
+    public function getOutStock()
+    {
+
+        $query = $this->db->query("SELECT count(available_stock) as  total_stock from stock_view where available_stock < 1");
+        return $query->result_array();
+    }
+    public function getProfile()
+    {
+        $query = $this->db->get_where('user_view', array('id' => $this->session->userdata('Id')));
+        return $query->result_array();
+    }
 }

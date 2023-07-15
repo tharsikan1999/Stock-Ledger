@@ -16,8 +16,6 @@
 
     <!--add pre loader-->
 
-
-
     <div class="center">
         <div class="wave"></div>
         <div class="wave"></div>
@@ -142,13 +140,14 @@
             <!--Page bar-->
 
             <div class="page-bar">
+
                 <!--Button-->
                 <div class="buttons">
                     <div class="left-buttons">
                         <div class="add-button">
                             <p>Add Item</p>
                         </div>
-                        
+
                         <div class="delete-button">
                             <p>Delete Item</p>
                         </div>
@@ -236,7 +235,10 @@
                             <circle class="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
                         </svg>
                         <h3>Total Stocks</h3>
-                        <h2 class="totalNumber"></h2>
+                        <h2 class="totalNumber">
+                            <?php echo $total[0]['total_stock']; ?>
+
+                        </h2>
                     </div>
                     <div class="cricle2-sub-box">
 
@@ -257,7 +259,10 @@
                             <circle class="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
                         </svg>
                         <h3>Available Stocks</h3>
-                        <h2 class="avilableStocks"></h2>
+                        <h2 class="avilableStocks">
+                            <?php echo $available[0]['total_stock']; ?>
+
+                        </h2>
 
                     </div>
                     <div class="cricle3-sub-box">
@@ -278,7 +283,10 @@
                             <circle class="circle3" cx="80" cy="80" r="70" stroke-linecap="round" />
                         </svg>
                         <h3>Low Stocks</h3>
-                        <h2 class="lowStock"></h2>
+                        <h2 class="lowStock">
+                            <?php echo $low[0]['total_stock']; ?>
+
+                        </h2>
                     </div>
                     <div class="cricle4-sub-box">
                         <div class="skill">
@@ -298,7 +306,9 @@
                             <circle class="circle4" cx="80" cy="80" r="70" stroke-linecap="round" />
                         </svg>
                         <h3>Out Of Stocks</h3>
-                        <h2 class="outOfStock"></h2>
+                        <h2 class="outOfStock">
+                            <?php echo $outof[0]['total_stock']; ?>
+                        </h2>
                     </div>
 
                 </div>
@@ -352,7 +362,18 @@
                                 <td id="tables-stocks"><?php echo $item['available_stock']; ?></td>
                                 <td><?php echo $item['total_amount']; ?></td>
                                 <td id="table-avilable-circle">
-                                    <div class="table-avilable-circle">
+                                    <div class="table-avilable-circle" id="<?php echo $item['pro_id']; ?>">
+                                        <script>
+                                            var val = "<?php echo $item['available_stock']; ?>";
+                                            if (val < 1) {
+                                                document.getElementById("<?php echo $item['pro_id']; ?>").style.background = " #FF5274";
+                                            } else if (val < 11) {
+                                                document.getElementById("<?php echo $item['pro_id']; ?>").style.background = " #FFC107";
+                                            } else {
+                                                document.getElementById("<?php echo $item['pro_id']; ?>").style.background = " #71D875";
+                                            }
+                                            
+                                        </script>
                                     </div>
                                 </td>
                             </tr>
