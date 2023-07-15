@@ -202,7 +202,7 @@
 
 
     </div>
-    <script src="<?php echo base_url(); ?>resources/frontend/Js/Histroy.Js">
+    <script src="<?php echo base_url(); ?>resources/frontend/Js/Report.Js">
     </script>
 </body>
 

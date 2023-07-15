@@ -52,7 +52,6 @@ hangBurgar.addEventListener("click",function(){
     hangBurgar.children[2].classList.toggle("Display3");
 })
 
-
 /* user profile animations */
 
 const userLogo = document.querySelector(".admin-avatar");
@@ -60,7 +59,13 @@ const userLogo = document.querySelector(".admin-avatar");
 const userMenu = document.querySelector(".user-dashboard");
 
 
-userLogo.addEventListener("click",function(){
-    userMenu.classList.toggle("user-Display");
+userLogo.addEventListener("mousemove",function(){
+    userMenu.classList.add("user-Display");
 });
 
+
+userMenu.addEventListener("mouseleave",function(){
+    userMenu.classList.remove("user-Display");
+
+    
+});

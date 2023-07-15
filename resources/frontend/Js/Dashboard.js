@@ -61,9 +61,20 @@ const userLogo = document.querySelector(".admin-avatar");
 const userMenu = document.querySelector(".user-dashboard");
 
 
-userLogo.addEventListener("click",function(){
-    userMenu.classList.toggle("user-Display");
+userLogo.addEventListener("mousemove",function(){
+    userMenu.classList.add("user-Display");
 });
+
+
+userMenu.addEventListener("mouseleave",function(){
+    userMenu.classList.remove("user-Display");
+
+    
+});
+
+
+
+
 
 
 

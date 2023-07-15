@@ -1574,13 +1574,13 @@ table th {
 }
 
 #delete-button-history {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   background-color: #ff5274;
   border: none;
   border-radius: 50%;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   font-weight: 900;
   display: flex;
