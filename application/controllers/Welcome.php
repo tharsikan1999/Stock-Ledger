@@ -35,7 +35,7 @@ class Welcome extends CI_Controller
       $this->session->set_userdata($data);
       if ($login['0']['department'] == 'admin') {
         echo "admin";
-      } else {
+      } else if ($login['0']['department'] == 'user'){
         echo "user";
       }
     } else {

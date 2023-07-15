@@ -189,18 +189,16 @@
         
         <!--Footer-->
         <div class="footer">
-            <div class="main-logout">
-                <div class="logout">
-                    <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
-                    <p>Logout</p>
-                </div>
+        <div class="main-logout">
+            <div class="logout">
+                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
             </div>
+        </div>
             <div class="copyright">
                 <p>Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt=""> <a href="https://itum.mrt.ac.lk/"><span>ITUM</span></a></p>
             </div>
         </div>
-
-
     </div>
     <script src="<?php echo base_url(); ?>resources/frontend/Js/Report.Js">
     </script>

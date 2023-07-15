@@ -43,16 +43,13 @@
                 <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
-                <h4>Admin</h4>
-                <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
+                <h4>USER</h4>
+                <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/rr.png" alt="">
             </div>
         </div>
 
-
-
         <!--contetent-->
         <div class="content">
-
 
             <div class="navbar">
                 <div class="main-hang-burgar">
@@ -74,7 +71,7 @@
 
                     <div class="box1">
 
-                        <a href="<?php echo base_url(); ?>index.php/Admin/dashboardView">
+                        <a href="<?php echo base_url(); ?>index.php/User/dashboardView">
                             <div class="slide-dashboard">
 
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="">
@@ -84,57 +81,6 @@
                         </a>
 
                     </div>
-
-
-                    <div class="box1">
-                        <div id="active1" class="sidebar1">
-
-                        </div>
-                        <a href="<?php echo base_url(); ?>index.php/Admin/inboundView">
-                            <div class="inbound">
-                                <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-up-light.png" alt="">
-                                <p>Inbound</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="box1">
-                        <div id="active1" class="sidebar1">
-
-                        </div>
-                        <a href="<?php echo base_url(); ?>index.php/Admin/outboundView">
-                            <div class="outbound">
-                                <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/arrow-down-light.png" alt="">
-                                <p>Outbound</p>
-
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="box1">
-                        <div id="active1" class="sidebar1">
-                        </div>
-                        <a href="<?php echo base_url(); ?>index.php/Admin/reportView">
-                            <div class="report">
-                                <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/report-light.png" alt="">
-                                <p>Report</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="box1">
-                        <div id="active1" class="sidebar1">
-
-                        </div>
-                        <a href="<?php echo base_url(); ?>index.php/Admin/historyView">
-
-                            <div class="history">
-                                <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/history-light.png" alt="">
-                                <p>History</p>
-                            </div>
-                        </a>
-                    </div>
-
                 </div>
             </div>
 
@@ -153,26 +99,26 @@
 
                 <div class="p-Information">
                     <div class="left-personal-information">
-                        <img src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
+                        <img src="<?php echo base_url(); ?>resources/frontend/img/rr.png" alt="">
 
                         <div class="box">
-                            <h3><?php echo $dp[0]['fname']." " .$dp[0]['lname'];?></h3>
+                            <h3><?php echo $dp[0]['fname'] . " " . $dp[0]['lname']; ?></h3>
                             <p><span>Member Since:</span> November 2023</p>
                         </div>
 
                     </div>
                     <div class="right-personal-information">
-                        <h2><b>Personal Information</b></h2><br/>
-                        <p>Full Name : <span><?php echo $dp[0]['fname']." " .$dp[0]['lname'];?></span></p>
-                        <p>Email(Username) : <span><?php echo $dp[0]['username'];?></span></p>
-                        <p>Division : <span>Admin</span></p>
-                        <p> Role : <span id="admin">Admin</span></p>
+                        <h2><b>Personal Information</b></h2><br />
+                        <p>Full Name : <span><?php echo $dp[0]['fname'] ." " . $dp[0]['lname']; ?></span></p>
+                        <p>Email(Username) : <span><?php echo $dp[0]['username']; ?></span></p>
+                        <p>Division : <span><?php echo $dp[0]['dep_name']; ?></span></p>
+                        <p> Role : <span id="admin">USER</span></p>
                     </div>
                 </div>
-                
 
 
-                
+
+
 
             </div>
 
@@ -210,12 +156,12 @@
 
         <!--Footer-->
         <div class="footer">
-        <div class="main-logout">
-            <div class="logout">
-                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
-                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+            <div class="main-logout">
+                <div class="logout">
+                    <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+                    <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+                </div>
             </div>
-        </div>
             <div class="copyright">
                 <p>Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt=""> <a href="https://itum.mrt.ac.lk/"><span>ITUM</span></a></p>
             </div>

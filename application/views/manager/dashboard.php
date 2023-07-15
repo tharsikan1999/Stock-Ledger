@@ -372,7 +372,6 @@
                                             } else {
                                                 document.getElementById("<?php echo $item['pro_id']; ?>").style.background = " #71D875";
                                             }
-                                            
                                         </script>
                                     </div>
                                 </td>

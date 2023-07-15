@@ -899,12 +899,12 @@
 
     <!--Footer-->
     <div class="footer">
-      <div class="main-logout">
-        <div class="logout">
-          <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="" />
-          <p>Logout</p>
+    <div class="main-logout">
+            <div class="logout">
+                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+            </div>
         </div>
-      </div>
       <div class="copyright">
         <p>
           Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt="" />

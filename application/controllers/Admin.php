@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
-
     public function logout()
     {
         $this->session->unset_userdata('Id');
@@ -100,7 +99,6 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php/Welcome/logout');
         }
     }
-
     public function deleteProduct()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {

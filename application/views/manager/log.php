@@ -274,7 +274,7 @@
                                     title: 'Welcome User!'
                                 })
 
-                                window.location = base_url + 'index.php/User/dashboardView';
+                                window.location = base_url + 'index.php/User/index';
                             } else {
                                 const Toast = Swal.mixin({
                                     toast: true,
