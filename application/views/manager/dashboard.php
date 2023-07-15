@@ -328,20 +328,20 @@
                                     <i id="second-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-fourth-th">Up Date
+                            <th class="table-third-th">Up Date
                                 <div class="dropdown-buttons">
                                     <i id="fourth-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="fourth-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
-                            <th class="table-five-th">Available Stocks
+                            <th class="table-fourth-th">Available Stocks
                                 <div id="dropdown-buttons" class="dropdown-buttons">
                                     <i id="five-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="five-fa-caret-down" class="fas fa-caret-down"></i>
                                 </div>
                             </th>
                             
-                            <th class="table-seven-th">Total Cost
+                            <th class="table-five-th">Total Cost
                                 <div class="dropdown-buttons">
                                     <i id="seven-fa-caret-up" class="fas fa-caret-up"></i>
                                     <i id="seven-fa-caret-down" class="fas fa-caret-down"></i>

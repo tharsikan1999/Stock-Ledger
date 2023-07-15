@@ -1492,7 +1492,7 @@ table th {
 }
 
 #deleteBtn {
-  height: 35px;
+  height: 40px;
   width: 120px;
   font-size: 17px;
   font-weight: 600;
@@ -1535,7 +1535,7 @@ table th {
 
 .close-button-df {
   background-color: #ff5274;
-  height: 35px;
+  height: 40px;
   width: 120px;
   font-size: 17px;
   font-weight: 600;
