@@ -34,8 +34,6 @@
         <div class="dash-menu">
             <div class="left-dash">
                 <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="">
-
-
             </div>
             <div class="right-dash">
 

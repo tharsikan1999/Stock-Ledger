@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2023 at 07:32 PM
+-- Generation Time: Jul 16, 2023 at 07:50 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -66,7 +66,24 @@ INSERT INTO `department` (`dep_id`, `dep_name`) VALUES
 -- (See below for the actual view)
 --
 CREATE TABLE `inbound_view` (
+`supplier` varchar(50)
+,`min_date` datetime
+,`max_date` datetime
+,`type_id` int(11)
+,`type_name` varchar(55)
+,`total_type_price` double
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `outbound_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `outbound_view` (
 `dep_id` int(11)
+,`min_date` datetime
+,`max_date` datetime
 ,`type_id` int(11)
 ,`type_name` varchar(55)
 ,`total_type_price` double
@@ -101,6 +118,9 @@ INSERT INTO `product` (`pro_id`, `pro_name`, `type_id`, `min_stock_limit`) VALUE
 ('3', 'Blue Pen', 1, 15),
 ('4', 'Black Pen', 1, 15),
 ('5', 'Eraser', 1, 15),
+('50', 'Sharpner', 1, 50),
+('51', 'C4', 5, 5),
+('52', 'Nitrogen', 5, 3),
 ('7', 'Ruler - Plastic', 1, 15),
 ('8', 'Marker Pen Blue', 1, 5),
 ('9', 'File Covers', 1, 10);
@@ -132,7 +152,7 @@ CREATE TABLE `stock` (
   `po_no` varchar(5) DEFAULT NULL,
   `issue_no` varchar(5) DEFAULT NULL,
   `pro_id` varchar(5) NOT NULL,
-  `date` datetime NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
   `dep_id` int(11) DEFAULT NULL,
   `supplier` varchar(50) DEFAULT NULL,
   `unit_price` double NOT NULL,
@@ -170,7 +190,42 @@ INSERT INTO `stock` (`id`, `grn`, `sir`, `po_no`, `issue_no`, `pro_id`, `date`, 
 (27, '65', NULL, '25', NULL, '15', '2023-07-13 00:00:00', NULL, 'AA', 150000, 100, 15000000, ''),
 (28, '65', NULL, '25', NULL, '15', '2023-07-13 00:00:00', NULL, 'AA', 150000, 2, 300000, ''),
 (29, '99', NULL, '65', NULL, '16', '2023-07-28 00:00:00', NULL, '3365', 15000, 25, 375000, ''),
-(30, NULL, '1', NULL, '1', '10', '2023-07-19 18:41:54', 17, NULL, 50, -3, -150, '');
+(30, NULL, '1', NULL, '1', '10', '2023-07-19 18:41:54', 17, NULL, 50, -3, -150, ''),
+(31, NULL, '5555', NULL, '55', '10', '2023-07-05 00:00:00', 1, NULL, 15, -10, -150, ''),
+(32, NULL, '2', NULL, '2', '11', '2023-07-26 21:32:28', 16, NULL, 300000, -5, -1500000, ''),
+(33, NULL, '3', NULL, '3', '10', '2023-07-25 21:41:25', 12, NULL, 120, -7, -840, ''),
+(34, NULL, '5', NULL, '5', '13', '2023-07-27 21:41:25', 16, NULL, 250, -2, -500, ''),
+(35, NULL, '7', NULL, '7', '5', '2023-07-16 16:11:24', 16, NULL, 25, -5, -125, ''),
+(36, NULL, '8', NULL, '8', '8', '2023-07-29 21:44:08', 13, NULL, 100, -3, -300, ''),
+(37, NULL, '9', NULL, '9', '3', '2023-07-16 16:11:24', 13, NULL, 15, -5, -75, ''),
+(38, NULL, '10', NULL, '10', '4', '2023-07-29 21:44:08', 13, NULL, 15, -3, -45, ''),
+(39, NULL, '11', NULL, '11', '12', '2023-07-16 16:11:24', 13, NULL, 350, -2, -700, ''),
+(40, NULL, '12', NULL, '12', '14', '2023-07-16 16:11:24', 9, NULL, 2500, -2, -5000, ''),
+(41, NULL, '13', NULL, '13', '11', '2023-07-16 16:11:24', 17, NULL, 150000, -2, -300000, ''),
+(42, NULL, '14', NULL, '14', '7', '2023-07-16 16:11:24', 17, NULL, 50, -4, -200, ''),
+(43, NULL, '15', NULL, '15', '8', '2023-07-16 16:11:24', 17, NULL, 150, -4, -600, ''),
+(44, NULL, '16', NULL, '16', '12', '2023-07-16 16:11:24', 17, NULL, 350, -3, -1050, ''),
+(45, NULL, '17', NULL, '17', '5', '2023-07-16 16:11:24', 17, NULL, 25, -4, -100, ''),
+(46, NULL, '18', NULL, '18', '4', '2023-07-26 21:55:11', 17, NULL, 15, -2, -30, ''),
+(47, NULL, '19', NULL, '19', '4', '2023-07-16 16:11:24', 15, NULL, 15, -4, -60, ''),
+(48, NULL, '20', NULL, '20', '5', '2023-07-28 22:00:16', 15, NULL, 25, -5, -125, ''),
+(49, NULL, '21', NULL, '21', '7', '2023-07-16 16:11:24', 15, NULL, 50, -4, -200, ''),
+(50, NULL, '22', NULL, '22', '3', '2023-07-16 16:11:24', 15, NULL, 15, -3, -45, ''),
+(51, NULL, '6', NULL, '6', '4', '2023-07-24 21:44:08', 16, NULL, 20, -10, -200, ''),
+(52, '85', NULL, '4', NULL, '5', '2023-07-05 00:00:00', NULL, 'SA Enterprises', 20, 100, 2000, ''),
+(53, '85', NULL, '4', NULL, '8', '2023-07-05 00:00:00', NULL, 'SA Enterprises', 55, 250, 13750, ''),
+(54, '85', NULL, '4', NULL, '4', '2023-07-05 00:00:00', NULL, 'SA Enterprises', 30, 100, 3000, ''),
+(55, '85', NULL, '4', NULL, '7', '2023-07-05 00:00:00', NULL, 'SA Enterprises', 41, 150, 7500, ''),
+(56, '36', NULL, '25', NULL, '11', '2023-07-12 00:00:00', NULL, 'NN Enter', 150000, 100, 15000000, ''),
+(57, '36', NULL, '25', NULL, '12', '2023-07-12 00:00:00', NULL, 'NN Enter', 350, 250, 87500, ''),
+(58, '36', NULL, '25', NULL, '13', '2023-07-12 00:00:00', NULL, 'NN Enter', 200, 500, 100000, ''),
+(59, NULL, '256', NULL, '23', '9', '2023-07-12 00:00:00', 1, NULL, 150, -15, -2250, ''),
+(60, NULL, '256', NULL, '23', '4', '2023-07-12 00:00:00', 4, NULL, 30, -100, -3000, ''),
+(61, '150', NULL, '10100', NULL, '50', '2023-07-14 00:00:00', NULL, 'lalith natraj', 30, 100, 3000, ''),
+(62, '150', NULL, '10100', NULL, '5', '2023-07-14 00:00:00', NULL, 'lalith natraj', 20, 100, 2000, ''),
+(63, NULL, NULL, NULL, NULL, '51', '0000-00-00 00:00:00', NULL, NULL, 0, 0, 0, ''),
+(64, NULL, NULL, NULL, NULL, '51', '2023-07-18 23:13:29', NULL, NULL, 0, 0, 0, ''),
+(65, NULL, NULL, NULL, NULL, '52', '2023-07-16 23:18:19', NULL, NULL, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -237,7 +292,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `fname`, `lname`, `password`, `dep_id`, `department`) VALUES
 (1, 'asf', 'Asluf', 'Ahamed', 'asf100', 0, 'admin'),
 (5, 'd@gmail.com', 'Shammi', 'Dhananjaya', 'asf100', 15, 'user'),
-(6, 'nsk@gmail.com', 'Moh', 'Nasik', 'asf100', 8, 'user');
+(6, 'nsk@gmail.com', 'Moh', 'Nasik', 'asf100', 8, 'user'),
+(7, 'cyber@gmail.com', 'GG', 'cyber', 'asf100', 9, 'user'),
+(8, 'sarfan@gmail.com', 'Sarfan', 'Moh', 'asf100', 9, 'user');
 
 -- --------------------------------------------------------
 
@@ -262,7 +319,16 @@ CREATE TABLE `user_view` (
 --
 DROP TABLE IF EXISTS `inbound_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `inbound_view`  AS  select `t1`.`dep_id` AS `dep_id`,`t2`.`type_id` AS `type_id`,`t2`.`type_name` AS `type_name`,sum(`t1`.`price`) AS `total_type_price` from (`stock` `t1` join `product_view` `t2` on(`t2`.`pro_id` = `t1`.`pro_id`)) where `t1`.`grn` is null group by `t1`.`dep_id`,`t2`.`type_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `inbound_view`  AS  select `t1`.`supplier` AS `supplier`,min(`t1`.`date`) AS `min_date`,max(`t1`.`date`) AS `max_date`,`t2`.`type_id` AS `type_id`,`t2`.`type_name` AS `type_name`,sum(`t1`.`price`) AS `total_type_price` from (`stock` `t1` join `product_view` `t2` on(`t2`.`pro_id` = `t1`.`pro_id`)) where `t1`.`grn` is not null group by `t1`.`supplier`,`t2`.`type_id` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `outbound_view`
+--
+DROP TABLE IF EXISTS `outbound_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `outbound_view`  AS  select `t1`.`dep_id` AS `dep_id`,min(`t1`.`date`) AS `min_date`,max(`t1`.`date`) AS `max_date`,`t2`.`type_id` AS `type_id`,`t2`.`type_name` AS `type_name`,sum(`t1`.`price`) AS `total_type_price` from (`stock` `t1` join `product_view` `t2` on(`t2`.`pro_id` = `t1`.`pro_id`)) where `t1`.`grn` is null group by `t1`.`dep_id`,`t2`.`type_id` ;
 
 -- --------------------------------------------------------
 
@@ -343,7 +409,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `type`
@@ -355,7 +421,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

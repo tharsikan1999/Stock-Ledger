@@ -40,7 +40,7 @@
         <!--NAVBAR-->
         <div class="dash-menu">
             <div class="left-dash">
-                <a href="<?php echo base_url(); ?>index.php/Welcome/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
+                <a href="<?php echo base_url(); ?>index.php/User/index"><img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt=""></a>
             </div>
             <div class="right-dash">
                 <h4>USER</h4>
