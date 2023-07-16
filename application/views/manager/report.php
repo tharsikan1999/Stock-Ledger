@@ -8,13 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Inventory Management</title>
 
-
-
-
-
-
     <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -37,11 +33,11 @@
         <div class="dash-menu">
             <div class="left-dash">
                 <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="">
-                
+
 
             </div>
             <div class="right-dash">
-            
+
                 <h4>Admin</h4>
                 <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="">
 
@@ -151,18 +147,39 @@
                 </div>
             </div>
 
-        <!--Page bar-->
+            <!--Page bar-->
 
-        <div class="page-bar">
-            <div class="buttons">
+            <div class="page-bar">
+                <div class="buttons">
                     <div class="left-buttons">
-                        
+
 
                     </div>
                     <div class="right-index-url">
                         <p> Home - Pages - History</p>
                     </div>
-            </div>
+                </div>
+                <div style="padding: 100px; text-align:center;">
+                    <h2 style="margin-bottom:50px;">Monthly Report</h2>
+
+                    <table style="text-align: center;width:100%;">
+                        <tr>
+                            <th>Department ID</th>
+                            <th>Department Name</th>
+                            <th>Type Name</th>
+                            <th>Total Amount</th>
+                        </tr>
+                        <?php foreach ($rep as $item) { ?>
+                            <tr>
+                                <td><?php echo $item->dep_id; ?></td>
+                                <td><?php echo $item->dep_name; ?></td>
+                                <td><?php echo $item->type_name; ?></td>
+                                <td><?php echo abs($item->total_type_price); ?></td>
+
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
 
 
             </div>
@@ -172,29 +189,29 @@
             <div class="user-dashboard">
                 <div class="user-profile">
                     <i class="fas fa-user fa-lg"></i>
-                        <p>Profile</p>
+                    <p>Profile</p>
                 </div>
 
                 <div class="logout-user-profile">
                     <i class="fas fa-sign-out-alt fa-lg"></i>
-                        <p>Log Out</p>
+                    <p>Log Out</p>
                 </div>
 
             </div>
 
-   
+
 
 
         </div>
-        
+
         <!--Footer-->
         <div class="footer">
-        <div class="main-logout">
-            <div class="logout">
-                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
-                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+            <div class="main-logout">
+                <div class="logout">
+                    <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+                    <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
+                </div>
             </div>
-        </div>
             <div class="copyright">
                 <p>Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt=""> <a href="https://itum.mrt.ac.lk/"><span>ITUM</span></a></p>
             </div>

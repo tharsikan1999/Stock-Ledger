@@ -66,7 +66,10 @@ class Admin extends CI_Controller
     public function outboundView()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
-            $this->load->view('manager/outbound');
+            $this->load->model('admin_model');
+            $data['types'] = $this->admin_model->getTypes();
+            $data['dep'] = $this->admin_model->getDeps();
+            $this->load->view('manager/outbound',$data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -74,7 +77,9 @@ class Admin extends CI_Controller
     public function reportView()
     {
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
-            $this->load->view('manager/report');
+            $this->load->model('admin_model');
+            $data['rep'] = $this->admin_model->getReport();
+            $this->load->view('manager/report', $data);
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }
@@ -128,6 +133,15 @@ class Admin extends CI_Controller
         if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
             $this->load->model('admin_model');
             $this->admin_model->deleteStock($id);
+        } else {
+            redirect(base_url() . 'index.php/Welcome/logout');
+        }
+    }
+    public function outboundProducts()
+    {
+        if ($this->session->userdata('Department') == 'admin' && $this->session->userdata('Username') != '') {
+            $this->load->model('admin_model');
+            $this->admin_model->outboundProducts($this->input->post());
         } else {
             redirect(base_url() . 'index.php/Welcome/logout');
         }

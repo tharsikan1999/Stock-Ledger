@@ -72,7 +72,7 @@
                         <div class="sidebar1">
 
                         </div>
-                        <a href="<?php echo base_url(); ?>index.php/User/dashboardView">
+                        <a href="<?php echo base_url(); ?>index.php/User/index">
                             <div id="active" class="slide-dashboard">
 
                                 <img class="light" src="<?php echo base_url(); ?>resources/frontend/img/dashboard light.png" alt="">

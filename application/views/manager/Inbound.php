@@ -647,28 +647,7 @@
       });
 
     }
-    // $(document).ready(function() {
-    //   $("[id^=type]").change(function(e) {
-    //     prdname = e.target.className;
-
-    //     var $product = $('#'+prdname);
-    //     $product.empty();
-
-    //     $.ajax({
-    //       url: "<?php echo base_url(); ?>" + "index.php/Admin/getprod/" + e.target.value,
-    //       method: 'get',
-    //       dataType: 'json',
-    //       success: function(response) {
-    //         // console.log(response);
-    //         response.map(function(item) {
-    //           $("#"+prdname).append(
-    //             "<option value='" + item.pro_id + "'>" + item.pro_name + "</option>"
-    //           );
-    //         });
-    //       }
-    //     });
-    //   });
-    // });
+   
   </script>
 </body>
 

@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <script src=" https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js "></script>
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Style.css" />
   <link rel="stylesheet" href="<?php echo base_url(); ?>resources/frontend/Outbound.css" />
 
@@ -76,10 +77,10 @@
     <div class="dash-menu">
       <div class="left-dash">
         <img class="logo" src="<?php echo base_url(); ?>resources/frontend/img/Itum logo.png" alt="" />
-        
+
       </div>
       <div class="right-dash">
-      
+
         <h4>Admin</h4>
         <img class="admin-avatar" src="<?php echo base_url(); ?>resources/frontend/img/User.jpg" alt="" />
       </div>
@@ -153,758 +154,609 @@
 
       <!--Page bar-->
 
-      
+
 
       <div class="page-bar">
-      <div class="buttons">
-                    <div class="left-buttons">
-                        
+        <div class="buttons">
+          <div class="left-buttons">
 
-                    </div>
-                    <div class="right-index-url">
-                        <p> Home - Pages - Outbound</p>
-                    </div>
+
+          </div>
+          <div class="right-index-url">
+            <p> Home - Pages - Outbound</p>
+          </div>
+        </div>
+        <h2 id="outbound-heading" class="text-center">OUTBOUND ITEMS</h2>
+        <form id="outbound_form" name="outbound_form">
+          <div class="row col-md-12 col-lg-12 col-sm-12 pt-3">
+            <span class="col-md-4 col-lg-4 col-sm-4 text-center">Issuing.No:
+              <input type="text" name="is_no" id="is_no" size="15" />
+            </span>
+            <span class="col-md-4 col-lg-4 col-sm-4 text-center">DATE:
+              <input type="date" name="date" id="date" />
+            </span>
+            <span class="col-md-4 col-lg-4 col-sm-4 text-center">SIR No:
+              <input type="text" name="sir_no" id="sir_no" size="15" />
+            </span>
+          </div>
+
+          <div class="row col-md-12 py-2">
+            <span class="col-md-9 col-lg-9 col-sm-9"></span>
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+          </div>
+          <!-- Label -->
+          <div class="row col-md-12 col-lg-12 col-sm-12" id="outbound-menu">
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">TYPE</span>
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">PRODUCT</span>
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">STOCK</span>
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">UNIT PRICE</span>
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">TOTAL AMOUNT</span>
+            <span class="col-md-2 col-lg-2 col-sm-2 text-center">DEPARTMENT</span>
+          </div>
+
+          <!-- 1st line of form -->
+
+          <div id="first5" name="first5">
+            <!-- 1st -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type" id="type" onchange="changeproduct('type','product')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product" id="product">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock" id="stock" onkeyup="totalAmount('stock','unit','tstock')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit" id="unit" onkeyup="totalAmount('stock','unit','tstock')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock" id="tstock" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart" id="depart">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
             </div>
-            <h2 id="outbound-heading" class="text-center">OUTBOUND ITEMS</h2>
-            <form id="outbound_form" name="outbound_form">
-              <div class="row col-md-12 col-lg-12 col-sm-12 pt-3">
-                <span class="col-md-4 col-lg-4 col-sm-4 text-center">Issuing.No:
-                  <input type="text" name="is_no" id="is_no" size="15" />
-                </span>
-                <span class="col-md-4 col-lg-4 col-sm-4 text-center">DATE: 
-                  <input type="date" name="date" id="date" />
-                </span>
-                <span class="col-md-4 col-lg-4 col-sm-4 text-center">SIR No:
-                  <input type="text" name="sir_no" id="sir_no" size="15" />
-                </span>
+            <!-- 2nd -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type2" id="type2" onchange="changeproduct('type2','product2')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product2" id="product2">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock2" id="stock2" onkeyup="totalAmount('stock2','unit2','tstock2')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit2" id="unit2" onkeyup="totalAmount('stock2','unit2','tstock2')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock2" id="tstock2" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart2" id="depart2">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 3rd -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type3" id="type3" onchange="changeproduct('type3','product3')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product3" id="product3">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock3" id="stock3" onkeyup="totalAmount('stock3','unit3','tstock3')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit3" id="unit3" onkeyup="totalAmount('stock3','unit3','tstock3')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock3" id="tstock3" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart3" id="depart3">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 4th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type4" id="type4" onchange="changeproduct('type4','product4')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product4" id="product4">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock4" id="stock4" onkeyup="totalAmount('stock4','unit4','tstock4')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit4" id="unit4" onkeyup="totalAmount('stock4','unit4','tstock4')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock4" id="tstock4" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart4" id="depart4">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 5th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type5" id="type5" onchange="changeproduct('type5','product5')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product5" id="product5">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock5" id="stock5" onkeyup="totalAmount('stock5','unit5','tstock5')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit5" id="unit5" onkeyup="totalAmount('stock5','unit5','tstock5')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock5" id="tstock5" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart5" id="depart5">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+          </div>
+          <div id="add10" style="text-align: right">
+            <div id="circle-button-inbound" onclick="add10()">
+              <p>+</p>
+            </div>
+          </div>
+
+          <div id="mid5" name="mid5" style="display: none">
+            <!-- 6th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type6" id="type6" onchange="changeproduct('type6','product6')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product6" id="product6">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock6" id="stock6" onkeyup="totalAmount('stock6','unit6','tstock6')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit6" id="unit6" onkeyup="totalAmount('stock6','unit6','tstock6')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock6" id="tstock6" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart6" id="depart6">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 7th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type7" id="type7" onchange="changeproduct('type7','product7')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product7" id="product7">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock7" id="stock7" onkeyup="totalAmount('stock7','unit7','tstock7')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit7" id="unit7" onkeyup="totalAmount('stock7','unit7','tstock7')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock7" id="tstock7" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart7" id="depart7">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 8th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type8" id="type8" onchange="changeproduct('type8','product8')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product8" id="product8">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock8" id="stock8" onkeyup="totalAmount('stock8','unit8','tstock8')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit8" id="unit8" onkeyup="totalAmount('stock8','unit8','tstock8')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock8" id="tstock8" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart8" id="depart8">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 9th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type9" id="type9" onchange="changeproduct('type9','product9')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product9" id="product9">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock9" id="stock9" onkeyup="totalAmount('stock9','unit9','tstock9')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit9" id="unit9" onkeyup="totalAmount('stock9','unit9','tstock9')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock9" id="tstock9" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart9" id="depart9">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+            <!-- 10th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type10" id="type10" onchange="changeproduct('type10','product10')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product10" id="product10">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
+
+
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock10" id="stock10" onkeyup="totalAmount('stock10','unit10','tstock10')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit10" id="unit10" onkeyup="totalAmount('stock10','unit10','tstock10')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock10" id="tstock10" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart10" id="depart10">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
+
+                </select>
+              </span>
+            </div>
+          </div>
+          <div id="add15">
+            <div id="add152">
+              <div id="circle-button-inbound2" onclick="add15()">
+                <p>+</p>
               </div>
+            </div>
+          </div>
 
-              <div class="row col-md-12 py-2">
-                <span class="col-md-9 col-lg-9 col-sm-9"></span>
-                <span class="col-md-3 col-lg-3 col-sm-3"></span>
-              </div>
-              <!-- Label -->
-              <div class="row col-md-12 col-lg-12 col-sm-12" id="outbound-menu">
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">TYPE</span>
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">PRODUCT</span>
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">STOCK</span>
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">UNIT PRICE</span>
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">TOTAL AMOUNT</span>
-                <span class="col-md-2 col-lg-2 col-sm-2 text-center">DEPARTMENT</span>
-              </div>
+          <div id="last5" name="last5" style="display: none">
+            <!-- 11th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type11" id="type11" onchange="changeproduct('type11','product11')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product11" id="product11">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
 
-              <!-- 1st line of form -->
 
-              <div id="first5" name="first5">
-                <!-- 1st -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type" id="type">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product" id="product">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid" id="productid">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock11" id="stock11" onkeyup="totalAmount('stock11','unit11','tstock11')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit11" id="unit11" onkeyup="totalAmount('stock11','unit11','tstock11')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock11" id="tstock11" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart11" id="depart11">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock" id="stock" onkeyup="totalAmount('stock','unit','tstock')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit" id="unit" onkeyup="totalAmount('stock','unit','tstock')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock" id="tstock" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart" id="depart">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 2nd -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type2" id="type2">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product2" id="product2">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid2" id="productid2">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+                </select>
+              </span>
+            </div>
+            <!-- 12th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type12" id="type12" onchange="changeproduct('type12','product12')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product12" id="product12">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock2" id="stock2" onkeyup="totalAmount('stock2','unit2','tstock2')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit2" id="unit2" onkeyup="totalAmount('stock2','unit2','tstock2')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock2" id="tstock2" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart2" id="depart2">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 3rd -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type3" id="type3">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product3" id="product3">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid3" id="productid3">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock3" id="stock3" onkeyup="totalAmount('stock3','unit3','tstock3')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit3" id="unit3" onkeyup="totalAmount('stock3','unit3','tstock3')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock3" id="tstock3" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart3" id="depart3">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 4th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type4" id="type4">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product4" id="product4">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid4" id="productid4">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock12" id="stock12" onkeyup="totalAmount('stock12','unit12','tstock12')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit12" id="unit12" onkeyup="totalAmount('stock12','unit12','tstock12')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock12" id="tstock12" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart12" id="depart12">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock4" id="stock4" onkeyup="totalAmount('stock4','unit4','tstock4')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit4" id="unit4" onkeyup="totalAmount('stock4','unit4','tstock4')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock4" id="tstock4" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart4" id="depart4">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 5th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type5" id="type5">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product5" id="product5">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid5" id="productid5">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+                </select>
+              </span>
+            </div>
+            <!-- 13th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type13" id="type13" onchange="changeproduct('type13','product13')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product13" id="product13">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock5" id="stock5" onkeyup="totalAmount('stock5','unit5','tstock5')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit5" id="unit5" onkeyup="totalAmount('stock5','unit5','tstock5')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock5" id="tstock5" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart5" id="depart5">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-              </div>
-              <div id="add10" style="text-align: right">
-                <div id="circle-button-inbound" onclick="add10()"><p>+</p></div>
-              </div>
 
-              <div id="mid5" name="mid5" style="display: none">
-                <!-- 6th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type6" id="type6">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product6" id="product6">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid6" id="productid6">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock13" id="stock13" onkeyup="totalAmount('stock13','unit13','tstock13')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit13" id="unit13" onkeyup="totalAmount('stock13','unit13','tstock13')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock13" id="tstock13" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart13" id="depart13">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock6" id="stock6" onkeyup="totalAmount('stock6','unit6','tstock6')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit6" id="unit6" onkeyup="totalAmount('stock6','unit6','tstock6')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock6" id="tstock6" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart6" id="depart6">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 7th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type7" id="type7">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product7" id="product7">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid7" id="productid7">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+                </select>
+              </span>
+            </div>
+            <!-- 14th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type14" id="type14" onchange="changeproduct('type14','product14')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product14" id="product14">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock7" id="stock7" onkeyup="totalAmount('stock7','unit7','tstock7')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit7" id="unit7" onkeyup="totalAmount('stock7','unit7','tstock7')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock7" id="tstock7" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart7" id="depart7">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 8th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type8" id="type8">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product8" id="product8">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid8" id="productid8">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock8" id="stock8" onkeyup="totalAmount('stock8','unit8','tstock8')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit8" id="unit8" onkeyup="totalAmount('stock8','unit8','tstock8')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock8" id="tstock8" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart8" id="depart8">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 9th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type9" id="type9">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product9" id="product9">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid9" id="productid9">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock14" id="stock14" onkeyup="totalAmount('stock14','unit14','tstock14')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit14" id="unit14" onkeyup="totalAmount('stock14','unit14','tstock14')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock14" id="tstock14" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart14" id="depart14">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock9" id="stock9" onkeyup="totalAmount('stock9','unit9','tstock9')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit9" id="unit9" onkeyup="totalAmount('stock9','unit9','tstock9')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock9" id="tstock9" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart9" id="depart9">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 10th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type10" id="type10">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product10" id="product10">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid10" id="productid10">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+                </select>
+              </span>
+            </div>
+            <!-- 15th -->
+            <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="type15" id="type15" onchange="changeproduct('type15','product15')">
+                  <option value="">Select the type</option>
+                  <!-- map the database array -->
+                  <?php foreach ($types as $item) {  ?>
+                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
+                  <?php } ?>
+                </select>
+              </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="product15" id="product15">
+                  <option value="">Select the product</option>
+                  <!-- map the database array -->
+                  
+                </select>
+              </span>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock10" id="stock10" onkeyup="totalAmount('stock10','unit10','tstock10')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit10" id="unit10" onkeyup="totalAmount('stock10','unit10','tstock10')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock10" id="tstock10" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart10" id="depart10">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-              </div>
-              <div id="add15">
-                 <div id="add152">
-                 <div id="circle-button-inbound2" onclick="add15()"><p>+</p></div>
-                  </div>
-              </div>
 
-              <div id="last5" name="last5" style="display: none">
-                <!-- 11th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type11" id="type11">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product11" id="product11">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid11" id="productid11">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock15" id="stock15" onkeyup="totalAmount('stock15','unit15','tstock15')" placeholder="Enter amount of  stock" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit15" id="unit15" onkeyup="totalAmount('stock15','unit15','tstock15')" placeholder="Enter uni t price" /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock15" id="tstock15" placeholder="TOTAL" readonly /></span>
+              <span class="col-md-2 col-lg-2 col-sm-2 text-center">
+                <select name="depart15" id="depart15">
+                  <option value="">Select department</option>
+                  <!-- map the database array -->
+                  <?php foreach ($dep as $item) {  ?>
+                    <option value="<?php echo $item->dep_id; ?>"><?php echo $item->dep_name; ?></option>
+                  <?php } ?>
 
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock11" id="stock11" onkeyup="totalAmount('stock11','unit11','tstock11')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit11" id="unit11" onkeyup="totalAmount('stock11','unit11','tstock11')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock11" id="tstock11" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart11" id="depart11">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 12th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type12" id="type12">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product12" id="product12">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid12" id="productid12">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
-
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock12" id="stock12" onkeyup="totalAmount('stock12','unit12','tstock12')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit12" id="unit12" onkeyup="totalAmount('stock12','unit12','tstock12')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock12" id="tstock12" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart12" id="depart12">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 13th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type13" id="type13">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product13" id="product13">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid13" id="productid13">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
-
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock13" id="stock13" onkeyup="totalAmount('stock13','unit13','tstock13')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit13" id="unit13" onkeyup="totalAmount('stock13','unit13','tstock13')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock13" id="tstock13" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart13" id="depart13">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 14th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type14" id="type14">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product14" id="product14">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid14" id="productid14">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
-
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock14" id="stock14" onkeyup="totalAmount('stock14','unit14','tstock14')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit14" id="unit14" onkeyup="totalAmount('stock14','unit14','tstock14')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock14" id="tstock14" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart14" id="depart14">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-                <!-- 15th -->
-                <div class="row col-md-12 col-lg-12 col-sm-12 py-1">
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="type15" id="type15">
-                      <option value="">Select the type</option>
-                      <!-- map the database array -->
-                      <?php foreach ($types as $item) {  ?>
-                                    <option value="<?php echo $item->type_id; ?>"><?php echo $item->type_name; ?></option>
-                                <?php } ?>
-                    </select>
-                  </span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="product15" id="product15">
-                      <option value="">Select the product</option>
-                      <!-- map the database array -->
-                      <option value="pen">Pen</option>
-                      <option value="pencil">Pencil</option>
-                      <option value="cr120">CR 120 PG</option>
-                      <option value="glue">Glue</option>
-                    </select>
-                  </span>
-                  <!-- ID is hidden -->
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center" style="display: none">
-                    <select name="productid15" id="productid15">
-                      <option value="">Select the product id</option>
-                      <!-- map the database array -->
-                      <option value="stationary">Pen</option>
-                    </select>
-                  </span>
-
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="stock15" id="stock15" onkeyup="totalAmount('stock15','unit15','tstock15')" placeholder="Enter amount of  stock" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="unit15" id="unit15" onkeyup="totalAmount('stock15','unit15','tstock15')" placeholder="Enter uni t price" /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center"><input type="number" min="1" size="15" name="tstock15" id="tstock15" placeholder="TOTAL" readonly /></span>
-                  <span class="col-md-2 col-lg-2 col-sm-2 text-center">
-                    <select name="depart15" id="depart15">
-                      <option value="">Select department</option>
-                      <!-- map the database array -->
-                      <option value="1">IT</option>
-                      <option value="2">Electronic</option>
-                      <option value="3">Mech</option>
-                      <option value="4">Civil</option>
-                    </select>
-                  </span>
-                </div>
-              </div>
-              <div id="py-2" class="text-center py-2">
-                <input type="submit" id="save-button-inbound" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
-              </div>
-            </form>
+                </select>
+              </span>
+            </div>
+          </div>
+          <div id="py-2" class="text-center py-2">
+            <input type="submit" id="save-button-inbound" class="btn btn-md btn-ld btn-outline-warning text-white" value="SAVE" />
+          </div>
+        </form>
       </div>
 
-        <!--User Dropdown Bar -->
+      <!--User Dropdown Bar -->
 
-        <div class="user-dashboard">
-                <div class="user-profile">
-                    <i class="fas fa-user fa-lg"></i>
-                        <p>Profile</p>
-                </div>
-
-                <div class="logout-user-profile">
-                    <i class="fas fa-sign-out-alt fa-lg"></i>
-                        <p>Log Out</p>
-                </div>
-
-           </div>
-
-  
+      <div class="user-dashboard">
+        <div class="user-profile">
+          <i class="fas fa-user fa-lg"></i>
+          <p>Profile</p>
         </div>
 
-      
+        <div class="logout-user-profile">
+          <i class="fas fa-sign-out-alt fa-lg"></i>
+          <p>Log Out</p>
+        </div>
+      </div>
+    </div>
+
+
 
     <!--Footer-->
     <div class="footer">
-    <div class="main-logout">
-            <div class="logout">
-                <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
-                <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
-            </div>
+      <div class="main-logout">
+        <div class="logout">
+          <img src="<?php echo base_url(); ?>resources/frontend/img/logout.png" alt="">
+          <p><a href="<?php echo base_url(); ?>index.php/Welcome/index">Logout</a></p>
         </div>
+      </div>
       <div class="copyright">
         <p>
           Copyrights <img src="<?php echo base_url(); ?>resources/frontend/img/copyright.png" alt="" />
@@ -914,6 +766,29 @@
     </div>
   </div>
   <script src="<?php echo base_url(); ?>resources/frontend/Js/Outbound.js"></script>
+  <script>
+    function changeproduct(type, pro) {
+
+      var $prd = $("#" + pro);
+      $prd.empty();
+      tt = $('#' + type).val();
+
+      $.ajax({
+        url: "<?php echo base_url(); ?>" + "index.php/Admin/getprod/" + tt,
+        method: 'get',
+        dataType: 'json',
+        success: function(response) {
+          // console.log(response);
+          response.map(function(item) {
+            $("#" + pro).append(
+              "<option value='" + item.pro_id + "'>" + item.pro_name + "</option>"
+            );
+          });
+        }
+      });
+
+    }
+  </script>
 </body>
 
 </html>

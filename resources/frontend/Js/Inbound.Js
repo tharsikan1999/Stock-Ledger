@@ -62,24 +62,7 @@ userMenu.addEventListener("mouseleave",function(){
 });
 
 $(document).ready(function () {
-	$("#type").change(function (e) {
-		var $district = $("#product");
-		// $district.empty();
-
-		// $.ajax({
-		//     url: "index.php/Homepage/getdistrict/" + e.target.value,
-		//     method: 'get',
-		//     dataType: 'json',
-		//     success: function(response) {
-		//         // console.log(response);
-		//         response.map(function(item) {
-		//             $("#district").append(
-		//                 "<option value='" + item.District_ID + "'>" + item.name_en + "</option>"
-		//             );
-		//         });
-		//     }
-		// });
-	});
+	
   
 	$("#inbound_form").submit(function (e) {
 		e.preventDefault();
@@ -107,7 +90,7 @@ $(document).ready(function () {
 					Swal.fire({
 						position: "top-end",
 						icon: "error",
-						title: "Something went wrong, Please check your email address",
+						title: "Something went wrong, Please check the fields",
 						showConfirmButton: false,
 						timer: 3000,
 					});

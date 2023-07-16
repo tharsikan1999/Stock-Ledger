@@ -346,7 +346,7 @@
 
                                 Toast.fire({
                                     icon: 'success',
-                                    title: 'Welcome Admin!'
+                                    title: 'Registration Successfull!'
                                 })
 
                                 window.location = base_url + 'index.php/Admin/index';
