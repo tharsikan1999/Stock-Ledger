@@ -1,0 +1,379 @@
+*{}
+
+.page-bar {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to right, #d4d0ec0d , #d9d7e52d);
+  position: relative;
+
+}
+
+
+
+.box {
+  width: 300px;
+  margin: 0 0 0 30px ;
+
+}
+
+
+.edit-button-profile {
+  height:50px;
+  width: 130px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-button-profile:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+.box h3{
+
+  color: #2b2a2a;
+    font-size: 20px ;
+  font-weight: 600;
+  margin: 30px 0;
+
+}
+
+.box p span{
+
+  color: #595757;
+  font-size: 17px ;
+  font-weight: 550;
+  margin: 0 5px 0 0;
+
+}
+
+.box p {
+
+  color: #595757;
+  font-size: 17px ;
+  font-weight: 550;
+  color: #6a48f1;
+
+}
+
+
+
+.p-Information {
+  display: flex;
+  justify-content: space-evenly;
+  background: #d4d0ec2d;
+  background-image: linear-gradient(to right, #d4d0ec0d , #d9d7e52d);
+  margin: 50px 0;
+  
+
+}
+
+.right-personal-information {
+  font-size: 18px ;
+  font-weight: 550;
+  color: #2c2c2c;
+  margin:30px 0 0 0;
+ 
+
+}
+.left-personal-information {
+  font-size: 18px ;
+  font-weight: 550;
+  color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.left-personal-information p span ,.right-personal-information p span{
+  color: #595757;
+
+}
+
+.left-personal-information p {
+  margin: 0 0 30px 0;
+}
+
+.right-personal-information p {
+  margin: 0 0 40px 0;
+}
+
+.left-personal-information {
+  flex-grow: 1;
+  padding: 30px 40px ;
+
+}
+
+.right-personal-information {
+  flex-grow: 1;
+  padding: 30px 40px ;
+
+
+}
+
+#admin {
+  color: #6a48f1;
+}
+
+.password-changed {
+  
+  height:50px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-changed:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+.change-password-manage {
+  min-width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.left-personal-information img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin: 0 0 0 40px;
+  
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* --- Password pop --- */
+
+.password-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+ 
+  
+}
+
+.password-popup img {
+ margin: 20px 0 ;
+ 
+  
+}
+
+.new-password p,.old-password p {
+  color: #595757;
+  font-size: 17px ;
+  font-weight: 550;
+}
+
+.new-password {
+  margin: 10px 0 0 0;
+}
+#old-Password {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
+
+}
+
+#new-Password {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
+
+}
+
+#new-Password1 {
+  height: 50px;
+  width: 300px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #5957576c;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 0 0 0 10px;
+  font-weight: 600;
+
+}
+
+#old-Password:hover {
+  border: 2.5px solid #6a48f1;
+
+}
+
+#new-Password:hover {
+  border: 2.5px solid #6a48f1;
+
+}
+
+.password-changed-popup {
+  
+  height:50px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #6a48f1df;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px 0 0;
+}
+
+.password-changed-popup:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+#close-button-popup {
+  height: 50px;
+  width: 200px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff5274;
+  cursor: pointer;
+  margin: 0 0 0 30px;
+}
+
+#close-button-popup:hover {
+  background-color: #fff;
+  color: #6a48f1;
+  border: 2px solid #6a48f1;
+  transition: 0.6s;
+}
+
+.change-buttons {
+  display: flex;
+  margin: 30px 0;
+}
+
+.fa-eye ,.fa-eye-slash{
+  color: #6a48f1;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+  font-size: 20px;
+}
+
+
+#password-hide-eye, #password-hide-eye2, #password-hide-eye3 {
+  display: none;
+}
+
+
+/* <!-- Notifications bar --> */
+
+
+.notifications-box {
+  height: 300px ;
+  width: 300px;
+  position: absolute;
+  top: 50px;
+  right: 153px;
+  background-color: #d4d0ec44;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: none;
+  scroll-behavior: smooth;
+
+}
+
+.scrollable-element {
+  scrollbar-color:#6a48f1;
+}
+
+.notification-display {
+  display: block;
+}
+
+.header-notifications {
+  height: 50px;
+  width: 300px;
+  background-color: #6a48f1bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  
+
+}
+
+.items-for-notifications {
+  display: flex;
+  width: 300px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 10px 0 ;
+
+}
+
+.notify-box {
+  height: 60px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #595757;
+  cursor: pointer;
+
+}
